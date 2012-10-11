@@ -59,7 +59,7 @@
   <ItemGroup>
     <ProjectReference Include="..\InstallmentUpdatingScheduler\InstallmentUpdatingScheduler.csproj">
       <Project>{2C899289-6128-405E-A755-22DFEB11E0CB}</Project>
-      <Name>InstallmentUpdatingScheduler %28Applications\InstallmentUpdatingScheduler\InstallmentUpdatingScheduler%29</Name>
+      <Name>InstallmentUpdatingScheduler %28src\Applications\InstallmentUpdatingScheduler\InstallmentUpdatingScheduler%29</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

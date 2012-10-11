@@ -59,7 +59,7 @@
     </ProjectReference>
     <ProjectReference Include="..\TransactionFrontEnd\TransactionFrontEnd.csproj">
       <Project>{9677979A-9154-4D0E-8980-9A49F98FF1A0}</Project>
-      <Name>TransactionFrontEnd %28Applications\TransactionFrontEnd\TransactionFrontEnd%29</Name>
+      <Name>TransactionFrontEnd %28src\Applications\TransactionFrontEnd\TransactionFrontEnd%29</Name>
     </ProjectReference>
     <ProjectReference Include="..\TransactionModel\TransactionModel.csproj">
       <Project>{9AE20600-407F-4BC0-93BE-C85BB86A9411}</Project>

@@ -61,7 +61,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ReconciliationFileReader\ReconciliationFileReader.csproj">
       <Project>{75F47F9E-8999-4259-B87E-A2768D4CA76A}</Project>
-      <Name>ReconciliationFileReader %28Applications\ReconciliationFileReader\ReconciliationFileReader%29</Name>
+      <Name>ReconciliationFileReader %28src\Applications\ReconciliationFileReader\ReconciliationFileReader%29</Name>
     </ProjectReference>
     <ProjectReference Include="..\TransactionModel\TransactionModel.csproj">
       <Project>{9AE20600-407F-4BC0-93BE-C85BB86A9411}</Project>

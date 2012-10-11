@@ -20,11 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Application
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReconciliationProcessor", "ReconciliationProcessor", "{F4F459D3-553D-4770-95E6-801379076F74}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployments", "Deployments", "{368D0546-1548-4B22-9485-919AA335B0A4}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReconciliationFileReader", "ReconciliationFileReader", "{6B1A4C86-A91B-4E25-AF28-92BCBB1F2DD4}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployments", "Deployments", "{7A89C53D-7745-4377-B1B3-D3CA22A28E5A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReconciliationFileReader", "ReconciliationFileReader\ReconciliationFileReader.csproj", "{75F47F9E-8999-4259-B87E-A2768D4CA76A}"
 EndProject
@@ -40,19 +36,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReconciliationFileProcessor
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TransactionService", "TransactionService", "{A7D461A8-D1F3-4A9F-8B9C-F93BA869B6F7}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployments", "Deployments", "{EA5D2B6C-D263-40D2-83F2-75F1F7A799BF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionServiceInterface", "TransactionServiceInterface\TransactionServiceInterface.csproj", "{B28E51EB-6520-4374-B4F0-0AEE1EB7BF3D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionServiceImpl", "TransactionServiceImpl\TransactionServiceImpl.csproj", "{C33DA03A-6328-4156-845D-3F73EA1B5B59}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TransactionFrontEnd", "TransactionFrontEnd", "{1E03D17A-619A-4120-859B-199ECEA2F519}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployments", "Deployments", "{EF1A51D9-BFBE-4771-8738-1B43195DAD41}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionFrontEnd", "TransactionFrontEnd\TransactionFrontEnd.csproj", "{9677979A-9154-4D0E-8980-9A49F98FF1A0}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebTransactionFrontEnd", "WebTransactionFrontEnd", "{607EE030-507D-46F7-A41C-B03106AEE8D8}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebTransactionFrontEnd", "WebTransactionFrontEnd\", "{607EE030-507D-46F7-A41C-B03106AEE8D8}"
 	ProjectSection(WebsiteProperties) = preProject
 		SccProjectName = ""$/CarPass Solution Dev/Transaction.root/Transaction", BQGDAAAA"
 		SccAuxPath = ""
@@ -83,8 +75,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfTransactionService", "Wc
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InstallmentUpdatingScheduler", "InstallmentUpdatingScheduler", "{2B30E992-3D07-403D-A4C2-5B5787BAE149}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployments", "Deployments", "{D3660988-15AF-454C-BA78-B01A134DF01E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstallmentUpdatingScheduler", "InstallmentUpdatingScheduler\InstallmentUpdatingScheduler.csproj", "{2C899289-6128-405E-A755-22DFEB11E0CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleInstallmentUpdator", "ConsoleInstallmentUpdator\ConsoleInstallmentUpdator.csproj", "{07F69C55-AB41-4058-A8CD-553C11F162D3}"
@@ -104,102 +94,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstallmentServiceWinSrv", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionCommon", "TransactionCommon\TransactionCommon.csproj", "{47FE0268-EFFB-4A60-83D1-6B66D7182193}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{743F5C4B-EC96-4174-BA11-F788AC120E96}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{8F257455-A4E3-4980-B60F-D3BE6063AB35}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "setup", "setup", "{AB5483AE-73C9-4446-BD2E-1FA331A4502D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{4E23A281-4104-41C4-B5E3-5A837366AB84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarPass.Transaction.Application.Common", "CarPass.Transaction.ApplicationCommon\CarPass.Transaction.Application.Common.csproj", "{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Transaction.vsmdi
-	EndGlobalSection
-	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 24
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = TransactionModel\\TransactionModel.csproj
-		SccLocalPath1 = .
-		SccProjectFilePathRelativizedFromConnection1 = TransactionModel\\
-		SccProjectUniqueName2 = TransactionModelTest\\TransactionModelTest.csproj
-		SccLocalPath2 = .
-		SccProjectFilePathRelativizedFromConnection2 = TransactionModelTest\\
-		SccProjectUniqueName3 = TransactionServiceAdaptor\\TransactionServiceAdaptor.csproj
-		SccLocalPath3 = .
-		SccProjectFilePathRelativizedFromConnection3 = TransactionServiceAdaptor\\
-		SccProjectUniqueName4 = TransactionServiceAdaptorTest\\TransactionServiceAdaptorTest.csproj
-		SccLocalPath4 = .
-		SccProjectFilePathRelativizedFromConnection4 = TransactionServiceAdaptorTest\\
-		SccProjectUniqueName5 = ReconciliationFileReader\\ReconciliationFileReader.csproj
-		SccProjectTopLevelParentUniqueName5 = Transaction.sln
-		SccLocalPath5 = .
-		SccProjectFilePathRelativizedFromConnection5 = ReconciliationFileReader\\
-		SccProjectUniqueName6 = ReconciliationFileReaderTest\\ReconciliationFileReaderTest.csproj
-		SccProjectTopLevelParentUniqueName6 = Transaction.sln
-		SccLocalPath6 = .
-		SccProjectFilePathRelativizedFromConnection6 = ReconciliationFileReaderTest\\
-		SccProjectUniqueName7 = ReconciliationFileReaderWinSrv\\ReconciliationFileReaderWinSrv.csproj
-		SccProjectTopLevelParentUniqueName7 = Transaction.sln
-		SccLocalPath7 = .
-		SccProjectFilePathRelativizedFromConnection7 = ReconciliationFileReaderWinSrv\\
-		SccProjectUniqueName8 = ReconciliationFileProcessor\\ReconciliationFileProcessor.csproj
-		SccProjectTopLevelParentUniqueName8 = Transaction.sln
-		SccLocalPath8 = .
-		SccProjectFilePathRelativizedFromConnection8 = ReconciliationFileProcessor\\
-		SccProjectUniqueName9 = ReaderConsole\\ReaderConsole.csproj
-		SccProjectTopLevelParentUniqueName9 = Transaction.sln
-		SccLocalPath9 = .
-		SccProjectFilePathRelativizedFromConnection9 = ReaderConsole\\
-		SccProjectUniqueName10 = ReconciliationFileProcessorTest\\ReconciliationFileProcessorTest.csproj
-		SccProjectTopLevelParentUniqueName10 = Transaction.sln
-		SccLocalPath10 = .
-		SccProjectFilePathRelativizedFromConnection10 = ReconciliationFileProcessorTest\\
-		SccProjectUniqueName11 = TransactionServiceInterface\\TransactionServiceInterface.csproj
-		SccProjectTopLevelParentUniqueName11 = Transaction.sln
-		SccLocalPath11 = .
-		SccProjectFilePathRelativizedFromConnection11 = TransactionServiceInterface\\
-		SccProjectUniqueName12 = TransactionServiceImpl\\TransactionServiceImpl.csproj
-		SccProjectTopLevelParentUniqueName12 = Transaction.sln
-		SccLocalPath12 = .
-		SccProjectFilePathRelativizedFromConnection12 = TransactionServiceImpl\\
-		SccProjectUniqueName13 = TransactionFrontEnd\\TransactionFrontEnd.csproj
-		SccProjectTopLevelParentUniqueName13 = Transaction.sln
-		SccLocalPath13 = .
-		SccProjectFilePathRelativizedFromConnection13 = TransactionFrontEnd\\
-		SccWebProject14 = true
-		SccProjectUniqueName14 = WebTransactionFrontEnd
-		SccProjectTopLevelParentUniqueName14 = Transaction.sln
-		SccLocalPath14 = .
-		SccProjectFilePathRelativizedFromConnection14 = WebTransactionFrontEnd\\
-		SccProjectEnlistmentChoice14 = 2
-		SccProjectUniqueName15 = WcfTransactionService\\WcfTransactionService.csproj
-		SccProjectTopLevelParentUniqueName15 = Transaction.sln
-		SccLocalPath15 = .
-		SccProjectFilePathRelativizedFromConnection15 = WcfTransactionService\\
-		SccProjectUniqueName16 = InstallmentUpdatingScheduler\\InstallmentUpdatingScheduler.csproj
-		SccProjectTopLevelParentUniqueName16 = Transaction.sln
-		SccLocalPath16 = .
-		SccProjectFilePathRelativizedFromConnection16 = InstallmentUpdatingScheduler\\
-		SccProjectUniqueName17 = ConsoleInstallmentUpdator\\ConsoleInstallmentUpdator.csproj
-		SccProjectTopLevelParentUniqueName17 = Transaction.sln
-		SccLocalPath17 = .
-		SccProjectFilePathRelativizedFromConnection17 = ConsoleInstallmentUpdator\\
-		SccProjectUniqueName18 = InstallmentUpdatingSchedulerTest\\InstallmentUpdatingSchedulerTest.csproj
-		SccProjectTopLevelParentUniqueName18 = Transaction.sln
-		SccLocalPath18 = .
-		SccProjectFilePathRelativizedFromConnection18 = InstallmentUpdatingSchedulerTest\\
-		SccProjectUniqueName19 = ProcessorConsole\\ProcessorConsole.csproj
-		SccProjectTopLevelParentUniqueName19 = Transaction.sln
-		SccLocalPath19 = .
-		SccProjectFilePathRelativizedFromConnection19 = ProcessorConsole\\
-		SccProjectUniqueName20 = TestTransactionService\\TestTransactionService.csproj
-		SccProjectTopLevelParentUniqueName20 = Transaction.sln
-		SccLocalPath20 = .
-		SccProjectFilePathRelativizedFromConnection20 = TestTransactionService\\
-		SccProjectUniqueName21 = ReconciliationProcessorWinSrv\\ReconciliationProcessorWinSrv.csproj
-		SccProjectTopLevelParentUniqueName21 = Transaction.sln
-		SccLocalPath21 = .
-		SccProjectFilePathRelativizedFromConnection21 = ReconciliationProcessorWinSrv\\
-		SccProjectUniqueName22 = InstallmentServiceWinSrv\\InstallmentServiceWinSrv.csproj
-		SccProjectTopLevelParentUniqueName22 = Transaction.sln
-		SccLocalPath22 = .
-		SccProjectFilePathRelativizedFromConnection22 = InstallmentServiceWinSrv\\
-		SccProjectUniqueName23 = TransactionCommon\\TransactionCommon.csproj
-		SccLocalPath23 = .
-		SccProjectFilePathRelativizedFromConnection23 = TransactionCommon\\
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -440,6 +347,16 @@ Global
 		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Release|x86.ActiveCfg = Release|Any CPU
+		{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -450,28 +367,32 @@ Global
 		{A7D461A8-D1F3-4A9F-8B9C-F93BA869B6F7} = {BEC8126E-3E5A-4808-8E37-E7748D9EB036}
 		{1E03D17A-619A-4120-859B-199ECEA2F519} = {BEC8126E-3E5A-4808-8E37-E7748D9EB036}
 		{2B30E992-3D07-403D-A4C2-5B5787BAE149} = {BEC8126E-3E5A-4808-8E37-E7748D9EB036}
-		{368D0546-1548-4B22-9485-919AA335B0A4} = {F4F459D3-553D-4770-95E6-801379076F74}
 		{311A819B-F24A-474B-BCA2-CE7268FE6580} = {F4F459D3-553D-4770-95E6-801379076F74}
-		{11E4D537-B412-4EED-A920-045737BA89EA} = {F4F459D3-553D-4770-95E6-801379076F74}
-		{DA5ABC3D-D77A-42D5-809F-C78C1A122619} = {368D0546-1548-4B22-9485-919AA335B0A4}
-		{FF6D09B3-2193-40E9-8C77-4643F3A82034} = {368D0546-1548-4B22-9485-919AA335B0A4}
-		{7A89C53D-7745-4377-B1B3-D3CA22A28E5A} = {6B1A4C86-A91B-4E25-AF28-92BCBB1F2DD4}
+		{DA5ABC3D-D77A-42D5-809F-C78C1A122619} = {F4F459D3-553D-4770-95E6-801379076F74}
+		{FF6D09B3-2193-40E9-8C77-4643F3A82034} = {F4F459D3-553D-4770-95E6-801379076F74}
 		{75F47F9E-8999-4259-B87E-A2768D4CA76A} = {6B1A4C86-A91B-4E25-AF28-92BCBB1F2DD4}
-		{533022D3-A5BB-4611-9260-5F74A5EF6B5B} = {6B1A4C86-A91B-4E25-AF28-92BCBB1F2DD4}
-		{5B465F8A-BAE5-495A-9E15-E900BAA987DD} = {7A89C53D-7745-4377-B1B3-D3CA22A28E5A}
-		{D3DF1FD5-618D-4D2F-B730-3D9D0B8DBC9A} = {7A89C53D-7745-4377-B1B3-D3CA22A28E5A}
-		{EA5D2B6C-D263-40D2-83F2-75F1F7A799BF} = {A7D461A8-D1F3-4A9F-8B9C-F93BA869B6F7}
+		{D3DF1FD5-618D-4D2F-B730-3D9D0B8DBC9A} = {6B1A4C86-A91B-4E25-AF28-92BCBB1F2DD4}
+		{5B465F8A-BAE5-495A-9E15-E900BAA987DD} = {6B1A4C86-A91B-4E25-AF28-92BCBB1F2DD4}
 		{B28E51EB-6520-4374-B4F0-0AEE1EB7BF3D} = {A7D461A8-D1F3-4A9F-8B9C-F93BA869B6F7}
 		{C33DA03A-6328-4156-845D-3F73EA1B5B59} = {A7D461A8-D1F3-4A9F-8B9C-F93BA869B6F7}
-		{7834BCAE-92EC-419F-BE6C-D1B221802E7F} = {A7D461A8-D1F3-4A9F-8B9C-F93BA869B6F7}
-		{EC3BE02B-F28F-470C-B6E0-EE6626D050FC} = {EA5D2B6C-D263-40D2-83F2-75F1F7A799BF}
-		{EF1A51D9-BFBE-4771-8738-1B43195DAD41} = {1E03D17A-619A-4120-859B-199ECEA2F519}
+		{EC3BE02B-F28F-470C-B6E0-EE6626D050FC} = {A7D461A8-D1F3-4A9F-8B9C-F93BA869B6F7}
 		{9677979A-9154-4D0E-8980-9A49F98FF1A0} = {1E03D17A-619A-4120-859B-199ECEA2F519}
-		{607EE030-507D-46F7-A41C-B03106AEE8D8} = {EF1A51D9-BFBE-4771-8738-1B43195DAD41}
-		{D3660988-15AF-454C-BA78-B01A134DF01E} = {2B30E992-3D07-403D-A4C2-5B5787BAE149}
+		{607EE030-507D-46F7-A41C-B03106AEE8D8} = {1E03D17A-619A-4120-859B-199ECEA2F519}
 		{2C899289-6128-405E-A755-22DFEB11E0CB} = {2B30E992-3D07-403D-A4C2-5B5787BAE149}
-		{63523CE3-A3D7-4824-928F-E280DCC46883} = {2B30E992-3D07-403D-A4C2-5B5787BAE149}
-		{07F69C55-AB41-4058-A8CD-553C11F162D3} = {D3660988-15AF-454C-BA78-B01A134DF01E}
-		{58F23B7A-8B00-4DB3-AFB7-85B977939C8B} = {D3660988-15AF-454C-BA78-B01A134DF01E}
+		{07F69C55-AB41-4058-A8CD-553C11F162D3} = {2B30E992-3D07-403D-A4C2-5B5787BAE149}
+		{58F23B7A-8B00-4DB3-AFB7-85B977939C8B} = {2B30E992-3D07-403D-A4C2-5B5787BAE149}
+		{BEC8126E-3E5A-4808-8E37-E7748D9EB036} = {743F5C4B-EC96-4174-BA11-F788AC120E96}
+		{8F257455-A4E3-4980-B60F-D3BE6063AB35} = {743F5C4B-EC96-4174-BA11-F788AC120E96}
+		{AB5483AE-73C9-4446-BD2E-1FA331A4502D} = {743F5C4B-EC96-4174-BA11-F788AC120E96}
+		{47FE0268-EFFB-4A60-83D1-6B66D7182193} = {8F257455-A4E3-4980-B60F-D3BE6063AB35}
+		{9AE20600-407F-4BC0-93BE-C85BB86A9411} = {8F257455-A4E3-4980-B60F-D3BE6063AB35}
+		{97AAE905-B922-4E11-84A2-628BC3E55633} = {8F257455-A4E3-4980-B60F-D3BE6063AB35}
+		{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F} = {8F257455-A4E3-4980-B60F-D3BE6063AB35}
+		{67B21638-9A49-4BE7-9DC9-809AB579806B} = {4E23A281-4104-41C4-B5E3-5A837366AB84}
+		{A5C23FE0-AF99-4DC2-8BCA-64CD5E03B518} = {4E23A281-4104-41C4-B5E3-5A837366AB84}
+		{63523CE3-A3D7-4824-928F-E280DCC46883} = {4E23A281-4104-41C4-B5E3-5A837366AB84}
+		{533022D3-A5BB-4611-9260-5F74A5EF6B5B} = {4E23A281-4104-41C4-B5E3-5A837366AB84}
+		{11E4D537-B412-4EED-A920-045737BA89EA} = {4E23A281-4104-41C4-B5E3-5A837366AB84}
+		{7834BCAE-92EC-419F-BE6C-D1B221802E7F} = {4E23A281-4104-41C4-B5E3-5A837366AB84}
 	EndGlobalSection
 EndGlobal
