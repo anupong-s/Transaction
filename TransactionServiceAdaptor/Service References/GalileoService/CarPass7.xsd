@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" />
+  <xs:element name="ProcessLowBattery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q1:ProcessLowBatteryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessLowBatteryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessLowBatteryResult" nillable="true" type="q2:ProcessLowBatteryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessHeartbeatLate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q3:ProcessHeartbeatLateRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessHeartbeatLateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessHeartbeatLateResult" nillable="true" type="q4:ProcessHeartbeatLateResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessFuelDrop">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q5:ProcessFuelDropRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessFuelDropResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessFuelDropResult" nillable="true" type="q6:ProcessFuelDropResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessCasingOpenAlert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q7:ProcessCasingOpenAlertRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessCasingOpenAlertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessCasingOpenAlertResult" nillable="true" type="q8:ProcessCasingOpenAlertResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessGPSDeviceInternalBatterySOHAlert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q9:ProcessGPSDeviceInternalBatterySOHRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessGPSDeviceInternalBatterySOHAlertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessGPSDeviceInternalBatterySOHAlertResult" nillable="true" type="q10:ProcessGPSDeviceInternalBatterySOHResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelPmpSubscription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q11:CancelPmpSubscriptionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelPmpSubscriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="CancelPmpSubscriptionResult" nillable="true" type="q12:CancelPmpSubscriptionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessGPSDataGapAlert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q13:ProcessGPSDataGapRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessGPSDataGapAlertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessGPSDataGapAlertResult" nillable="true" type="q14:ProcessGPSDataGapResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessEcall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q15:ProcessEcallRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessEcallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessEcallResult" nillable="true" type="q16:ProcessEcallResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessDongleInternalBatteryVoltageSOCAlert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q17:ProcessDongleInternalBatteryVoltageSOCRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessDongleInternalBatteryVoltageSOCAlertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessDongleInternalBatteryVoltageSOCAlertResult" nillable="true" type="q18:ProcessDongleInternalBatteryVoltageSOCResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateInstallment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q19:UpdateInstallmentRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateInstallmentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="UpdateInstallmentResult" nillable="true" type="q20:UpdateInstallmentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessCarStealingSms">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q21:ProcessCarStealingSmsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessCarStealingSmsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessCarStealingSmsResult" nillable="true" type="q22:ProcessCarStealingSmsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessTowingDetectionAlert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q23:ProcessTowingDetectionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessTowingDetectionAlertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessTowingDetectionAlertResult" nillable="true" type="q24:ProcessTowingDetectionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessFuelThresholdAlert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q25:ProcessFuelThresholdRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessFuelThresholdAlertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessFuelThresholdAlertResult" nillable="true" type="q26:ProcessFuelThresholdResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePmpVehicleDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q27:ChangePmpVehicleDetailsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePmpVehicleDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ChangePmpVehicleDetailsResult" nillable="true" type="q28:ChangePmpVehicleDetailsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyPmpPaid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q29:NotifyPmpPaidRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NotifyPmpPaidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="NotifyPmpPaidResult" nillable="true" type="q30:NotifyPmpPaidResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessBatteryTemperatureCheck">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q31:ProcessBatteryTemperatureCheckRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessBatteryTemperatureCheckResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessBatteryTemperatureCheckResult" nillable="true" type="q32:ProcessBatteryTemperatureCheckResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateApplication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q33:ValidateApplicationRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateApplicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ValidateApplicationResult" nillable="true" type="q34:ValidateApplicationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessOBDCoreDataUnreadable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q35:ProcessOBDCoreDataUnreadableRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessOBDCoreDataUnreadableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessOBDCoreDataUnreadableResult" nillable="true" type="q36:ProcessOBDCoreDataUnreadableResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsEffectiveSubscriptionExisted">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q37:IsEffectiveSubscriptionExistedRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsEffectiveSubscriptionExistedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="IsEffectiveSubscriptionExistedResult" nillable="true" type="q38:IsEffectiveSubscriptionExistedResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessVINMismatchAlert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q39:ProcessVINMismatchRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessVINMismatchAlertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessVINMismatchAlertResult" nillable="true" type="q40:ProcessVINMismatchResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessButtonPressed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q41:ProcessButtonPressedRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessButtonPressedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessButtonPressedResult" nillable="true" type="q42:ProcessButtonPressedResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessTilt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q43:ProcessTiltRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessTiltResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessTiltResult" nillable="true" type="q44:ProcessTiltResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessFreezeFrame">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q45:ProcessFreezeFrameRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessFreezeFrameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessFreezeFrameResult" nillable="true" type="q46:ProcessFreezeFrameResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessJourneySummaryAdhoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q47:ProcessJourneySummaryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessJourneySummaryAdhocResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessJourneySummaryAdhocResult" nillable="true" type="q48:ProcessJourneySummaryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAlive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q49:IsAliveRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsAliveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="IsAliveResult" nillable="true" type="q50:IsAliveResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmDispatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q51:ConfirmDispatchRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmDispatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ConfirmDispatchResult" nillable="true" type="q52:ConfirmDispatchResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExtendPmpSubscription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q53:ExtendPmpSubscriptionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExtendPmpSubscriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ExtendPmpSubscriptionResult" nillable="true" type="q54:ExtendPmpSubscriptionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReDispatchPmpSubscription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q55:ReDispatchPmpSubscriptionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReDispatchPmpSubscriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ReDispatchPmpSubscriptionResult" nillable="true" type="q56:ReDispatchPmpSubscriptionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessPowerLoss">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q57:ProcessPowerLossRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessPowerLossResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessPowerLossResult" nillable="true" type="q58:ProcessPowerLossResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessIdlingAlert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q59:ProcessIdlingRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessIdlingAlertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessIdlingAlertResult" nillable="true" type="q60:ProcessIdlingResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenewPmpSubscription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q61:RenewPmpSubscriptionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenewPmpSubscriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="RenewPmpSubscriptionResult" nillable="true" type="q62:RenewPmpSubscriptionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessObdAlert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q63:ProcessObdAlertRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessObdAlertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessObdAlertResult" nillable="true" type="q64:ProcessObdAlertResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessGPSDeviceHealthStatusAlert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q65:ProcessGPSDeviceHealthStatusRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessGPSDeviceHealthStatusAlertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessGPSDeviceHealthStatusAlertResult" nillable="true" type="q66:ProcessGPSDeviceHealthStatusResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessGeofenceAlert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q67:ProcessGeofenceAlertRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessGeofenceAlertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessGeofenceAlertResult" nillable="true" type="q68:ProcessGeofenceAlertResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessDeviceReceiptChecking">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q69:ProcessDeviceReceiptCheckingRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessDeviceReceiptCheckingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessDeviceReceiptCheckingResult" nillable="true" type="q70:ProcessDeviceReceiptCheckingResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessValueAddedSms">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q71:ProcessValueAddedSmsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessValueAddedSmsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessValueAddedSmsResult" nillable="true" type="q72:ProcessValueAddedSmsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AbandonPmpSubscription">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q73:AbandonPmpSubscriptionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AbandonPmpSubscriptionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="AbandonPmpSubscriptionResult" nillable="true" type="q74:AbandonPmpSubscriptionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessOdometerAccuracyAdhoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q75:ProcessOdometerAccuracyRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessOdometerAccuracyAdhocResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessOdometerAccuracyAdhocResult" nillable="true" type="q76:ProcessOdometerAccuracyResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePmpPolicyHolderDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q77:ChangePmpPolicyHolderDetailsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangePmpPolicyHolderDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ChangePmpPolicyHolderDetailsResult" nillable="true" type="q78:ChangePmpPolicyHolderDetailsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessWake">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="req" nillable="true" type="q79:ProcessWakeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessWakeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="ProcessWakeResult" nillable="true" type="q80:ProcessWakeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

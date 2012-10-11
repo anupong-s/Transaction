@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GalileoInternalServiceWcf" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" />
+      <xsd:import schemaLocation="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" />
+      <xsd:import schemaLocation="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+      <xsd:import schemaLocation="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Common" />
+      <xsd:import schemaLocation="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessLowBattery_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessLowBattery" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessLowBattery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessLowBatteryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessHeartbeatLate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessHeartbeatLate" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessHeartbeatLate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessHeartbeatLateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessFuelDrop_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessFuelDrop" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessFuelDrop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessFuelDropResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessCasingOpenAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessCasingOpenAlert" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessCasingOpenAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessCasingOpenAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessGPSDeviceInternalBatterySOHAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessGPSDeviceInternalBatterySOHAlert" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessGPSDeviceInternalBatterySOHAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessGPSDeviceInternalBatterySOHAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_CancelPmpSubscription_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelPmpSubscription" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_CancelPmpSubscription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelPmpSubscriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessGPSDataGapAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessGPSDataGapAlert" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessGPSDataGapAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessGPSDataGapAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessEcall_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessEcall" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessEcall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessEcallResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessDongleInternalBatteryVoltageSOCAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessDongleInternalBatteryVoltageSOCAlert" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessDongleInternalBatteryVoltageSOCAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessDongleInternalBatteryVoltageSOCAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_UpdateInstallment_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateInstallment" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_UpdateInstallment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateInstallmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessCarStealingSms_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessCarStealingSms" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessCarStealingSms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessCarStealingSmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessTowingDetectionAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessTowingDetectionAlert" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessTowingDetectionAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessTowingDetectionAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessFuelThresholdAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessFuelThresholdAlert" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessFuelThresholdAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessFuelThresholdAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ChangePmpVehicleDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePmpVehicleDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ChangePmpVehicleDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePmpVehicleDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_NotifyPmpPaid_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotifyPmpPaid" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_NotifyPmpPaid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NotifyPmpPaidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessBatteryTemperatureCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessBatteryTemperatureCheck" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessBatteryTemperatureCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessBatteryTemperatureCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ValidateApplication_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateApplication" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ValidateApplication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessOBDCoreDataUnreadable_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessOBDCoreDataUnreadable" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessOBDCoreDataUnreadable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessOBDCoreDataUnreadableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_IsEffectiveSubscriptionExisted_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsEffectiveSubscriptionExisted" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_IsEffectiveSubscriptionExisted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsEffectiveSubscriptionExistedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessVINMismatchAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessVINMismatchAlert" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessVINMismatchAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessVINMismatchAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessButtonPressed_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessButtonPressed" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessButtonPressed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessButtonPressedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessTilt_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessTilt" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessTilt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessTiltResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessFreezeFrame_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessFreezeFrame" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessFreezeFrame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessFreezeFrameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessJourneySummaryAdhoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessJourneySummaryAdhoc" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessJourneySummaryAdhoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessJourneySummaryAdhocResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_IsAlive_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsAlive" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_IsAlive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsAliveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ConfirmDispatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmDispatch" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ConfirmDispatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmDispatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ExtendPmpSubscription_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExtendPmpSubscription" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ExtendPmpSubscription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExtendPmpSubscriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ReDispatchPmpSubscription_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReDispatchPmpSubscription" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ReDispatchPmpSubscription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReDispatchPmpSubscriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessPowerLoss_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessPowerLoss" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessPowerLoss_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessPowerLossResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessIdlingAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessIdlingAlert" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessIdlingAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessIdlingAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_RenewPmpSubscription_InputMessage">
+    <wsdl:part name="parameters" element="tns:RenewPmpSubscription" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_RenewPmpSubscription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RenewPmpSubscriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessObdAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessObdAlert" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessObdAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessObdAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessGPSDeviceHealthStatusAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessGPSDeviceHealthStatusAlert" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessGPSDeviceHealthStatusAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessGPSDeviceHealthStatusAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessGeofenceAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessGeofenceAlert" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessGeofenceAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessGeofenceAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessDeviceReceiptChecking_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessDeviceReceiptChecking" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessDeviceReceiptChecking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessDeviceReceiptCheckingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessValueAddedSms_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessValueAddedSms" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessValueAddedSms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessValueAddedSmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_AbandonPmpSubscription_InputMessage">
+    <wsdl:part name="parameters" element="tns:AbandonPmpSubscription" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_AbandonPmpSubscription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AbandonPmpSubscriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessOdometerAccuracyAdhoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessOdometerAccuracyAdhoc" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessOdometerAccuracyAdhoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessOdometerAccuracyAdhocResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ChangePmpPolicyHolderDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePmpPolicyHolderDetails" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ChangePmpPolicyHolderDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePmpPolicyHolderDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessWake_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessWake" />
+  </wsdl:message>
+  <wsdl:message name="IGalileoInternalServiceWcf_ProcessWake_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessWakeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGalileoInternalServiceWcf">
+    <wsdl:operation name="ProcessLowBattery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessLowBattery" message="tns:IGalileoInternalServiceWcf_ProcessLowBattery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessLowBatteryResponse" message="tns:IGalileoInternalServiceWcf_ProcessLowBattery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessHeartbeatLate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessHeartbeatLate" message="tns:IGalileoInternalServiceWcf_ProcessHeartbeatLate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessHeartbeatLateResponse" message="tns:IGalileoInternalServiceWcf_ProcessHeartbeatLate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessFuelDrop">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessFuelDrop" message="tns:IGalileoInternalServiceWcf_ProcessFuelDrop_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessFuelDropResponse" message="tns:IGalileoInternalServiceWcf_ProcessFuelDrop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessCasingOpenAlert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessCasingOpenAlert" message="tns:IGalileoInternalServiceWcf_ProcessCasingOpenAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessCasingOpenAlertResponse" message="tns:IGalileoInternalServiceWcf_ProcessCasingOpenAlert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessGPSDeviceInternalBatterySOHAlert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessGPSDeviceInternalBatterySOHAlert" message="tns:IGalileoInternalServiceWcf_ProcessGPSDeviceInternalBatterySOHAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessGPSDeviceInternalBatterySOHAlertResponse" message="tns:IGalileoInternalServiceWcf_ProcessGPSDeviceInternalBatterySOHAlert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelPmpSubscription">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/CancelPmpSubscription" message="tns:IGalileoInternalServiceWcf_CancelPmpSubscription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/CancelPmpSubscriptionResponse" message="tns:IGalileoInternalServiceWcf_CancelPmpSubscription_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessGPSDataGapAlert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessGPSDataGapAlert" message="tns:IGalileoInternalServiceWcf_ProcessGPSDataGapAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessGPSDataGapAlertResponse" message="tns:IGalileoInternalServiceWcf_ProcessGPSDataGapAlert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEcall">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessEcall" message="tns:IGalileoInternalServiceWcf_ProcessEcall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessEcallResponse" message="tns:IGalileoInternalServiceWcf_ProcessEcall_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessDongleInternalBatteryVoltageSOCAlert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessDongleInternalBatteryVoltageSOCAlert" message="tns:IGalileoInternalServiceWcf_ProcessDongleInternalBatteryVoltageSOCAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessDongleInternalBatteryVoltageSOCAlertResponse" message="tns:IGalileoInternalServiceWcf_ProcessDongleInternalBatteryVoltageSOCAlert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInstallment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/UpdateInstallment" message="tns:IGalileoInternalServiceWcf_UpdateInstallment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/UpdateInstallmentResponse" message="tns:IGalileoInternalServiceWcf_UpdateInstallment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessCarStealingSms">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessCarStealingSms" message="tns:IGalileoInternalServiceWcf_ProcessCarStealingSms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessCarStealingSmsResponse" message="tns:IGalileoInternalServiceWcf_ProcessCarStealingSms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessTowingDetectionAlert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessTowingDetectionAlert" message="tns:IGalileoInternalServiceWcf_ProcessTowingDetectionAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessTowingDetectionAlertResponse" message="tns:IGalileoInternalServiceWcf_ProcessTowingDetectionAlert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessFuelThresholdAlert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessFuelThresholdAlert" message="tns:IGalileoInternalServiceWcf_ProcessFuelThresholdAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessFuelThresholdAlertResponse" message="tns:IGalileoInternalServiceWcf_ProcessFuelThresholdAlert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePmpVehicleDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ChangePmpVehicleDetails" message="tns:IGalileoInternalServiceWcf_ChangePmpVehicleDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ChangePmpVehicleDetailsResponse" message="tns:IGalileoInternalServiceWcf_ChangePmpVehicleDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyPmpPaid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/NotifyPmpPaid" message="tns:IGalileoInternalServiceWcf_NotifyPmpPaid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/NotifyPmpPaidResponse" message="tns:IGalileoInternalServiceWcf_NotifyPmpPaid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessBatteryTemperatureCheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessBatteryTemperatureCheck" message="tns:IGalileoInternalServiceWcf_ProcessBatteryTemperatureCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessBatteryTemperatureCheckResponse" message="tns:IGalileoInternalServiceWcf_ProcessBatteryTemperatureCheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateApplication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ValidateApplication" message="tns:IGalileoInternalServiceWcf_ValidateApplication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ValidateApplicationResponse" message="tns:IGalileoInternalServiceWcf_ValidateApplication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessOBDCoreDataUnreadable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessOBDCoreDataUnreadable" message="tns:IGalileoInternalServiceWcf_ProcessOBDCoreDataUnreadable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessOBDCoreDataUnreadableResponse" message="tns:IGalileoInternalServiceWcf_ProcessOBDCoreDataUnreadable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsEffectiveSubscriptionExisted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/IsEffectiveSubscriptionExisted" message="tns:IGalileoInternalServiceWcf_IsEffectiveSubscriptionExisted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/IsEffectiveSubscriptionExistedResponse" message="tns:IGalileoInternalServiceWcf_IsEffectiveSubscriptionExisted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessVINMismatchAlert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessVINMismatchAlert" message="tns:IGalileoInternalServiceWcf_ProcessVINMismatchAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessVINMismatchAlertResponse" message="tns:IGalileoInternalServiceWcf_ProcessVINMismatchAlert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessButtonPressed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessButtonPressed" message="tns:IGalileoInternalServiceWcf_ProcessButtonPressed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessButtonPressedResponse" message="tns:IGalileoInternalServiceWcf_ProcessButtonPressed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessTilt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessTilt" message="tns:IGalileoInternalServiceWcf_ProcessTilt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessTiltResponse" message="tns:IGalileoInternalServiceWcf_ProcessTilt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessFreezeFrame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessFreezeFrame" message="tns:IGalileoInternalServiceWcf_ProcessFreezeFrame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessFreezeFrameResponse" message="tns:IGalileoInternalServiceWcf_ProcessFreezeFrame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessJourneySummaryAdhoc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessJourneySummaryAdhoc" message="tns:IGalileoInternalServiceWcf_ProcessJourneySummaryAdhoc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessJourneySummaryAdhocResponse" message="tns:IGalileoInternalServiceWcf_ProcessJourneySummaryAdhoc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAlive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/IsAlive" message="tns:IGalileoInternalServiceWcf_IsAlive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/IsAliveResponse" message="tns:IGalileoInternalServiceWcf_IsAlive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmDispatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ConfirmDispatch" message="tns:IGalileoInternalServiceWcf_ConfirmDispatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ConfirmDispatchResponse" message="tns:IGalileoInternalServiceWcf_ConfirmDispatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExtendPmpSubscription">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ExtendPmpSubscription" message="tns:IGalileoInternalServiceWcf_ExtendPmpSubscription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ExtendPmpSubscriptionResponse" message="tns:IGalileoInternalServiceWcf_ExtendPmpSubscription_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReDispatchPmpSubscription">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ReDispatchPmpSubscription" message="tns:IGalileoInternalServiceWcf_ReDispatchPmpSubscription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ReDispatchPmpSubscriptionResponse" message="tns:IGalileoInternalServiceWcf_ReDispatchPmpSubscription_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessPowerLoss">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessPowerLoss" message="tns:IGalileoInternalServiceWcf_ProcessPowerLoss_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessPowerLossResponse" message="tns:IGalileoInternalServiceWcf_ProcessPowerLoss_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessIdlingAlert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessIdlingAlert" message="tns:IGalileoInternalServiceWcf_ProcessIdlingAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessIdlingAlertResponse" message="tns:IGalileoInternalServiceWcf_ProcessIdlingAlert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RenewPmpSubscription">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/RenewPmpSubscription" message="tns:IGalileoInternalServiceWcf_RenewPmpSubscription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/RenewPmpSubscriptionResponse" message="tns:IGalileoInternalServiceWcf_RenewPmpSubscription_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessObdAlert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessObdAlert" message="tns:IGalileoInternalServiceWcf_ProcessObdAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessObdAlertResponse" message="tns:IGalileoInternalServiceWcf_ProcessObdAlert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessGPSDeviceHealthStatusAlert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessGPSDeviceHealthStatusAlert" message="tns:IGalileoInternalServiceWcf_ProcessGPSDeviceHealthStatusAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessGPSDeviceHealthStatusAlertResponse" message="tns:IGalileoInternalServiceWcf_ProcessGPSDeviceHealthStatusAlert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessGeofenceAlert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessGeofenceAlert" message="tns:IGalileoInternalServiceWcf_ProcessGeofenceAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessGeofenceAlertResponse" message="tns:IGalileoInternalServiceWcf_ProcessGeofenceAlert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessDeviceReceiptChecking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessDeviceReceiptChecking" message="tns:IGalileoInternalServiceWcf_ProcessDeviceReceiptChecking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessDeviceReceiptCheckingResponse" message="tns:IGalileoInternalServiceWcf_ProcessDeviceReceiptChecking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessValueAddedSms">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessValueAddedSms" message="tns:IGalileoInternalServiceWcf_ProcessValueAddedSms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessValueAddedSmsResponse" message="tns:IGalileoInternalServiceWcf_ProcessValueAddedSms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AbandonPmpSubscription">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/AbandonPmpSubscription" message="tns:IGalileoInternalServiceWcf_AbandonPmpSubscription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/AbandonPmpSubscriptionResponse" message="tns:IGalileoInternalServiceWcf_AbandonPmpSubscription_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessOdometerAccuracyAdhoc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessOdometerAccuracyAdhoc" message="tns:IGalileoInternalServiceWcf_ProcessOdometerAccuracyAdhoc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessOdometerAccuracyAdhocResponse" message="tns:IGalileoInternalServiceWcf_ProcessOdometerAccuracyAdhoc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePmpPolicyHolderDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ChangePmpPolicyHolderDetails" message="tns:IGalileoInternalServiceWcf_ChangePmpPolicyHolderDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ChangePmpPolicyHolderDetailsResponse" message="tns:IGalileoInternalServiceWcf_ChangePmpPolicyHolderDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessWake">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessWake" message="tns:IGalileoInternalServiceWcf_ProcessWake_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessWakeResponse" message="tns:IGalileoInternalServiceWcf_ProcessWake_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IGalileoInternalServiceWcf" type="tns:IGalileoInternalServiceWcf">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProcessLowBattery">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessLowBattery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessHeartbeatLate">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessHeartbeatLate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessFuelDrop">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessFuelDrop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessCasingOpenAlert">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessCasingOpenAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessGPSDeviceInternalBatterySOHAlert">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessGPSDeviceInternalBatterySOHAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelPmpSubscription">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/CancelPmpSubscription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessGPSDataGapAlert">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessGPSDataGapAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEcall">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessEcall" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessDongleInternalBatteryVoltageSOCAlert">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessDongleInternalBatteryVoltageSOCAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInstallment">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/UpdateInstallment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessCarStealingSms">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessCarStealingSms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessTowingDetectionAlert">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessTowingDetectionAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessFuelThresholdAlert">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessFuelThresholdAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePmpVehicleDetails">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ChangePmpVehicleDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyPmpPaid">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/NotifyPmpPaid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessBatteryTemperatureCheck">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessBatteryTemperatureCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateApplication">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ValidateApplication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessOBDCoreDataUnreadable">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessOBDCoreDataUnreadable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsEffectiveSubscriptionExisted">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/IsEffectiveSubscriptionExisted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessVINMismatchAlert">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessVINMismatchAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessButtonPressed">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessButtonPressed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessTilt">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessTilt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessFreezeFrame">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessFreezeFrame" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessJourneySummaryAdhoc">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessJourneySummaryAdhoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAlive">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/IsAlive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmDispatch">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ConfirmDispatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExtendPmpSubscription">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ExtendPmpSubscription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReDispatchPmpSubscription">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ReDispatchPmpSubscription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessPowerLoss">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessPowerLoss" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessIdlingAlert">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessIdlingAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenewPmpSubscription">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/RenewPmpSubscription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessObdAlert">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessObdAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessGPSDeviceHealthStatusAlert">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessGPSDeviceHealthStatusAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessGeofenceAlert">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessGeofenceAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessDeviceReceiptChecking">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessDeviceReceiptChecking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessValueAddedSms">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessValueAddedSms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AbandonPmpSubscription">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/AbandonPmpSubscription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessOdometerAccuracyAdhoc">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessOdometerAccuracyAdhoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePmpPolicyHolderDetails">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ChangePmpPolicyHolderDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessWake">
+      <soap:operation soapAction="http://tempuri.org/IGalileoInternalServiceInterfaces/ProcessWake" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GalileoInternalServiceWcf">
+    <wsdl:port name="BasicHttpBinding_IGalileoInternalServiceWcf" binding="tns:BasicHttpBinding_IGalileoInternalServiceWcf">
+      <soap:address location="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

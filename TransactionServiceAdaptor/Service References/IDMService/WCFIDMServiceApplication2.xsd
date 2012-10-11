@@ -1,0 +1,1330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/IDM.Dto" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IDM.Dto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://itdev02.carpassad.co.th:8081/idm/service/current/WCFIDMServiceApplication.WCFIDMService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:complexType name="GetSystemByIdRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System" base="q1:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SystemId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetSystemByIdRequest" nillable="true" type="tns:GetSystemByIdRequest" />
+  <xs:complexType name="GetSystemByIdResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/System" base="q2:SingleResultResponseOfIDMASystemWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetSystemByIdResponse" nillable="true" type="tns:GetSystemByIdResponse" />
+  <xs:complexType name="IDMASystem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IDMASystem" nillable="true" type="tns:IDMASystem" />
+  <xs:complexType name="GetUserAccountsByPartyIdRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/System" base="q3:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PartyId" type="xs:long" />
+          <xs:element minOccurs="0" name="Skip" type="xs:int" />
+          <xs:element minOccurs="0" name="Take" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUserAccountsByPartyIdRequest" nillable="true" type="tns:GetUserAccountsByPartyIdRequest" />
+  <xs:complexType name="GetUserAccountsByPartyIdResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/System" base="q4:MultipleResultResponseOfIDMUserAccountWS_Py3X1u">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Total" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUserAccountsByPartyIdResponse" nillable="true" type="tns:GetUserAccountsByPartyIdResponse" />
+  <xs:complexType name="ArrayOfIDMUserAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IDMUserAccount" nillable="true" type="tns:IDMUserAccount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIDMUserAccount" nillable="true" type="tns:ArrayOfIDMUserAccount" />
+  <xs:complexType name="IDMUserAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Answer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAdmin" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PartyId" type="xs:long" />
+      <xs:element minOccurs="0" name="PasswordExpireDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PwdResetCount" type="xs:int" />
+      <xs:element minOccurs="0" name="QuestionId" type="xs:long" />
+      <xs:element minOccurs="0" name="SystemId" type="xs:long" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IDMUserAccount" nillable="true" type="tns:IDMUserAccount" />
+  <xs:complexType name="GetUsersBySystemIdRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/System" base="q5:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Skip" type="xs:int" />
+          <xs:element minOccurs="0" name="SystemId" type="xs:long" />
+          <xs:element minOccurs="0" name="Take" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUsersBySystemIdRequest" nillable="true" type="tns:GetUsersBySystemIdRequest" />
+  <xs:complexType name="GetUsersBySystemIdResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/System" base="q6:MultipleResultResponseOfIDMUserAccountWS_Py3X1u">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Total" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUsersBySystemIdResponse" nillable="true" type="tns:GetUsersBySystemIdResponse" />
+  <xs:complexType name="GetUserByUsernameRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/System" base="q7:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUserByUsernameRequest" nillable="true" type="tns:GetUserByUsernameRequest" />
+  <xs:complexType name="GetUserByUsernameResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/System" base="q8:SingleResultResponseOfIDMUserAccountWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUserByUsernameResponse" nillable="true" type="tns:GetUserByUsernameResponse" />
+  <xs:complexType name="GetUserByUserIdRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/System" base="q9:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="UserId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUserByUserIdRequest" nillable="true" type="tns:GetUserByUserIdRequest" />
+  <xs:complexType name="GetUserByUserIdResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/System" base="q10:SingleResultResponseOfIDMUserAccountWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUserByUserIdResponse" nillable="true" type="tns:GetUserByUserIdResponse" />
+  <xs:complexType name="ArrayOfUserSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserSummary" nillable="true" type="tns:UserSummary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserSummary" nillable="true" type="tns:ArrayOfUserSummary" />
+  <xs:complexType name="UserSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartyId" type="xs:long" />
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserSummary" nillable="true" type="tns:UserSummary" />
+  <xs:complexType name="IsOrganizationExistedRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/System" base="q11:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RegistrationNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IsOrganizationExistedRequest" nillable="true" type="tns:IsOrganizationExistedRequest" />
+  <xs:complexType name="IsOrganizationExistedResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/System" base="q12:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsExisted" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IsOrganizationExistedResponse" nillable="true" type="tns:IsOrganizationExistedResponse" />
+  <xs:complexType name="IsPersonExistedRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/System" base="q13:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdentificationNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IsPersonExistedRequest" nillable="true" type="tns:IsPersonExistedRequest" />
+  <xs:complexType name="IsPersonExistedResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/System" base="q14:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IsExisted" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IsPersonExistedResponse" nillable="true" type="tns:IsPersonExistedResponse" />
+  <xs:complexType name="LoginRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/System" base="q15:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Culture" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginRequest" nillable="true" type="tns:LoginRequest" />
+  <xs:complexType name="LoginResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/System" base="q16:SingleResultResponseOfIDMOttWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LoginResponse" nillable="true" type="tns:LoginResponse" />
+  <xs:complexType name="IDMOtt">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Culture" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IpAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastLoggedInTimestamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LogInTimestamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LogOutTimestamp" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RedirectUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ticket" type="xs:long" />
+      <xs:element minOccurs="0" name="UserId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IDMOtt" nillable="true" type="tns:IDMOtt" />
+  <xs:complexType name="LogoutRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/System" base="q17:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ticket" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LogoutRequest" nillable="true" type="tns:LogoutRequest" />
+  <xs:complexType name="LogoutResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/System" base="q18:SingleResultResponseOfIDMOttWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LogoutResponse" nillable="true" type="tns:LogoutResponse" />
+  <xs:complexType name="RegisterCustomerRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/System" base="q19:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerCategoryId" type="xs:long" />
+          <xs:element minOccurs="0" name="PartyId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RegisterCustomerRequest" nillable="true" type="tns:RegisterCustomerRequest" />
+  <xs:complexType name="RegisterCustomerResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/System" base="q20:SingleResultResponseOfIDMPartyWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RegisterCustomerResponse" nillable="true" type="tns:RegisterCustomerResponse" />
+  <xs:complexType name="IDMParty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerCategoryId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="CustomerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerRegistDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PartnerCategoryId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="PartnerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartnerRegistDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PartyId" type="xs:long" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IDMParty" nillable="true" type="tns:IDMParty" />
+  <xs:complexType name="RegisterPartnerRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/System" base="q21:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PartnerCategryId" type="xs:long" />
+          <xs:element minOccurs="0" name="PartyId" type="xs:long" />
+          <xs:element minOccurs="0" name="UpdateBy" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RegisterPartnerRequest" nillable="true" type="tns:RegisterPartnerRequest" />
+  <xs:complexType name="RegisterPartnerResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.datacontract.org/2004/07/System" base="q22:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RegisterPartnerResponse" nillable="true" type="tns:RegisterPartnerResponse" />
+  <xs:complexType name="ResetPasswordRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/System" base="q23:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResetBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResetPasswordRequest" nillable="true" type="tns:ResetPasswordRequest" />
+  <xs:complexType name="ResetPasswordResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/System" base="q24:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NewPassword" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResetPasswordResponse" nillable="true" type="tns:ResetPasswordResponse" />
+  <xs:complexType name="ResetPasswordByAdminRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://schemas.datacontract.org/2004/07/System" base="q25:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdminPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AdminUsername" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResetPasswordByAdminRequest" nillable="true" type="tns:ResetPasswordByAdminRequest" />
+  <xs:complexType name="ResetPasswordByAdminResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q26="http://schemas.datacontract.org/2004/07/System" base="q26:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NewPassword" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ResetPasswordByAdminResponse" nillable="true" type="tns:ResetPasswordByAdminResponse" />
+  <xs:complexType name="UpdateOrganizationRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q27="http://schemas.datacontract.org/2004/07/System" base="q27:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Apartment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Building" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonBirthDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ContactPersonEmail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonFax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonFirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonHomePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonHomePhoneExt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonLastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonMobilePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonOfficePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonOfficePhoneExt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonPosition" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="District" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DistrictId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EnglishName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EnglishShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HouseNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartyId" type="xs:long" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Province" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProvinceId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="RegistrationDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RegistrationNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Road" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Soi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubDistrict" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubDistrictId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="TaxNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ThaiName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ThaiShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UnitNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UpdatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Village" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Yak" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UpdateOrganizationRequest" nillable="true" type="tns:UpdateOrganizationRequest" />
+  <xs:complexType name="UpdateOrganizationResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q28="http://schemas.datacontract.org/2004/07/System" base="q28:SingleResultResponseOfIDMOrganizationWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UpdateOrganizationResponse" nillable="true" type="tns:UpdateOrganizationResponse" />
+  <xs:complexType name="IDMOrganization">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IDMParty">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="tns:IDMAddress" />
+          <xs:element minOccurs="0" name="ContactPerson" nillable="true" type="tns:IDMContactPerson" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EnglishName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InvolvedPartyCode" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegistrationDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RegistrationNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortEnglishName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortThaiName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TaxNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ThaiName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IDMOrganization" nillable="true" type="tns:IDMOrganization" />
+  <xs:complexType name="IDMAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Apartment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Building" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="District" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DistrictId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="HouseNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Province" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvinceId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Road" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Soi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubDistrict" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubDistrictId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="UnitNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Village" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Yak" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IDMAddress" nillable="true" type="tns:IDMAddress" />
+  <xs:complexType name="IDMContactPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomePhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomePhoneExt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MobilePhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfficePhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfficePhoneExt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IDMContactPerson" nillable="true" type="tns:IDMContactPerson" />
+  <xs:complexType name="UpdatePersonRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q29="http://schemas.datacontract.org/2004/07/System" base="q29:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Apartment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BirthDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Building" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="District" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DistrictId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="DrivingLicenseNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HomePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HomePhoneExt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HouseNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdentificationNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsPassport" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MobilePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OfficePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OfficePhoneExt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrganizationPartyId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="PartyId" type="xs:long" />
+          <xs:element minOccurs="0" name="Province" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProvinceId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="Road" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Soi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubDistrict" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubDistrictId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="UnitNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UpdateBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Village" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Yak" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UpdatePersonRequest" nillable="true" type="tns:UpdatePersonRequest" />
+  <xs:complexType name="UpdatePersonResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q30="http://schemas.datacontract.org/2004/07/System" base="q30:SingleResultResponseOfIDMPersonWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UpdatePersonResponse" nillable="true" type="tns:UpdatePersonResponse" />
+  <xs:complexType name="IDMPerson">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IDMParty">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="tns:IDMAddress" />
+          <xs:element minOccurs="0" name="BirthDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DrivingLicenseNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HomePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HomePhoneExt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdentificationNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsPassport" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MobilePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OfficePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OfficePhoneExt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrganizationPartyId" nillable="true" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IDMPerson" nillable="true" type="tns:IDMPerson" />
+  <xs:complexType name="GetPersonHistoryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q31="http://schemas.datacontract.org/2004/07/System" base="q31:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Skip" type="xs:int" />
+          <xs:element minOccurs="0" name="Take" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPersonHistoryRequest" nillable="true" type="tns:GetPersonHistoryRequest" />
+  <xs:complexType name="GetPersonHistoryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q32="http://schemas.datacontract.org/2004/07/System" base="q32:MultipleResultResponseOfIDMPersonHistoryWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPersonHistoryResponse" nillable="true" type="tns:GetPersonHistoryResponse" />
+  <xs:complexType name="ArrayOfIDMPersonHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IDMPersonHistory" nillable="true" type="tns:IDMPersonHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIDMPersonHistory" nillable="true" type="tns:ArrayOfIDMPersonHistory" />
+  <xs:complexType name="IDMPersonHistory">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IDMPartyHistory">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="tns:IDMAddress" />
+          <xs:element minOccurs="0" name="BirthDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DrivingLicenseNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HomePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HomePhoneExt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdentificationNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsPassport" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MobilePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OfficePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OfficePhoneExt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrganizationPartyId" nillable="true" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IDMPersonHistory" nillable="true" type="tns:IDMPersonHistory" />
+  <xs:complexType name="IDMPartyHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerCategoryId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="CustomerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerRegistDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HistoryId" type="xs:long" />
+      <xs:element minOccurs="0" name="PartnerCategoryId" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="PartnerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartnerRegistDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PartyId" type="xs:long" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IDMPartyHistory" nillable="true" type="tns:IDMPartyHistory" />
+  <xs:complexType name="GetOrganizationHistoryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q33="http://schemas.datacontract.org/2004/07/System" base="q33:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Skip" type="xs:int" />
+          <xs:element minOccurs="0" name="Take" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetOrganizationHistoryRequest" nillable="true" type="tns:GetOrganizationHistoryRequest" />
+  <xs:complexType name="GetOrganizationHistoryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q34="http://schemas.datacontract.org/2004/07/System" base="q34:MultipleResultResponseOfIDMOrganizationHistoryWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetOrganizationHistoryResponse" nillable="true" type="tns:GetOrganizationHistoryResponse" />
+  <xs:complexType name="ArrayOfIDMOrganizationHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IDMOrganizationHistory" nillable="true" type="tns:IDMOrganizationHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIDMOrganizationHistory" nillable="true" type="tns:ArrayOfIDMOrganizationHistory" />
+  <xs:complexType name="IDMOrganizationHistory">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:IDMPartyHistory">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="tns:IDMAddress" />
+          <xs:element minOccurs="0" name="ContactPerson" nillable="true" type="tns:IDMContactPerson" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EnglishName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InvolvedPartyCode" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RegistrationDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RegistrationNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortEnglishName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortThaiName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TaxNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ThaiName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IDMOrganizationHistory" nillable="true" type="tns:IDMOrganizationHistory" />
+  <xs:complexType name="GetUserAccountHistoryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q35="http://schemas.datacontract.org/2004/07/System" base="q35:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Skip" type="xs:int" />
+          <xs:element minOccurs="0" name="Take" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUserAccountHistoryRequest" nillable="true" type="tns:GetUserAccountHistoryRequest" />
+  <xs:complexType name="GetUserAccountHistoryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q36="http://schemas.datacontract.org/2004/07/System" base="q36:MultipleResultResponseOfIDMUserAccountHistoryWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUserAccountHistoryResponse" nillable="true" type="tns:GetUserAccountHistoryResponse" />
+  <xs:complexType name="ArrayOfIDMUserAccountHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IDMUserAccountHistory" nillable="true" type="tns:IDMUserAccountHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIDMUserAccountHistory" nillable="true" type="tns:ArrayOfIDMUserAccountHistory" />
+  <xs:complexType name="IDMUserAccountHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Answer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAdmin" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PartyId" type="xs:long" />
+      <xs:element minOccurs="0" name="PasswordExpireDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PwdResetCount" type="xs:int" />
+      <xs:element minOccurs="0" name="QuestionId" type="xs:long" />
+      <xs:element minOccurs="0" name="SystemId" type="xs:long" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IDMUserAccountHistory" nillable="true" type="tns:IDMUserAccountHistory" />
+  <xs:complexType name="ChangePasswordRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q37="http://schemas.datacontract.org/2004/07/System" base="q37:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NewPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UpdateBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangePasswordRequest" nillable="true" type="tns:ChangePasswordRequest" />
+  <xs:complexType name="ChangePasswordResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q38="http://schemas.datacontract.org/2004/07/System" base="q38:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangePasswordResponse" nillable="true" type="tns:ChangePasswordResponse" />
+  <xs:complexType name="ChangePasswordByAdminRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q39="http://schemas.datacontract.org/2004/07/System" base="q39:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdminPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AdminUsername" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NewPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangePasswordByAdminRequest" nillable="true" type="tns:ChangePasswordByAdminRequest" />
+  <xs:complexType name="ChangePasswordByAdminResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q40="http://schemas.datacontract.org/2004/07/System" base="q40:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangePasswordByAdminResponse" nillable="true" type="tns:ChangePasswordByAdminResponse" />
+  <xs:complexType name="ChangeQuestionAnswerRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q41="http://schemas.datacontract.org/2004/07/System" base="q41:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NewAnswer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NewQuestionId" type="xs:long" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangeQuestionAnswerRequest" nillable="true" type="tns:ChangeQuestionAnswerRequest" />
+  <xs:complexType name="ChangeQuestionAnswerResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q42="http://schemas.datacontract.org/2004/07/System" base="q42:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangeQuestionAnswerResponse" nillable="true" type="tns:ChangeQuestionAnswerResponse" />
+  <xs:complexType name="ChangeQuestionAnswerByAdminRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q43="http://schemas.datacontract.org/2004/07/System" base="q43:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdminPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AdminUsername" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NewAnswer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NewQuestionId" type="xs:long" />
+          <xs:element minOccurs="0" name="UserId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangeQuestionAnswerByAdminRequest" nillable="true" type="tns:ChangeQuestionAnswerByAdminRequest" />
+  <xs:complexType name="ChangeQuestionAnswerByAdminResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q44="http://schemas.datacontract.org/2004/07/System" base="q44:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangeQuestionAnswerByAdminResponse" nillable="true" type="tns:ChangeQuestionAnswerByAdminResponse" />
+  <xs:complexType name="ChangeUsernameRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q45="http://schemas.datacontract.org/2004/07/System" base="q45:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NewUsername" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangeUsernameRequest" nillable="true" type="tns:ChangeUsernameRequest" />
+  <xs:complexType name="ChangeUsernameResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q46="http://schemas.datacontract.org/2004/07/System" base="q46:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangeUsernameResponse" nillable="true" type="tns:ChangeUsernameResponse" />
+  <xs:complexType name="ChangeUsernameByAdminRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q47="http://schemas.datacontract.org/2004/07/System" base="q47:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdminPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AdminUsername" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NewUsername" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangeUsernameByAdminRequest" nillable="true" type="tns:ChangeUsernameByAdminRequest" />
+  <xs:complexType name="ChangeUsernameByAdminResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q48="http://schemas.datacontract.org/2004/07/System" base="q48:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangeUsernameByAdminResponse" nillable="true" type="tns:ChangeUsernameByAdminResponse" />
+  <xs:complexType name="CreateOrganizationRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q49="http://schemas.datacontract.org/2004/07/System" base="q49:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Apartment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Building" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonBirthDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ContactPersonEmail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonFax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonFirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonHomePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonHomePhoneExt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonLastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonMobilePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonOfficePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonOfficePhoneExt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPersonPosition" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="District" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DistrictId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EnglishName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EnglishShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HouseNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Province" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProvinceId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="RegistrationDate" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RegistrationNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Road" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Soi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubDistrict" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubDistrictId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="TaxNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ThaiName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ThaiShortName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UnitNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Village" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Yak" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateOrganizationRequest" nillable="true" type="tns:CreateOrganizationRequest" />
+  <xs:complexType name="CreateOrganizationResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q50="http://schemas.datacontract.org/2004/07/System" base="q50:SingleResultResponseOfIDMOrganizationWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateOrganizationResponse" nillable="true" type="tns:CreateOrganizationResponse" />
+  <xs:complexType name="CreatePersonRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q51="http://schemas.datacontract.org/2004/07/System" base="q51:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Apartment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BirthDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Building" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreateBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="District" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DistrictId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="DrivingLicenseNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HomePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HomePhoneExt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HouseNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdentificationNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsPassport" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MobilePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OfficePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OfficePhoneExt" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrganizationPartyId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="Province" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProvinceId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="Road" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Soi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubDistrict" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubDistrictId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="UnitNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Village" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Yak" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreatePersonRequest" nillable="true" type="tns:CreatePersonRequest" />
+  <xs:complexType name="CreatePersonResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q52="http://schemas.datacontract.org/2004/07/System" base="q52:SingleResultResponseOfIDMPersonWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreatePersonResponse" nillable="true" type="tns:CreatePersonResponse" />
+  <xs:complexType name="CreateUserAccountRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q53="http://schemas.datacontract.org/2004/07/System" base="q53:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Answer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsAdmin" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PartyId" type="xs:long" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="QuestionId" type="xs:long" />
+          <xs:element minOccurs="0" name="SystemId" type="xs:long" />
+          <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateUserAccountRequest" nillable="true" type="tns:CreateUserAccountRequest" />
+  <xs:complexType name="CreateUserAccountResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q54="http://schemas.datacontract.org/2004/07/System" base="q54:SingleResultResponseOfIDMUserAccountWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreateUserAccountResponse" nillable="true" type="tns:CreateUserAccountResponse" />
+  <xs:complexType name="GenerateUserAccountRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q55="http://schemas.datacontract.org/2004/07/System" base="q55:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PartyId" type="xs:long" />
+          <xs:element minOccurs="0" name="SystemId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenerateUserAccountRequest" nillable="true" type="tns:GenerateUserAccountRequest" />
+  <xs:complexType name="GenerateUserAccountResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q56="http://schemas.datacontract.org/2004/07/System" base="q56:SingleResultResponseOfIDMUserAccountWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GenerateUserAccountResponse" nillable="true" type="tns:GenerateUserAccountResponse" />
+  <xs:complexType name="GetAllCustomerCategoriesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q57="http://schemas.datacontract.org/2004/07/System" base="q57:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Skip" type="xs:int" />
+          <xs:element minOccurs="0" name="Take" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetAllCustomerCategoriesRequest" nillable="true" type="tns:GetAllCustomerCategoriesRequest" />
+  <xs:complexType name="GetAllCustomerCategoriesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q58="http://schemas.datacontract.org/2004/07/System" base="q58:MultipleResultResponseOfIDMCustomerCategoryWS_Py3X1u">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Total" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetAllCustomerCategoriesResponse" nillable="true" type="tns:GetAllCustomerCategoriesResponse" />
+  <xs:complexType name="ArrayOfIDMCustomerCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IDMCustomerCategory" nillable="true" type="tns:IDMCustomerCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIDMCustomerCategory" nillable="true" type="tns:ArrayOfIDMCustomerCategory" />
+  <xs:complexType name="IDMCustomerCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EnglishName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Prefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThaiName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IDMCustomerCategory" nillable="true" type="tns:IDMCustomerCategory" />
+  <xs:complexType name="GetAllOrganizationSummaryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q59="http://schemas.datacontract.org/2004/07/System" base="q59:MultipleResultResponseOfIDMOrganizationSummaryWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetAllOrganizationSummaryResponse" nillable="true" type="tns:GetAllOrganizationSummaryResponse" />
+  <xs:complexType name="ArrayOfIDMOrganizationSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IDMOrganizationSummary" nillable="true" type="tns:IDMOrganizationSummary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIDMOrganizationSummary" nillable="true" type="tns:ArrayOfIDMOrganizationSummary" />
+  <xs:complexType name="IDMOrganizationSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EnglishName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartyId" type="xs:long" />
+      <xs:element minOccurs="0" name="RegistrationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RegistrationNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortEnglishName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortThaiName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaxNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThaiName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IDMOrganizationSummary" nillable="true" type="tns:IDMOrganizationSummary" />
+  <xs:complexType name="GetAllPartnerCategoriesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q60="http://schemas.datacontract.org/2004/07/System" base="q60:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Skip" type="xs:int" />
+          <xs:element minOccurs="0" name="Take" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetAllPartnerCategoriesRequest" nillable="true" type="tns:GetAllPartnerCategoriesRequest" />
+  <xs:complexType name="GetAllPartnerCategoriesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q61="http://schemas.datacontract.org/2004/07/System" base="q61:MultipleResultResponseOfIDMPartnerCategoryWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetAllPartnerCategoriesResponse" nillable="true" type="tns:GetAllPartnerCategoriesResponse" />
+  <xs:complexType name="ArrayOfIDMPartnerCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IDMPartnerCategory" nillable="true" type="tns:IDMPartnerCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIDMPartnerCategory" nillable="true" type="tns:ArrayOfIDMPartnerCategory" />
+  <xs:complexType name="IDMPartnerCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EnglishName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="PartnerCodeDigit1" type="xs:int" />
+      <xs:element minOccurs="0" name="PartnerCodeDigit2" type="xs:int" />
+      <xs:element minOccurs="0" name="ThaiName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IDMPartnerCategory" nillable="true" type="tns:IDMPartnerCategory" />
+  <xs:complexType name="GetAllQuestionsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q62="http://schemas.datacontract.org/2004/07/System" base="q62:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Skip" type="xs:int" />
+          <xs:element minOccurs="0" name="Take" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetAllQuestionsRequest" nillable="true" type="tns:GetAllQuestionsRequest" />
+  <xs:complexType name="GetAllQuestionsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q63="http://schemas.datacontract.org/2004/07/System" base="q63:MultipleResultResponseOfIDMQuestionWS_Py3X1u">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Questions" nillable="true" type="tns:ArrayOfIDMQuestion" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetAllQuestionsResponse" nillable="true" type="tns:GetAllQuestionsResponse" />
+  <xs:complexType name="ArrayOfIDMQuestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IDMQuestion" nillable="true" type="tns:IDMQuestion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIDMQuestion" nillable="true" type="tns:ArrayOfIDMQuestion" />
+  <xs:complexType name="IDMQuestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IDMQuestion" nillable="true" type="tns:IDMQuestion" />
+  <xs:complexType name="GetAllSystemsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q64="http://schemas.datacontract.org/2004/07/System" base="q64:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Skip" type="xs:int" />
+          <xs:element minOccurs="0" name="Take" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetAllSystemsRequest" nillable="true" type="tns:GetAllSystemsRequest" />
+  <xs:complexType name="GetAllSystemsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q65="http://schemas.datacontract.org/2004/07/System" base="q65:MultipleResultResponseOfIDMASystemWS_Py3X1u">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Total" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetAllSystemsResponse" nillable="true" type="tns:GetAllSystemsResponse" />
+  <xs:complexType name="ArrayOfIDMASystem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IDMASystem" nillable="true" type="tns:IDMASystem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIDMASystem" nillable="true" type="tns:ArrayOfIDMASystem" />
+  <xs:complexType name="GetCustomerCategoryByIdRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q66="http://schemas.datacontract.org/2004/07/System" base="q66:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CustomerCategoryId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCustomerCategoryByIdRequest" nillable="true" type="tns:GetCustomerCategoryByIdRequest" />
+  <xs:complexType name="GetCustomerCategoryByIdResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q67="http://schemas.datacontract.org/2004/07/System" base="q67:SingleResultResponseOfIDMCustomerCategoryWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCustomerCategoryByIdResponse" nillable="true" type="tns:GetCustomerCategoryByIdResponse" />
+  <xs:complexType name="GetOrganizationByPartyIdRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q68="http://schemas.datacontract.org/2004/07/System" base="q68:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PartyId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetOrganizationByPartyIdRequest" nillable="true" type="tns:GetOrganizationByPartyIdRequest" />
+  <xs:complexType name="GetOrganizationByPartyIdResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q69="http://schemas.datacontract.org/2004/07/System" base="q69:SingleResultResponseOfIDMOrganizationWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetOrganizationByPartyIdResponse" nillable="true" type="tns:GetOrganizationByPartyIdResponse" />
+  <xs:complexType name="GetOrganizationByRegistNoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q70="http://schemas.datacontract.org/2004/07/System" base="q70:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RegistrationNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetOrganizationByRegistNoRequest" nillable="true" type="tns:GetOrganizationByRegistNoRequest" />
+  <xs:complexType name="GetOrganizationByRegistNoResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q71="http://schemas.datacontract.org/2004/07/System" base="q71:SingleResultResponseOfIDMOrganizationWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetOrganizationByRegistNoResponse" nillable="true" type="tns:GetOrganizationByRegistNoResponse" />
+  <xs:complexType name="GetOrganizationsByNameRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q72="http://schemas.datacontract.org/2004/07/System" base="q72:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetOrganizationsByNameRequest" nillable="true" type="tns:GetOrganizationsByNameRequest" />
+  <xs:complexType name="GetOrganizationsByNameResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q73="http://schemas.datacontract.org/2004/07/System" base="q73:MultipleResultResponseOfIDMOrganizationWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetOrganizationsByNameResponse" nillable="true" type="tns:GetOrganizationsByNameResponse" />
+  <xs:complexType name="ArrayOfIDMOrganization">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IDMOrganization" nillable="true" type="tns:IDMOrganization" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIDMOrganization" nillable="true" type="tns:ArrayOfIDMOrganization" />
+  <xs:complexType name="GetOrganizationsByShortNameRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q74="http://schemas.datacontract.org/2004/07/System" base="q74:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetOrganizationsByShortNameRequest" nillable="true" type="tns:GetOrganizationsByShortNameRequest" />
+  <xs:complexType name="GetOrganizationsByShortNameResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q75="http://schemas.datacontract.org/2004/07/System" base="q75:MultipleResultResponseOfIDMOrganizationWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetOrganizationsByShortNameResponse" nillable="true" type="tns:GetOrganizationsByShortNameResponse" />
+  <xs:complexType name="GetOttByTicketRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q76="http://schemas.datacontract.org/2004/07/System" base="q76:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ticket" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetOttByTicketRequest" nillable="true" type="tns:GetOttByTicketRequest" />
+  <xs:complexType name="GetOttByTicketResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q77="http://schemas.datacontract.org/2004/07/System" base="q77:SingleResultResponseOfIDMOttWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetOttByTicketResponse" nillable="true" type="tns:GetOttByTicketResponse" />
+  <xs:complexType name="GetPartnerCategoryByIdRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q78="http://schemas.datacontract.org/2004/07/System" base="q78:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PartnerCategoryId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPartnerCategoryByIdRequest" nillable="true" type="tns:GetPartnerCategoryByIdRequest" />
+  <xs:complexType name="GetPartnerCategoryByIdResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q79="http://schemas.datacontract.org/2004/07/System" base="q79:SingleResultResponseOfIDMPartnerCategoryWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPartnerCategoryByIdResponse" nillable="true" type="tns:GetPartnerCategoryByIdResponse" />
+  <xs:complexType name="GetPartyByPartyIdRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q80="http://schemas.datacontract.org/2004/07/System" base="q80:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PartyId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPartyByPartyIdRequest" nillable="true" type="tns:GetPartyByPartyIdRequest" />
+  <xs:complexType name="GetPartyByPartyIdResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q81="http://schemas.datacontract.org/2004/07/System" base="q81:SingleResultResponseOfIDMPartyWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPartyByPartyIdResponse" nillable="true" type="tns:GetPartyByPartyIdResponse" />
+  <xs:complexType name="GetPeopleByNameRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q82="http://schemas.datacontract.org/2004/07/System" base="q82:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPeopleByNameRequest" nillable="true" type="tns:GetPeopleByNameRequest" />
+  <xs:complexType name="GetPeopleByNameResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q83="http://schemas.datacontract.org/2004/07/System" base="q83:MultipleResultResponseOfIDMPersonWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPeopleByNameResponse" nillable="true" type="tns:GetPeopleByNameResponse" />
+  <xs:complexType name="ArrayOfIDMPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IDMPerson" nillable="true" type="tns:IDMPerson" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIDMPerson" nillable="true" type="tns:ArrayOfIDMPerson" />
+  <xs:complexType name="GetPersonByIdNoRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q84="http://schemas.datacontract.org/2004/07/System" base="q84:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdentificationNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPersonByIdNoRequest" nillable="true" type="tns:GetPersonByIdNoRequest" />
+  <xs:complexType name="GetPersonByIdNoResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q85="http://schemas.datacontract.org/2004/07/System" base="q85:SingleResultResponseOfIDMPersonWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPersonByIdNoResponse" nillable="true" type="tns:GetPersonByIdNoResponse" />
+  <xs:complexType name="GetPersonByPartyIdRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q86="http://schemas.datacontract.org/2004/07/System" base="q86:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PartyId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPersonByPartyIdRequest" nillable="true" type="tns:GetPersonByPartyIdRequest" />
+  <xs:complexType name="GetPersonByPartyIdResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q87="http://schemas.datacontract.org/2004/07/System" base="q87:SingleResultResponseOfIDMPersonWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPersonByPartyIdResponse" nillable="true" type="tns:GetPersonByPartyIdResponse" />
+  <xs:complexType name="GetQuestionByIdRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q88="http://schemas.datacontract.org/2004/07/System" base="q88:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="QuestionId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetQuestionByIdRequest" nillable="true" type="tns:GetQuestionByIdRequest" />
+  <xs:complexType name="GetQuestionByIdResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q89="http://schemas.datacontract.org/2004/07/System" base="q89:SingleResultResponseOfIDMQuestionWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetQuestionByIdResponse" nillable="true" type="tns:GetQuestionByIdResponse" />
+</xs:schema>

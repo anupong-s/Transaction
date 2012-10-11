@@ -1,0 +1,116 @@
+<publishData>
+  <publishTarget publishUrl="D:\Data_Anupong\Publish\TransactionService\">
+    <file relUrl="Web.config" publishTime="03/13/2012 15:44:51" />
+    <file relUrl="bin/TransactionFrontEnd.dll" publishTime="07/02/2012 13:11:12" />
+    <file relUrl="bin/WcfTransactionService.pdb" publishTime="07/02/2012 13:55:17" />
+    <file relUrl="bin/TransactionCommon.dll" publishTime="07/02/2012 13:11:11" />
+    <file relUrl="bin/WcfTransactionService.dll" publishTime="07/02/2012 13:55:18" />
+    <file relUrl="bin/TransactionServiceImpl.pdb" publishTime="07/02/2012 13:55:17" />
+    <file relUrl="bin/TransactionModel.pdb" publishTime="07/02/2012 13:11:11" />
+    <file relUrl="bin/TransactionServiceImpl.dll" publishTime="07/02/2012 13:55:17" />
+    <file relUrl="bin/WcfTransactionService.dll.config" publishTime="03/13/2012 15:44:51" />
+    <file relUrl="bin/TransactionModel.dll" publishTime="07/02/2012 13:11:11" />
+    <file relUrl="bin/TransactionServiceInterface.dll" publishTime="07/02/2012 13:11:12" />
+    <file relUrl="bin/TransactionServiceAdaptor.dll" publishTime="07/02/2012 13:11:11" />
+    <file relUrl="bin/TransactionFrontEnd.pdb" publishTime="07/02/2012 13:11:12" />
+    <file relUrl="bin/TransactionServiceAdaptor.pdb" publishTime="07/02/2012 13:11:11" />
+    <file relUrl="bin/TransactionServiceInterface.pdb" publishTime="07/02/2012 13:11:12" />
+    <file relUrl="WcfTransactionService.WcfTransactionService.svc" publishTime="07/02/2012 13:58:36" />
+    <file relUrl="bin/TransactionCommon.pdb" publishTime="07/02/2012 13:11:11" />
+  </publishTarget>
+  <publishTarget publishUrl="E:\Publish\TransactionService\">
+    <file relUrl="Web.config" publishTime="03/13/2012 15:44:51" />
+    <file relUrl="bin/TransactionFrontEnd.dll" publishTime="06/13/2012 10:10:19" />
+    <file relUrl="bin/WcfTransactionService.pdb" publishTime="06/13/2012 10:10:19" />
+    <file relUrl="bin/TransactionCommon.pdb" publishTime="06/13/2012 10:10:17" />
+    <file relUrl="bin/TransactionCommon.dll" publishTime="06/13/2012 10:10:17" />
+    <file relUrl="bin/WcfTransactionService.dll" publishTime="06/13/2012 10:10:19" />
+    <file relUrl="bin/TransactionModel.pdb" publishTime="06/13/2012 10:10:18" />
+    <file relUrl="bin/TransactionServiceInterface.pdb" publishTime="06/13/2012 10:10:18" />
+    <file relUrl="bin/TransactionServiceImpl.dll" publishTime="06/13/2012 10:10:19" />
+    <file relUrl="bin/WcfTransactionService.dll.config" publishTime="03/13/2012 15:44:51" />
+    <file relUrl="bin/TransactionModel.dll" publishTime="06/13/2012 10:10:18" />
+    <file relUrl="bin/TransactionServiceInterface.dll" publishTime="06/13/2012 10:10:18" />
+    <file relUrl="bin/TransactionServiceAdaptor.dll" publishTime="06/13/2012 10:10:17" />
+    <file relUrl="bin/TransactionFrontEnd.pdb" publishTime="06/13/2012 10:10:19" />
+    <file relUrl="bin/TransactionServiceAdaptor.pdb" publishTime="06/13/2012 10:10:17" />
+    <file relUrl="bin/TransactionServiceImpl.pdb" publishTime="06/13/2012 10:10:19" />
+    <file relUrl="WcfTransactionService.WcfTransactionService.svc" publishTime="06/13/2012 10:10:39" />
+  </publishTarget>
+  <publishTarget publishUrl="ftp://itdev02/carpass/privatedev/transaction/service/">
+    <file relUrl="Web.config" publishTime="09/10/2011 11:50:39" />
+    <file relUrl="bin/TransactionFrontEnd.dll" publishTime="09/10/2011 11:59:00" />
+    <file relUrl="bin/WcfTransactionService.pdb" publishTime="09/10/2011 11:59:01" />
+    <file relUrl="bin/TransactionCommon.dll" publishTime="09/10/2011 11:58:58" />
+    <file relUrl="bin/WcfTransactionService.dll" publishTime="09/10/2011 11:59:01" />
+    <file relUrl="bin/TransactionServiceImpl.pdb" publishTime="09/10/2011 11:59:00" />
+    <file relUrl="bin/TransactionModel.pdb" publishTime="09/10/2011 11:58:59" />
+    <file relUrl="bin/TransactionServiceImpl.dll" publishTime="09/10/2011 11:59:00" />
+    <file relUrl="bin/WcfTransactionService.dll.config" publishTime="09/10/2011 11:50:39" />
+    <file relUrl="bin/TransactionModel.dll" publishTime="09/10/2011 11:58:59" />
+    <file relUrl="bin/TransactionServiceInterface.dll" publishTime="09/10/2011 11:58:59" />
+    <file relUrl="bin/TransactionServiceAdaptor.dll" publishTime="09/10/2011 11:58:58" />
+    <file relUrl="bin/TransactionFrontEnd.pdb" publishTime="09/10/2011 11:59:00" />
+    <file relUrl="bin/TransactionServiceAdaptor.pdb" publishTime="09/10/2011 11:58:58" />
+    <file relUrl="bin/TransactionServiceInterface.pdb" publishTime="09/10/2011 11:58:59" />
+    <file relUrl="WcfTransactionService.WcfTransactionService.svc" publishTime="09/10/2011 12:00:07" />
+    <file relUrl="bin/TransactionCommon.pdb" publishTime="09/10/2011 11:58:58" />
+  </publishTarget>
+  <publishTarget publishUrl="http://localhost/TransactionService">
+    <file relUrl="Web.config" publishTime="09/03/2011 13:40:24" />
+    <file relUrl="bin/TransactionFrontEnd.pdb" publishTime="09/03/2011 11:01:21" />
+    <file relUrl="bin/WcfTransactionService.pdb" publishTime="09/03/2011 12:16:59" />
+    <file relUrl="bin/TransactionFrontEnd.dll" publishTime="09/03/2011 11:01:21" />
+    <file relUrl="bin/WcfTransactionService.dll" publishTime="09/03/2011 12:16:59" />
+    <file relUrl="WcfTransactionService.WcfTransactionService.svc" publishTime="09/03/2011 13:41:57" />
+    <file relUrl="bin/TransactionModel.pdb" publishTime="09/03/2011 11:01:20" />
+    <file relUrl="bin/TransactionServiceInterface.pdb" publishTime="09/03/2011 11:01:20" />
+    <file relUrl="bin/TransactionServiceImpl.dll" publishTime="09/03/2011 12:16:58" />
+    <file relUrl="bin/WcfTransactionService.dll.config" publishTime="09/03/2011 13:40:24" />
+    <file relUrl="bin/TransactionModel.dll" publishTime="09/03/2011 11:01:20" />
+    <file relUrl="bin/TransactionServiceInterface.dll" publishTime="09/03/2011 11:01:20" />
+    <file relUrl="bin/TransactionServiceAdaptor.dll" publishTime="09/03/2011 11:01:19" />
+    <file relUrl="bin/TransactionServiceAdaptor.pdb" publishTime="09/03/2011 11:01:19" />
+    <file relUrl="bin/TransactionServiceImpl.pdb" publishTime="09/03/2011 12:16:58" />
+    <file relUrl="bin/TransactionCommon.pdb" publishTime="09/03/2011 11:01:19" />
+    <file relUrl="bin/TransactionCommon.dll" publishTime="09/03/2011 11:01:19" />
+  </publishTarget>
+  <publishTarget publishUrl="ftp://itdev02/carpass/privatedev/transaction/">
+    <file relUrl="Web.config" publishTime="09/03/2011 13:40:24" />
+    <file relUrl="bin/TransactionFrontEnd.pdb" publishTime="09/03/2011 11:01:21" />
+    <file relUrl="bin/WcfTransactionService.pdb" publishTime="09/03/2011 12:16:59" />
+    <file relUrl="bin/TransactionCommon.pdb" publishTime="09/03/2011 11:01:19" />
+    <file relUrl="bin/TransactionFrontEnd.dll" publishTime="09/03/2011 11:01:21" />
+    <file relUrl="bin/WcfTransactionService.dll" publishTime="09/03/2011 12:16:59" />
+    <file relUrl="bin/TransactionModel.pdb" publishTime="09/03/2011 11:01:20" />
+    <file relUrl="bin/TransactionServiceInterface.pdb" publishTime="09/03/2011 11:01:20" />
+    <file relUrl="bin/TransactionServiceImpl.dll" publishTime="09/03/2011 12:16:58" />
+    <file relUrl="bin/WcfTransactionService.dll.config" publishTime="09/03/2011 13:40:24" />
+    <file relUrl="bin/TransactionModel.dll" publishTime="09/03/2011 11:01:20" />
+    <file relUrl="bin/TransactionServiceInterface.dll" publishTime="09/03/2011 11:01:20" />
+    <file relUrl="bin/TransactionServiceAdaptor.dll" publishTime="09/03/2011 11:01:19" />
+    <file relUrl="bin/TransactionServiceAdaptor.pdb" publishTime="09/03/2011 11:01:19" />
+    <file relUrl="bin/TransactionServiceImpl.pdb" publishTime="09/03/2011 12:16:58" />
+    <file relUrl="WcfTransactionService.WcfTransactionService.svc" publishTime="09/03/2011 13:40:32" />
+    <file relUrl="bin/TransactionCommon.dll" publishTime="09/03/2011 11:01:19" />
+  </publishTarget>
+  <publishTarget publishUrl="ftp://websit01/CarPass/internal/transaction/service/Current">
+    <file relUrl="Web.config" publishTime="09/03/2011 12:08:11" />
+    <file relUrl="bin/TransactionFrontEnd.pdb" publishTime="09/03/2011 11:01:21" />
+    <file relUrl="bin/WcfTransactionService.pdb" publishTime="09/03/2011 12:16:59" />
+    <file relUrl="bin/TransactionCommon.pdb" publishTime="09/03/2011 11:01:19" />
+    <file relUrl="bin/TransactionFrontEnd.dll" publishTime="09/03/2011 11:01:21" />
+    <file relUrl="bin/WcfTransactionService.dll" publishTime="09/03/2011 12:16:59" />
+    <file relUrl="bin/TransactionServiceImpl.pdb" publishTime="09/03/2011 12:16:58" />
+    <file relUrl="bin/TransactionModel.pdb" publishTime="09/03/2011 11:01:20" />
+    <file relUrl="bin/TransactionServiceImpl.dll" publishTime="09/03/2011 12:16:58" />
+    <file relUrl="bin/WcfTransactionService.dll.config" publishTime="09/03/2011 12:08:11" />
+    <file relUrl="bin/TransactionModel.dll" publishTime="09/03/2011 11:01:20" />
+    <file relUrl="bin/TransactionServiceInterface.dll" publishTime="09/03/2011 11:01:20" />
+    <file relUrl="bin/TransactionServiceAdaptor.dll" publishTime="09/03/2011 11:01:19" />
+    <file relUrl="bin/TransactionServiceAdaptor.pdb" publishTime="09/03/2011 11:01:19" />
+    <file relUrl="bin/TransactionServiceInterface.pdb" publishTime="09/03/2011 11:01:20" />
+    <file relUrl="WcfTransactionService.WcfTransactionService.svc" publishTime="09/03/2011 12:16:59" />
+    <file relUrl="bin/TransactionCommon.dll" publishTime="09/03/2011 11:01:19" />
+  </publishTarget>
+</publishData>

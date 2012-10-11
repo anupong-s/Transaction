@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" />
+  <xs:import schemaLocation="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Common" />
+  <xs:import schemaLocation="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd7" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ProcessLowBatteryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System" base="q1:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="Geopoint" nillable="true" type="q2:GeoPoint" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="SignalType" type="q3:ELowBatterySignalType" />
+          <xs:element minOccurs="0" name="Voltage" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessLowBatteryRequest" nillable="true" type="tns:ProcessLowBatteryRequest" />
+  <xs:complexType name="ProcessLowBatteryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/System" base="q4:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessLowBatteryResponse" nillable="true" type="tns:ProcessLowBatteryResponse" />
+  <xs:complexType name="ProcessHeartbeatLateRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/System" base="q5:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="SignalType" type="q6:EHeartbeatLateSignalType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessHeartbeatLateRequest" nillable="true" type="tns:ProcessHeartbeatLateRequest" />
+  <xs:complexType name="ProcessHeartbeatLateResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/System" base="q7:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessHeartbeatLateResponse" nillable="true" type="tns:ProcessHeartbeatLateResponse" />
+  <xs:complexType name="ProcessFuelDropRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/System" base="q8:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Altitude" type="xs:short" />
+          <xs:element minOccurs="0" name="BeforeFuelDropLevelPercentage" type="xs:float" />
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GroundSpeed" type="xs:int" />
+          <xs:element minOccurs="0" name="Hdop" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Heading" type="xs:short" />
+          <xs:element minOccurs="0" name="LastFuelDropLevelPercentage" type="xs:float" />
+          <xs:element minOccurs="0" name="Latitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Longitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UtcTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessFuelDropRequest" nillable="true" type="tns:ProcessFuelDropRequest" />
+  <xs:complexType name="ProcessFuelDropResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/System" base="q9:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessFuelDropResponse" nillable="true" type="tns:ProcessFuelDropResponse" />
+  <xs:complexType name="ProcessCasingOpenAlertRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/System" base="q10:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="Geopoint" nillable="true" type="q11:GeoPoint" />
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="SignalType" type="q12:ECasingOpenSignalType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessCasingOpenAlertRequest" nillable="true" type="tns:ProcessCasingOpenAlertRequest" />
+  <xs:complexType name="ProcessCasingOpenAlertResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/System" base="q13:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessCasingOpenAlertResponse" nillable="true" type="tns:ProcessCasingOpenAlertResponse" />
+  <xs:complexType name="ProcessGPSDeviceInternalBatterySOHRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/System" base="q14:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BatteryLevelPercentage" type="xs:float" />
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="SignalType" type="q15:EGpsDeviceInternalBatterySOHSignalType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessGPSDeviceInternalBatterySOHRequest" nillable="true" type="tns:ProcessGPSDeviceInternalBatterySOHRequest" />
+  <xs:complexType name="ProcessGPSDeviceInternalBatterySOHResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/System" base="q16:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessGPSDeviceInternalBatterySOHResponse" nillable="true" type="tns:ProcessGPSDeviceInternalBatterySOHResponse" />
+  <xs:complexType name="CancelPmpSubscriptionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/System" base="q17:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SubscriptionId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CancelPmpSubscriptionRequest" nillable="true" type="tns:CancelPmpSubscriptionRequest" />
+  <xs:complexType name="CancelPmpSubscriptionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/System" base="q18:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CancelPmpSubscriptionResponse" nillable="true" type="tns:CancelPmpSubscriptionResponse" />
+  <xs:complexType name="ProcessGPSDataGapRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/System" base="q19:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CumulativeDistanceForMissingGPSSignal" type="xs:int" />
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="JourneyId" type="xs:int" />
+          <xs:element minOccurs="0" name="MissingGPSSignalDuration" type="xs:int" />
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="SignalType" type="q20:EGPSDataGapSignalType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessGPSDataGapRequest" nillable="true" type="tns:ProcessGPSDataGapRequest" />
+  <xs:complexType name="ProcessGPSDataGapResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/System" base="q21:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessGPSDataGapResponse" nillable="true" type="tns:ProcessGPSDataGapResponse" />
+  <xs:complexType name="ProcessEcallRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.datacontract.org/2004/07/System" base="q22:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Altitude" type="xs:short" />
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GroundSpeed" type="xs:int" />
+          <xs:element minOccurs="0" name="Hdop" type="xs:decimal" />
+          <xs:element minOccurs="0" name="HeaderTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Heading" type="xs:short" />
+          <xs:element minOccurs="0" name="Latitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Longitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="MultipleImpact" type="xs:boolean" />
+          <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="Pdof" type="q23:EEcallPdof" />
+          <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="RestingPosition" type="q24:ERestingPosition" />
+          <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="Severity" type="q25:EEcallSeverity" />
+          <xs:element minOccurs="0" name="SpeedAtImpact" type="xs:float" />
+          <xs:element minOccurs="0" name="TDetect" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="TZero" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="UtcTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessEcallRequest" nillable="true" type="tns:ProcessEcallRequest" />
+  <xs:complexType name="ProcessEcallResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q26="http://schemas.datacontract.org/2004/07/System" base="q26:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessEcallResponse" nillable="true" type="tns:ProcessEcallResponse" />
+  <xs:complexType name="ProcessDongleInternalBatteryVoltageSOCRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q27="http://schemas.datacontract.org/2004/07/System" base="q27:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="SignalType" type="q28:EDongleInternalBatteryVoltageSOCFlag" />
+          <xs:element minOccurs="0" name="Voltage" type="xs:float" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessDongleInternalBatteryVoltageSOCRequest" nillable="true" type="tns:ProcessDongleInternalBatteryVoltageSOCRequest" />
+  <xs:complexType name="ProcessDongleInternalBatteryVoltageSOCResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q29="http://schemas.datacontract.org/2004/07/System" base="q29:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessDongleInternalBatteryVoltageSOCResponse" nillable="true" type="tns:ProcessDongleInternalBatteryVoltageSOCResponse" />
+  <xs:complexType name="UpdateInstallmentRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q30="http://schemas.datacontract.org/2004/07/System" base="q30:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="InstallmentBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="InstallmentDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="InstallmentSeq" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="Method" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReconciliationId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UpdateInstallmentRequest" nillable="true" type="tns:UpdateInstallmentRequest" />
+  <xs:complexType name="UpdateInstallmentResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q31="http://schemas.datacontract.org/2004/07/System" base="q31:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UpdateInstallmentResponse" nillable="true" type="tns:UpdateInstallmentResponse" />
+  <xs:complexType name="ProcessCarStealingSmsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q32="http://schemas.datacontract.org/2004/07/System" base="q32:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AnotherInformation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:long" />
+          <xs:element minOccurs="0" name="LicensePlate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ShortLicensePlateProvince" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VehicleDetail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Vin" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessCarStealingSmsRequest" nillable="true" type="tns:ProcessCarStealingSmsRequest" />
+  <xs:complexType name="ProcessCarStealingSmsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q33="http://schemas.datacontract.org/2004/07/System" base="q33:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessCarStealingSmsResponse" nillable="true" type="tns:ProcessCarStealingSmsResponse" />
+  <xs:complexType name="ProcessTowingDetectionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q34="http://schemas.datacontract.org/2004/07/System" base="q34:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CumulativeTowedDuration" type="xs:int" />
+          <xs:element minOccurs="0" name="CumulativeTowedHAVDistance" type="xs:float" />
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="JourneyId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessTowingDetectionRequest" nillable="true" type="tns:ProcessTowingDetectionRequest" />
+  <xs:complexType name="ProcessTowingDetectionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q35="http://schemas.datacontract.org/2004/07/System" base="q35:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessTowingDetectionResponse" nillable="true" type="tns:ProcessTowingDetectionResponse" />
+  <xs:complexType name="ProcessFuelThresholdRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q36="http://schemas.datacontract.org/2004/07/System" base="q36:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="FuelThresholdLevel" type="q37:EFuelThresholdLevel" />
+          <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="Geopoint" nillable="true" type="q38:GeoPoint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessFuelThresholdRequest" nillable="true" type="tns:ProcessFuelThresholdRequest" />
+  <xs:complexType name="ProcessFuelThresholdResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q39="http://schemas.datacontract.org/2004/07/System" base="q39:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessFuelThresholdResponse" nillable="true" type="tns:ProcessFuelThresholdResponse" />
+  <xs:complexType name="ChangePmpVehicleDetailsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q40="http://schemas.datacontract.org/2004/07/System" base="q40:AbstractRequest">
+        <xs:sequence>
+          <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Common" minOccurs="0" name="NewVehicle" nillable="true" type="q41:VehicleDto" />
+          <xs:element minOccurs="0" name="SubscriptionId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangePmpVehicleDetailsRequest" nillable="true" type="tns:ChangePmpVehicleDetailsRequest" />
+  <xs:complexType name="ChangePmpVehicleDetailsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q42="http://schemas.datacontract.org/2004/07/System" base="q42:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangePmpVehicleDetailsResponse" nillable="true" type="tns:ChangePmpVehicleDetailsResponse" />
+  <xs:complexType name="NotifyPmpPaidRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q43="http://schemas.datacontract.org/2004/07/System" base="q43:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectivePeriodSeq" type="xs:short" />
+          <xs:element minOccurs="0" name="SubscriptionId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NotifyPmpPaidRequest" nillable="true" type="tns:NotifyPmpPaidRequest" />
+  <xs:complexType name="NotifyPmpPaidResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q44="http://schemas.datacontract.org/2004/07/System" base="q44:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NotifyPmpPaidResponse" nillable="true" type="tns:NotifyPmpPaidResponse" />
+  <xs:complexType name="ProcessBatteryTemperatureCheckRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q45="http://schemas.datacontract.org/2004/07/System" base="q45:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Temperature" type="xs:float" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessBatteryTemperatureCheckRequest" nillable="true" type="tns:ProcessBatteryTemperatureCheckRequest" />
+  <xs:complexType name="ProcessBatteryTemperatureCheckResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q46="http://schemas.datacontract.org/2004/07/System" base="q46:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessBatteryTemperatureCheckResponse" nillable="true" type="tns:ProcessBatteryTemperatureCheckResponse" />
+  <xs:complexType name="ValidateApplicationRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q47="http://schemas.datacontract.org/2004/07/System" base="q47:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectivePeriodSeq" type="xs:short" />
+          <xs:element minOccurs="0" name="SubscriptionId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ValidateApplicationRequest" nillable="true" type="tns:ValidateApplicationRequest" />
+  <xs:complexType name="ValidateApplicationResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q48="http://schemas.datacontract.org/2004/07/System" base="q48:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ValidateApplicationResponse" nillable="true" type="tns:ValidateApplicationResponse" />
+  <xs:complexType name="ProcessOBDCoreDataUnreadableRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q49="http://schemas.datacontract.org/2004/07/System" base="q49:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PIDx0DValue" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="PIDx31Value" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VINValue" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessOBDCoreDataUnreadableRequest" nillable="true" type="tns:ProcessOBDCoreDataUnreadableRequest" />
+  <xs:complexType name="ProcessOBDCoreDataUnreadableResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q50="http://schemas.datacontract.org/2004/07/System" base="q50:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessOBDCoreDataUnreadableResponse" nillable="true" type="tns:ProcessOBDCoreDataUnreadableResponse" />
+  <xs:complexType name="IsEffectiveSubscriptionExistedRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q51="http://schemas.datacontract.org/2004/07/System" base="q51:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Personinfo_IdentificationNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Subscription_Effectivedate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Vin" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IsEffectiveSubscriptionExistedRequest" nillable="true" type="tns:IsEffectiveSubscriptionExistedRequest" />
+  <xs:complexType name="IsEffectiveSubscriptionExistedResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q52="http://schemas.datacontract.org/2004/07/System" base="q52:SingleResultResponseOfIsVinActiveunQWKDRz">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IsEffectiveSubscriptionExistedResponse" nillable="true" type="tns:IsEffectiveSubscriptionExistedResponse" />
+  <xs:complexType name="IsVinActive">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsMatchPolicyHolderVin" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPolicyHolderExis" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsVinExis" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IsVinActive" nillable="true" type="tns:IsVinActive" />
+  <xs:complexType name="ProcessVINMismatchRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q53="http://schemas.datacontract.org/2004/07/System" base="q53:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MismatchedVIN" nillable="true" type="xs:string" />
+          <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="SignalType" type="q54:EVinMismatchSignalType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessVINMismatchRequest" nillable="true" type="tns:ProcessVINMismatchRequest" />
+  <xs:complexType name="ProcessVINMismatchResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q55="http://schemas.datacontract.org/2004/07/System" base="q55:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessVINMismatchResponse" nillable="true" type="tns:ProcessVINMismatchResponse" />
+  <xs:complexType name="ProcessButtonPressedRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q56="http://schemas.datacontract.org/2004/07/System" base="q56:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Altitude" type="xs:short" />
+          <xs:element minOccurs="0" name="ButtonType" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GroundSpeed" type="xs:int" />
+          <xs:element minOccurs="0" name="Hdop" type="xs:decimal" />
+          <xs:element minOccurs="0" name="HeaderTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Heading" type="xs:short" />
+          <xs:element minOccurs="0" name="KeyFobEventId" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="Latitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Longitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UtcTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessButtonPressedRequest" nillable="true" type="tns:ProcessButtonPressedRequest" />
+  <xs:complexType name="ProcessButtonPressedResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q57="http://schemas.datacontract.org/2004/07/System" base="q57:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessButtonPressedResponse" nillable="true" type="tns:ProcessButtonPressedResponse" />
+  <xs:complexType name="ProcessTiltRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q58="http://schemas.datacontract.org/2004/07/System" base="q58:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="Geopoint" nillable="true" type="q59:GeoPoint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessTiltRequest" nillable="true" type="tns:ProcessTiltRequest" />
+  <xs:complexType name="ProcessTiltResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q60="http://schemas.datacontract.org/2004/07/System" base="q60:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessTiltResponse" nillable="true" type="tns:ProcessTiltResponse" />
+  <xs:complexType name="ProcessFreezeFrameRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q61="http://schemas.datacontract.org/2004/07/System" base="q61:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParameterName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ParameterValue" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SequenceId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessFreezeFrameRequest" nillable="true" type="tns:ProcessFreezeFrameRequest" />
+  <xs:complexType name="ProcessFreezeFrameResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q62="http://schemas.datacontract.org/2004/07/System" base="q62:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessFreezeFrameResponse" nillable="true" type="tns:ProcessFreezeFrameResponse" />
+  <xs:complexType name="ProcessJourneySummaryRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q63="http://schemas.datacontract.org/2004/07/System" base="q63:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="JourneyId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessJourneySummaryRequest" nillable="true" type="tns:ProcessJourneySummaryRequest" />
+  <xs:complexType name="ProcessJourneySummaryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q64="http://schemas.datacontract.org/2004/07/System" base="q64:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessJourneySummaryResponse" nillable="true" type="tns:ProcessJourneySummaryResponse" />
+  <xs:complexType name="IsAliveRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q65="http://schemas.datacontract.org/2004/07/System" base="q65:AbstractRequest">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IsAliveRequest" nillable="true" type="tns:IsAliveRequest" />
+  <xs:complexType name="IsAliveResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q66="http://schemas.datacontract.org/2004/07/System" base="q66:SingleResultResponseOfboolean">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IsAliveResponse" nillable="true" type="tns:IsAliveResponse" />
+  <xs:complexType name="ConfirmDispatchRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q67="http://schemas.datacontract.org/2004/07/System" base="q67:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DispatchOrderId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConfirmDispatchRequest" nillable="true" type="tns:ConfirmDispatchRequest" />
+  <xs:complexType name="ConfirmDispatchResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q68="http://schemas.datacontract.org/2004/07/System" base="q68:SingleResultResponseOfstring">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConfirmDispatchResponse" nillable="true" type="tns:ConfirmDispatchResponse" />
+  <xs:complexType name="ExtendPmpSubscriptionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q69="http://schemas.datacontract.org/2004/07/System" base="q69:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NewExpiredDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="SubscriptionId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExtendPmpSubscriptionRequest" nillable="true" type="tns:ExtendPmpSubscriptionRequest" />
+  <xs:complexType name="ExtendPmpSubscriptionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q70="http://schemas.datacontract.org/2004/07/System" base="q70:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ExtendPmpSubscriptionResponse" nillable="true" type="tns:ExtendPmpSubscriptionResponse" />
+  <xs:complexType name="ReDispatchPmpSubscriptionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q71="http://schemas.datacontract.org/2004/07/System" base="q71:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SubscriptionId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReDispatchPmpSubscriptionRequest" nillable="true" type="tns:ReDispatchPmpSubscriptionRequest" />
+  <xs:complexType name="ReDispatchPmpSubscriptionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q72="http://schemas.datacontract.org/2004/07/System" base="q72:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ReDispatchPmpSubscriptionResponse" nillable="true" type="tns:ReDispatchPmpSubscriptionResponse" />
+  <xs:complexType name="ProcessPowerLossRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q73="http://schemas.datacontract.org/2004/07/System" base="q73:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Altitude" type="xs:short" />
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DistanceTravelled" type="xs:int" />
+          <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="GPSDevicePluggingStatus" type="q74:EDevicepluggingStatus" />
+          <xs:element minOccurs="0" name="GroundSpeed" type="xs:int" />
+          <xs:element minOccurs="0" name="Hdop" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Heading" type="xs:short" />
+          <xs:element minOccurs="0" name="Latitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Longitude" type="xs:decimal" />
+          <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="PowerSourceType" type="q75:EPowerSourceType" />
+          <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="SignalType" type="q76:EPowerLossSignalType" />
+          <xs:element minOccurs="0" name="UtcTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessPowerLossRequest" nillable="true" type="tns:ProcessPowerLossRequest" />
+  <xs:complexType name="ProcessPowerLossResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q77="http://schemas.datacontract.org/2004/07/System" base="q77:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessPowerLossResponse" nillable="true" type="tns:ProcessPowerLossResponse" />
+  <xs:complexType name="ProcessIdlingRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q78="http://schemas.datacontract.org/2004/07/System" base="q78:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="Geopoint" nillable="true" type="q79:GeoPoint" />
+          <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="SignalType" type="q80:EIdlingSignalType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessIdlingRequest" nillable="true" type="tns:ProcessIdlingRequest" />
+  <xs:complexType name="ProcessIdlingResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q81="http://schemas.datacontract.org/2004/07/System" base="q81:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessIdlingResponse" nillable="true" type="tns:ProcessIdlingResponse" />
+  <xs:complexType name="RenewPmpSubscriptionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q82="http://schemas.datacontract.org/2004/07/System" base="q82:AbstractRequest">
+        <xs:sequence>
+          <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Common" minOccurs="0" name="PmpSubscription" nillable="true" type="q83:PMPSubscriptionDto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RenewPmpSubscriptionRequest" nillable="true" type="tns:RenewPmpSubscriptionRequest" />
+  <xs:complexType name="RenewPmpSubscriptionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q84="http://schemas.datacontract.org/2004/07/System" base="q84:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RenewPmpSubscriptionResponse" nillable="true" type="tns:RenewPmpSubscriptionResponse" />
+  <xs:complexType name="ProcessObdAlertRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q85="http://schemas.datacontract.org/2004/07/System" base="q85:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ACRefrigerant" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Altitude" type="xs:short" />
+          <xs:element minOccurs="0" name="Catalyst" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Components" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DtcCleared" type="xs:int" />
+          <xs:element minOccurs="0" name="ECUCompliantStandard" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EGRSystem" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="EvaporativeSystem" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FuelSystem" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GroundSpeed" type="xs:int" />
+          <xs:element minOccurs="0" name="Hdop" type="xs:decimal" />
+          <xs:element minOccurs="0" name="HeaderTimestamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Heading" type="xs:short" />
+          <xs:element minOccurs="0" name="HeatedCatalyst" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Latitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Longitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Misfire" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NumberOfOBDTroubleCodes" type="xs:int" />
+          <xs:element minOccurs="0" name="OxygenSensor" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="OxygenSensorHeater" nillable="true" type="xs:boolean" />
+          <xs:element xmlns:q86="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="PendingDtcCodes" nillable="true" type="q86:ArrayOfstring" />
+          <xs:element minOccurs="0" name="Reserved" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SecondaryAirSystem" nillable="true" type="xs:boolean" />
+          <xs:element xmlns:q87="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="StoredDtcCodes" nillable="true" type="q87:ArrayOfstring" />
+          <xs:element minOccurs="0" name="TotalPIDSupported" type="xs:int" />
+          <xs:element minOccurs="0" name="UtcTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Vin" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessObdAlertRequest" nillable="true" type="tns:ProcessObdAlertRequest" />
+  <xs:complexType name="ProcessObdAlertResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q88="http://schemas.datacontract.org/2004/07/System" base="q88:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessObdAlertResponse" nillable="true" type="tns:ProcessObdAlertResponse" />
+  <xs:complexType name="ProcessGPSDeviceHealthStatusRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q89="http://schemas.datacontract.org/2004/07/System" base="q89:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccelerometerStatus" type="xs:boolean" />
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ExternalSourceType" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FlashMemoryStatus" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FuelGaugeStatus" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GPSModuleStatus" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GSMModuleStatus" type="xs:boolean" />
+          <xs:element minOccurs="0" name="JourneyId" type="xs:int" />
+          <xs:element minOccurs="0" name="MicrocontrollerStatus" type="xs:boolean" />
+          <xs:element minOccurs="0" name="OBDChipStatus" type="xs:boolean" />
+          <xs:element minOccurs="0" name="PowerSwitchStatus" type="xs:boolean" />
+          <xs:element minOccurs="0" name="RFIDChipStatus" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SIMCardStatus" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SerialPortStatus" type="xs:boolean" />
+          <xs:element minOccurs="0" name="USBPortStatus" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessGPSDeviceHealthStatusRequest" nillable="true" type="tns:ProcessGPSDeviceHealthStatusRequest" />
+  <xs:complexType name="ProcessGPSDeviceHealthStatusResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q90="http://schemas.datacontract.org/2004/07/System" base="q90:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessGPSDeviceHealthStatusResponse" nillable="true" type="tns:ProcessGPSDeviceHealthStatusResponse" />
+  <xs:complexType name="ProcessGeofenceAlertRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q91="http://schemas.datacontract.org/2004/07/System" base="q91:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Altitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GeofenceId" type="xs:int" />
+          <xs:element minOccurs="0" name="GeofenceType" type="xs:int" />
+          <xs:element minOccurs="0" name="GroundSpeed" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Hdop" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Heading" type="xs:short" />
+          <xs:element minOccurs="0" name="Latitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Longitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TriggerRule" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="UniqueJouneyId" type="xs:unsignedShort" />
+          <xs:element minOccurs="0" name="UtcTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessGeofenceAlertRequest" nillable="true" type="tns:ProcessGeofenceAlertRequest" />
+  <xs:complexType name="ProcessGeofenceAlertResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q92="http://schemas.datacontract.org/2004/07/System" base="q92:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessGeofenceAlertResponse" nillable="true" type="tns:ProcessGeofenceAlertResponse" />
+  <xs:complexType name="ProcessDeviceReceiptCheckingRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q93="http://schemas.datacontract.org/2004/07/System" base="q93:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="SignalType" type="q94:EDeviceReceiptCheckingSignalType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessDeviceReceiptCheckingRequest" nillable="true" type="tns:ProcessDeviceReceiptCheckingRequest" />
+  <xs:complexType name="ProcessDeviceReceiptCheckingResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q95="http://schemas.datacontract.org/2004/07/System" base="q95:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessDeviceReceiptCheckingResponse" nillable="true" type="tns:ProcessDeviceReceiptCheckingResponse" />
+  <xs:complexType name="ProcessValueAddedSmsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q96="http://schemas.datacontract.org/2004/07/System" base="q96:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Contents" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FromMobileNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SmsTimestamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ToMobileNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TxId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessValueAddedSmsRequest" nillable="true" type="tns:ProcessValueAddedSmsRequest" />
+  <xs:complexType name="ProcessValueAddedSmsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q97="http://schemas.datacontract.org/2004/07/System" base="q97:SingleResultResponseOfstring">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessValueAddedSmsResponse" nillable="true" type="tns:ProcessValueAddedSmsResponse" />
+  <xs:complexType name="AbandonPmpSubscriptionRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q98="http://schemas.datacontract.org/2004/07/System" base="q98:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EffectivePeriodSeq" type="xs:short" />
+          <xs:element minOccurs="0" name="SubscriptionId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AbandonPmpSubscriptionRequest" nillable="true" type="tns:AbandonPmpSubscriptionRequest" />
+  <xs:complexType name="AbandonPmpSubscriptionResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q99="http://schemas.datacontract.org/2004/07/System" base="q99:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AbandonPmpSubscriptionResponse" nillable="true" type="tns:AbandonPmpSubscriptionResponse" />
+  <xs:complexType name="ProcessOdometerAccuracyRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q100="http://schemas.datacontract.org/2004/07/System" base="q100:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DRValue" nillable="true" type="xs:float" />
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="JourneyId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessOdometerAccuracyRequest" nillable="true" type="tns:ProcessOdometerAccuracyRequest" />
+  <xs:complexType name="ProcessOdometerAccuracyResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q101="http://schemas.datacontract.org/2004/07/System" base="q101:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessOdometerAccuracyResponse" nillable="true" type="tns:ProcessOdometerAccuracyResponse" />
+  <xs:complexType name="ChangePmpPolicyHolderDetailsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q102="http://schemas.datacontract.org/2004/07/System" base="q102:AbstractRequest">
+        <xs:sequence>
+          <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Common" minOccurs="0" name="Address" nillable="true" type="q103:AddressDto" />
+          <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Common" minOccurs="0" name="PolicyHolder" nillable="true" type="q104:PolicyHolderDto" />
+          <xs:element minOccurs="0" name="SubscriptionId" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangePmpPolicyHolderDetailsRequest" nillable="true" type="tns:ChangePmpPolicyHolderDetailsRequest" />
+  <xs:complexType name="ChangePmpPolicyHolderDetailsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q105="http://schemas.datacontract.org/2004/07/System" base="q105:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ChangePmpPolicyHolderDetailsResponse" nillable="true" type="tns:ChangePmpPolicyHolderDetailsResponse" />
+  <xs:complexType name="ProcessWakeRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q106="http://schemas.datacontract.org/2004/07/System" base="q106:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceSn" nillable="true" type="xs:string" />
+          <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" minOccurs="0" name="Geopoint" nillable="true" type="q107:GeoPoint" />
+          <xs:element minOccurs="0" name="MoveAlertStatus" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessWakeRequest" nillable="true" type="tns:ProcessWakeRequest" />
+  <xs:complexType name="ProcessWakeResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q108="http://schemas.datacontract.org/2004/07/System" base="q108:AbstractResponse">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProcessWakeResponse" nillable="true" type="tns:ProcessWakeResponse" />
+</xs:schema>

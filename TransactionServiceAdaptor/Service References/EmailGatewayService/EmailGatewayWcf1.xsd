@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://itdev01:8080/emailgateway/service/201101/EmailGatewayWcf.EmailGateway.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="SendText">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mailFrom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mailTo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bcc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="body" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendTextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendTextResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendHtml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mailFrom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mailTo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bcc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="body" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendHtmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendHtmlResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendTextAttachments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mailFrom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mailTo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bcc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="body" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="fileNameAttachmentContents" nillable="true" type="q1:ArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendTextAttachmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendTextAttachmentsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendHtmlAttachments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mailFrom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mailTo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bcc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="body" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="fileNameAttachmentContents" nillable="true" type="q2:ArrayOfKeyValueOfstringstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendHtmlAttachmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendHtmlAttachmentsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

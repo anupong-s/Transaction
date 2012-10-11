@@ -1,0 +1,1108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TransactionModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="TransactionModelStoreContainer">
+          <EntitySet Name="Configurations" EntityType="TransactionModel.Store.Configurations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CustomerCredits" EntityType="TransactionModel.Store.CustomerCredits" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ErrorLogs" EntityType="TransactionModel.Store.ErrorLogs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Installments" EntityType="TransactionModel.Store.Installments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PayInSlips" EntityType="TransactionModel.Store.PayInSlips" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PaymentCodes" EntityType="TransactionModel.Store.PaymentCodes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PaymentItems" EntityType="TransactionModel.Store.PaymentItems" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Payments" EntityType="TransactionModel.Store.Payments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReconciliationFiles" EntityType="TransactionModel.Store.ReconciliationFiles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Reconciliations" EntityType="TransactionModel.Store.Reconciliations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RefundItems" EntityType="TransactionModel.Store.RefundItems" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Refunds" EntityType="TransactionModel.Store.Refunds" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TaxInvoiceReceipts" EntityType="TransactionModel.Store.TaxInvoiceReceipts" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_CustomerCredits_Installments" Association="TransactionModel.Store.FK_CustomerCredits_Installments">
+            <End Role="Installments" EntitySet="Installments" />
+            <End Role="CustomerCredits" EntitySet="CustomerCredits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Installments_Payments" Association="TransactionModel.Store.FK_Installments_Payments">
+            <End Role="Payments" EntitySet="Payments" />
+            <End Role="Installments" EntitySet="Installments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Installments_Reconciliations" Association="TransactionModel.Store.FK_Installments_Reconciliations">
+            <End Role="Reconciliations" EntitySet="Reconciliations" />
+            <End Role="Installments" EntitySet="Installments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PayInSlips_Payments" Association="TransactionModel.Store.FK_PayInSlips_Payments">
+            <End Role="Payments" EntitySet="Payments" />
+            <End Role="PayInSlips" EntitySet="PayInSlips" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentItems_Payments" Association="TransactionModel.Store.FK_PaymentItems_Payments">
+            <End Role="Payments" EntitySet="Payments" />
+            <End Role="PaymentItems" EntitySet="PaymentItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reconciliations_ReconciliationFiles" Association="TransactionModel.Store.FK_Reconciliations_ReconciliationFiles">
+            <End Role="ReconciliationFiles" EntitySet="ReconciliationFiles" />
+            <End Role="Reconciliations" EntitySet="Reconciliations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RefundItems_Refunds" Association="TransactionModel.Store.FK_RefundItems_Refunds">
+            <End Role="Refunds" EntitySet="Refunds" />
+            <End Role="RefundItems" EntitySet="RefundItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Refunds_RefundItems" Association="TransactionModel.Store.FK_Refunds_RefundItems">
+            <End Role="Refunds" EntitySet="Refunds" />
+            <End Role="Refunds1" EntitySet="Refunds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaxInvoiceReceipts_Payments" Association="TransactionModel.Store.FK_TaxInvoiceReceipts_Payments">
+            <End Role="Payments" EntitySet="Payments" />
+            <End Role="TaxInvoiceReceipts" EntitySet="TaxInvoiceReceipts" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Configurations">
+          <Key>
+            <PropertyRef Name="Group" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Group" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Value1" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Value2" Type="nvarchar" MaxLength="100" />
+          <Property Name="Value3" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="CreateBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UpdateDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CustomerCredits">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="Amount" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="InstallmentId" Type="int" Nullable="false" />
+          <Property Name="CustomerIdmPartyId" Type="bigint" Nullable="false" />
+          <Property Name="CustomerName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="CustomerAddress" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="CustomerRefundAccountNo" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerRefundAccountName" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerRefundBankId" Type="int" />
+          <Property Name="CustomerMobilePhoneNo" Type="varchar" MaxLength="20" />
+          <Property Name="IsUsedOrRefund" Type="bit" Nullable="false" />
+          <Property Name="BeneficiaryCharge" Type="varchar" MaxLength="5" />
+          <Property Name="HotKey" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ErrorLogs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IssuedBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IssuedDate" Type="datetime" Nullable="false" />
+          <Property Name="IssuedMessage" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Severity" Type="tinyint" Nullable="false" />
+          <Property Name="SystemErrorId" Type="tinyint" />
+          <Property Name="SystemErrorName" Type="varchar" MaxLength="20" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="Installments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InstallmentDate" Type="datetime" Nullable="false" />
+          <Property Name="InstallmentBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Amount" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="Method" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="ReconciliationId" Type="bigint" />
+          <Property Name="CustomerCreditId" Type="bigint" />
+          <Property Name="PaymentId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PayInSlips">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IssuedDate" Type="datetime" Nullable="false" />
+          <Property Name="IssuedBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="SlipPdf" Type="varbinary(max)" Nullable="false" />
+          <Property Name="PaymentId" Type="bigint" Nullable="false" />
+          <Property Name="DocumentNumber" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PaymentCodes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="char" Nullable="false" MaxLength="8" />
+          <Property Name="IsUsed" Type="bit" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="PaymentItems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GroupRef1" Type="varchar" MaxLength="50" />
+          <Property Name="GroupRef2" Type="varchar" MaxLength="50" />
+          <Property Name="GroupRef3" Type="varchar" MaxLength="50" />
+          <Property Name="Qty" Type="int" Nullable="false" />
+          <Property Name="UnitAmount" Type="decimal" Nullable="false" Scale="5" />
+          <Property Name="ItemDescription" Type="varchar" MaxLength="255" />
+          <Property Name="ServiceIsRevenue" Type="bit" Nullable="false" />
+          <Property Name="VatPercent" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="WithholdingTexPercent" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="IsLegalPerson" Type="bit" Nullable="false" />
+          <Property Name="PaymentId" Type="bigint" Nullable="false" />
+          <Property Name="Remark" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Payments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="PaymentCode" Type="char" Nullable="false" MaxLength="8" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="IsVoid" Type="bit" Nullable="false" />
+          <Property Name="CustomerIdmPartyId" Type="bigint" Nullable="false" />
+          <Property Name="CustomerName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="CustomerAddress" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="CustomerRefundAccountNo" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerRefundAccountName" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerRefundBankId" Type="int" />
+          <Property Name="CustomerMobilePhoneNo" Type="varchar" MaxLength="20" />
+          <Property Name="Remark" Type="varchar" MaxLength="255" />
+          <Property Name="Ref1" Type="varchar" MaxLength="50" />
+          <Property Name="Ref2" Type="varchar" MaxLength="50" />
+          <Property Name="Ref3" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ReconciliationFiles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FileName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Contents" Type="varbinary(max)" Nullable="false" />
+          <Property Name="BackupPath" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsValid" Type="bit" Nullable="false" />
+          <Property Name="IsRead" Type="bit" Nullable="false" />
+          <Property Name="FileType" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="Source" Type="nvarchar" MaxLength="255" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="CreateBy" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Reconciliations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PaymentCode" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Amount" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="PaymentDate" Type="datetime" Nullable="false" />
+          <Property Name="PaymentBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="PaymentMethod" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="ReconciliationFileId" Type="bigint" Nullable="false" />
+          <Property Name="IsRead" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RefundItems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Qty" Type="int" Nullable="false" />
+          <Property Name="UnitAmount" Type="int" Nullable="false" />
+          <Property Name="ItemDescription" Type="nvarchar" MaxLength="1000" />
+          <Property Name="RefundId" Type="bigint" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar" />
+          <Property Name="GroupRef1" Type="nvarchar" />
+          <Property Name="GroupRef2" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="Refunds">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+          <Property Name="PaymentCode" Type="char" Nullable="false" MaxLength="8" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="IsVoid" Type="bit" Nullable="false" />
+          <Property Name="CustomerIdmPartyId" Type="bigint" Nullable="false" />
+          <Property Name="CustomerName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="CustomerAddress" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="CustomerRefundAccountNo" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerRefundAccountName" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerRefundBankId" Type="int" />
+          <Property Name="CustomerMobilePhoneNo" Type="varchar" MaxLength="20" />
+          <Property Name="Remark" Type="varchar" MaxLength="255" />
+          <Property Name="Ref1" Type="varchar" MaxLength="50" />
+          <Property Name="Ref2" Type="varchar" MaxLength="50" />
+          <Property Name="Ref3" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TaxInvoiceReceipts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IssuedDate" Type="datetime" Nullable="false" />
+          <Property Name="IssuedBy" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="TaxInvoiceReceiptPdf" Type="varbinary(max)" Nullable="false" />
+          <Property Name="PaymentId" Type="bigint" Nullable="false" />
+          <Property Name="DocumentNumber" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_CustomerCredits_Installments">
+          <End Role="Installments" Type="TransactionModel.Store.Installments" Multiplicity="1" />
+          <End Role="CustomerCredits" Type="TransactionModel.Store.CustomerCredits" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Installments">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CustomerCredits">
+              <PropertyRef Name="InstallmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Installments_Payments">
+          <End Role="Payments" Type="TransactionModel.Store.Payments" Multiplicity="1" />
+          <End Role="Installments" Type="TransactionModel.Store.Installments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payments">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Installments">
+              <PropertyRef Name="PaymentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Installments_Reconciliations">
+          <End Role="Reconciliations" Type="TransactionModel.Store.Reconciliations" Multiplicity="0..1" />
+          <End Role="Installments" Type="TransactionModel.Store.Installments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reconciliations">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Installments">
+              <PropertyRef Name="ReconciliationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PayInSlips_Payments">
+          <End Role="Payments" Type="TransactionModel.Store.Payments" Multiplicity="1" />
+          <End Role="PayInSlips" Type="TransactionModel.Store.PayInSlips" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payments">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PayInSlips">
+              <PropertyRef Name="PaymentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PaymentItems_Payments">
+          <End Role="Payments" Type="TransactionModel.Store.Payments" Multiplicity="1" />
+          <End Role="PaymentItems" Type="TransactionModel.Store.PaymentItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payments">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PaymentItems">
+              <PropertyRef Name="PaymentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reconciliations_ReconciliationFiles">
+          <End Role="ReconciliationFiles" Type="TransactionModel.Store.ReconciliationFiles" Multiplicity="1" />
+          <End Role="Reconciliations" Type="TransactionModel.Store.Reconciliations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReconciliationFiles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reconciliations">
+              <PropertyRef Name="ReconciliationFileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RefundItems_Refunds">
+          <End Role="Refunds" Type="TransactionModel.Store.Refunds" Multiplicity="1" />
+          <End Role="RefundItems" Type="TransactionModel.Store.RefundItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Refunds">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RefundItems">
+              <PropertyRef Name="RefundId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Refunds_RefundItems">
+          <End Role="Refunds" Type="TransactionModel.Store.Refunds" Multiplicity="1" />
+          <End Role="Refunds1" Type="TransactionModel.Store.Refunds" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Refunds">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Refunds1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaxInvoiceReceipts_Payments">
+          <End Role="Payments" Type="TransactionModel.Store.Payments" Multiplicity="1" />
+          <End Role="TaxInvoiceReceipts" Type="TransactionModel.Store.TaxInvoiceReceipts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payments">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TaxInvoiceReceipts">
+              <PropertyRef Name="PaymentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="TransactionModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="TransactionModelContainer" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="sp_UserRefundsAdd" ReturnType="Collection(TransactionModel.sp_UserRefundsAdd_Result)">
+          <Parameter Name="amount" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_Reconciliation">
+          <Parameter Name="FileName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_PaymentAccountNoNotFound" ReturnType="Collection(TransactionModel.sp_PaymentAccountNoNotFound_Result)">
+          <Parameter Name="FileName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CreditCardReconciliation">
+            <Parameter Name="BankCode" Mode="In" Type="String" />
+            <Parameter Name="FileName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_CreditCardPaymentAccountNoNotFound" ReturnType="Collection(TransactionModel.sp_CreditCardPaymentAccountNoNotFound_Result)">
+          <Parameter Name="FileName" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Configurations" EntityType="TransactionModel.Configuration" />
+          <EntitySet Name="ErrorLogs" EntityType="TransactionModel.ErrorLog" />
+          <EntitySet Name="PaymentCodes" EntityType="TransactionModel.PaymentCode" />
+          <EntitySet Name="ReconciliationFiles" EntityType="TransactionModel.ReconciliationFile" />
+          <EntitySet Name="Reconciliations" EntityType="TransactionModel.Reconciliation" />
+          <AssociationSet Name="FK_Reconciliations_ReconciliationFiles" Association="TransactionModel.FK_Reconciliations_ReconciliationFiles">
+            <End Role="ReconciliationFile" EntitySet="ReconciliationFiles" />
+            <End Role="Reconciliation" EntitySet="Reconciliations" />
+          </AssociationSet>
+          <EntitySet Name="CustomerCredits" EntityType="TransactionModel.CustomerCredit" />
+          <EntitySet Name="Installments" EntityType="TransactionModel.Installment" />
+          <EntitySet Name="PayInSlips" EntityType="TransactionModel.PayInSlip" />
+          <EntitySet Name="PaymentItems" EntityType="TransactionModel.PaymentItem" />
+          <EntitySet Name="Payments" EntityType="TransactionModel.Payment" />
+          <AssociationSet Name="FK_CustomerCredits_Installments" Association="TransactionModel.FK_CustomerCredits_Installments">
+            <End Role="Installment" EntitySet="Installments" />
+            <End Role="CustomerCredit" EntitySet="CustomerCredits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Installments_Payments" Association="TransactionModel.FK_Installments_Payments">
+            <End Role="Payment" EntitySet="Payments" />
+            <End Role="Installment" EntitySet="Installments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Installments_Reconciliations" Association="TransactionModel.FK_Installments_Reconciliations">
+            <End Role="Reconciliation" EntitySet="Reconciliations" />
+            <End Role="Installment" EntitySet="Installments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PayInSlips_Payments" Association="TransactionModel.FK_PayInSlips_Payments">
+            <End Role="Payment" EntitySet="Payments" />
+            <End Role="PayInSlip" EntitySet="PayInSlips" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentItems_Payments" Association="TransactionModel.FK_PaymentItems_Payments">
+            <End Role="Payment" EntitySet="Payments" />
+            <End Role="PaymentItem" EntitySet="PaymentItems" />
+          </AssociationSet>
+          <EntitySet Name="TaxInvoiceReceipts" EntityType="TransactionModel.TaxInvoiceReceipt" />
+          <AssociationSet Name="FK_TaxInvoiceReceipts_Payments" Association="TransactionModel.FK_TaxInvoiceReceipts_Payments">
+            <End Role="Payment" EntitySet="Payments" />
+            <End Role="TaxInvoiceReceipt" EntitySet="TaxInvoiceReceipts" />
+          </AssociationSet>
+          <EntitySet Name="RefundItems" EntityType="TransactionModel.RefundItem" />
+          <EntitySet Name="Refunds" EntityType="TransactionModel.Refund" />
+          <AssociationSet Name="FK_RefundItems_Refunds" Association="TransactionModel.FK_RefundItems_Refunds">
+            <End Role="Refund" EntitySet="Refunds" />
+            <End Role="RefundItem" EntitySet="RefundItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Refunds_RefundItems" Association="TransactionModel.FK_Refunds_RefundItems">
+            <End Role="Refund" EntitySet="Refunds" />
+            <End Role="Refund1" EntitySet="Refunds" />
+          </AssociationSet>
+          </EntityContainer>
+        <ComplexType Name="sp_CreditCardPaymentAccountNoNotFound_Result">
+          <Property Type="Int64" Name="SubscriberId" Nullable="true" />
+          <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="String" Name="PaymentCode" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="MobileNo" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_UserRefundsAdd_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="String" Name="CreateBy" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="UpdateBy" Nullable="false" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="23" />
+          <Property Type="Int64" Name="UserId" Nullable="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="17" Scale="7" />
+          <Property Type="String" Name="PaymentCode" Nullable="false" />
+          <Property Type="Binary" Name="Version" Nullable="false" MaxLength="8" />
+          <Property Type="Boolean" Name="IsUsed" Nullable="false" />
+          <Property Type="String" Name="BankAccountHolder" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="BankAccountNumber" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="BankName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="BeneficiaryCharge" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="HotKey" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_PaymentAccountNoNotFound_Result">
+          <Property Type="Int64" Name="SubscriberId" Nullable="true" />
+          <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="3" />
+          <Property Type="String" Name="PaymentCode" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="MobileNo" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="Configuration">
+          <Key>
+            <PropertyRef Name="Group" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Type="String" Name="Group" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="Value1" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="Value2" MaxLength="100" FixedLength="false" Unicode="true" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="Value3" MaxLength="100" FixedLength="false" Unicode="true" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="Description" MaxLength="255" FixedLength="false" Unicode="true" cg:SetterAccess="Internal" />
+          <Property Type="Binary" Name="Version" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" cg:SetterAccess="Internal" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="CreateBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" cg:SetterAccess="Internal" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="UpdateBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" cg:SetterAccess="Internal" />
+        </EntityType>
+        <EntityType Name="ErrorLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="IssuedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" cg:SetterAccess="Internal" />
+          <Property Type="DateTime" Name="IssuedDate" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="IssuedMessage" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" cg:SetterAccess="Internal" />
+          <Property Type="Byte" Name="Severity" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="Binary" Name="Version" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" cg:SetterAccess="Internal" />
+          <Property Type="Byte" Name="SystemErrorId" />
+          <Property Type="String" Name="SystemErrorName" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PaymentCode">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="Boolean" Name="IsUsed" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="Binary" Name="Version" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" cg:SetterAccess="Internal" />
+        </EntityType>
+        <EntityType Name="ReconciliationFile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="FileName" Nullable="false" Unicode="true" MaxLength="100" cg:SetterAccess="Public" />
+          <Property Type="Binary" Name="Contents" Nullable="false" cg:SetterAccess="Public" />
+          <Property Type="String" Name="BackupPath" Nullable="true" Unicode="true" MaxLength="255" cg:SetterAccess="Public" />
+          <Property Type="Boolean" Name="IsValid" Nullable="false" cg:SetterAccess="Public" />
+          <Property Type="String" Name="Source" Nullable="true" MaxLength="255" Unicode="true" cg:SetterAccess="Public" />
+          <Property Type="Binary" Name="Version" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" cg:SetterAccess="Internal" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" cg:SetterAccess="Public" />
+          <Property Type="String" Name="CreateBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" cg:SetterAccess="Public" />
+          <Property Type="Boolean" Name="IsRead" Nullable="false" cg:SetterAccess="Public" />
+          <Property Type="String" Name="FileType" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" cg:SetterAccess="Public" />
+          <NavigationProperty Name="Reconciliations" Relationship="TransactionModel.FK_Reconciliations_ReconciliationFiles" FromRole="ReconciliationFile" ToRole="Reconciliation" cg:SetterAccess="Internal" cg:GetterAccess="Public" />
+        </EntityType>
+        <EntityType Name="Reconciliation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="PaymentCode" Nullable="false" FixedLength="true" Unicode="false" cg:SetterAccess="Public" MaxLength="20" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" cg:SetterAccess="Public" />
+          <Property Type="DateTime" Name="PaymentDate" Nullable="false" cg:SetterAccess="Public" />
+          <Property Type="String" Name="PaymentBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" cg:SetterAccess="Public" />
+          <Property Type="String" Name="PaymentMethod" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" cg:SetterAccess="Public" />
+          <Property Type="Int64" Name="ReconciliationFileId" Nullable="false" cg:SetterAccess="Public" />
+          <Property Type="Boolean" Name="IsRead" Nullable="false" cg:SetterAccess="Public" />
+          <NavigationProperty Name="ReconciliationFile" Relationship="TransactionModel.FK_Reconciliations_ReconciliationFiles" FromRole="Reconciliation" ToRole="ReconciliationFile" cg:SetterAccess="Internal" cg:GetterAccess="Public" />
+          <NavigationProperty Name="Installments" Relationship="TransactionModel.FK_Installments_Reconciliations" FromRole="Reconciliation" ToRole="Installment" cg:SetterAccess="Internal" cg:GetterAccess="Public" />
+        </EntityType>
+        <Association Name="FK_Reconciliations_ReconciliationFiles">
+          <End Type="TransactionModel.ReconciliationFile" Role="ReconciliationFile" Multiplicity="1" />
+          <End Type="TransactionModel.Reconciliation" Role="Reconciliation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReconciliationFile">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reconciliation">
+              <PropertyRef Name="ReconciliationFileId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CustomerCredit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Internal" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="UpdatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="Binary" Name="Version" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" cg:SetterAccess="Internal" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" cg:SetterAccess="Internal" />
+          <Property Type="Int32" Name="InstallmentId" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="Int64" Name="CustomerIdmPartyId" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="CustomerName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="CustomerAddress" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="CustomerRefundAccountNo" MaxLength="50" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="CustomerRefundAccountName" MaxLength="50" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="Int32" Name="CustomerRefundBankId" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="CustomerMobilePhoneNo" MaxLength="20" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="Boolean" Name="IsUsedOrRefund" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="BeneficiaryCharge" MaxLength="5" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="HotKey" MaxLength="50" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <NavigationProperty Name="Installment" Relationship="TransactionModel.FK_CustomerCredits_Installments" FromRole="CustomerCredit" ToRole="Installment" cg:SetterAccess="Internal" cg:GetterAccess="Public" />
+        </EntityType>
+        <EntityType Name="Installment" cg:TypeAccess="Public">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Internal" />
+          <Property Type="DateTime" Name="InstallmentDate" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="InstallmentBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="18" Scale="2" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="Method" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="Int64" Name="ReconciliationId" cg:SetterAccess="Public" />
+          <Property Type="Int64" Name="CustomerCreditId" cg:SetterAccess="Internal" />
+          <Property Type="Int64" Name="PaymentId" Nullable="false" cg:SetterAccess="Internal" />
+          <NavigationProperty Name="CustomerCredits" Relationship="TransactionModel.FK_CustomerCredits_Installments" FromRole="Installment" ToRole="CustomerCredit" cg:SetterAccess="Internal" cg:GetterAccess="Public" />
+          <NavigationProperty Name="Payment" Relationship="TransactionModel.FK_Installments_Payments" FromRole="Installment" ToRole="Payment" cg:SetterAccess="Internal" cg:GetterAccess="Public" />
+          <NavigationProperty Name="Reconciliation" Relationship="TransactionModel.FK_Installments_Reconciliations" FromRole="Installment" ToRole="Reconciliation" cg:SetterAccess="Internal" cg:GetterAccess="Public" />
+        </EntityType>
+        <EntityType Name="PayInSlip">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Internal" />
+          <Property Type="DateTime" Name="IssuedDate" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="IssuedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="Binary" Name="SlipPdf" Nullable="false" MaxLength="Max" FixedLength="false" cg:SetterAccess="Internal" />
+          <Property Type="Int64" Name="PaymentId" Nullable="false" cg:SetterAccess="Internal" />
+          <NavigationProperty Name="Payment" Relationship="TransactionModel.FK_PayInSlips_Payments" FromRole="PayInSlip" ToRole="Payment" cg:SetterAccess="Internal" cg:GetterAccess="Public" />
+          <Property Type="String" Name="DocumentNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PaymentItem" cg:TypeAccess="Public">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="GroupRef1" MaxLength="50" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="GroupRef2" MaxLength="50" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="GroupRef3" MaxLength="50" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="Int32" Name="Qty" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="Decimal" Name="UnitAmount" Nullable="false" Precision="18" Scale="2" cg:SetterAccess="Internal" />
+          <Property Type="Boolean" Name="ServiceIsRevenue" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="Int64" Name="PaymentId" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="Remark" MaxLength="255" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <NavigationProperty Name="Payment" Relationship="TransactionModel.FK_PaymentItems_Payments" FromRole="PaymentItem" ToRole="Payment" cg:SetterAccess="Internal" cg:GetterAccess="Public" />
+          <Property Type="Decimal" Name="WithholdingTexPercent" Nullable="false" Precision="18" Scale="2" cg:SetterAccess="Internal" />
+          <Property Type="Boolean" Name="IsLegalPerson" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="ItemDescription" MaxLength="255" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="Decimal" Name="VatPercent" Nullable="false" Precision="18" Scale="2" cg:SetterAccess="Internal" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Internal" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="UpdatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="Binary" Name="Version" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="PaymentCode" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="Boolean" Name="IsVoid" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="Int64" Name="CustomerIdmPartyId" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="CustomerName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="CustomerAddress" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="CustomerRefundAccountNo" MaxLength="50" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="CustomerRefundAccountName" MaxLength="50" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="Int32" Name="CustomerRefundBankId" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="CustomerMobilePhoneNo" MaxLength="20" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="Remark" MaxLength="255" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="Ref1" MaxLength="50" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="Ref2" MaxLength="50" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="Ref3" MaxLength="50" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <NavigationProperty Name="Installments" Relationship="TransactionModel.FK_Installments_Payments" FromRole="Payment" ToRole="Installment" cg:SetterAccess="Internal" cg:GetterAccess="Public" />
+          <NavigationProperty Name="PayInSlips" Relationship="TransactionModel.FK_PayInSlips_Payments" FromRole="Payment" ToRole="PayInSlip" cg:SetterAccess="Internal" cg:GetterAccess="Public" />
+          <NavigationProperty Name="PaymentItems" Relationship="TransactionModel.FK_PaymentItems_Payments" FromRole="Payment" ToRole="PaymentItem" cg:SetterAccess="Internal" cg:GetterAccess="Public" />
+          <NavigationProperty Name="TaxInvoiceReceipts" Relationship="TransactionModel.FK_TaxInvoiceReceipts_Payments" FromRole="Payment" ToRole="TaxInvoiceReceipt" cg:SetterAccess="Internal" cg:GetterAccess="Public" />
+        </EntityType>
+        <Association Name="FK_CustomerCredits_Installments">
+          <End Type="TransactionModel.Installment" Role="Installment" Multiplicity="1" />
+          <End Type="TransactionModel.CustomerCredit" Role="CustomerCredit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Installment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CustomerCredit">
+              <PropertyRef Name="InstallmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Installments_Payments">
+          <End Type="TransactionModel.Payment" Role="Payment" Multiplicity="1" />
+          <End Type="TransactionModel.Installment" Role="Installment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Installment">
+              <PropertyRef Name="PaymentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Installments_Reconciliations">
+          <End Type="TransactionModel.Reconciliation" Role="Reconciliation" Multiplicity="0..1" />
+          <End Type="TransactionModel.Installment" Role="Installment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reconciliation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Installment">
+              <PropertyRef Name="ReconciliationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PayInSlips_Payments">
+          <End Type="TransactionModel.Payment" Role="Payment" Multiplicity="1" />
+          <End Type="TransactionModel.PayInSlip" Role="PayInSlip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PayInSlip">
+              <PropertyRef Name="PaymentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PaymentItems_Payments">
+          <End Type="TransactionModel.Payment" Role="Payment" Multiplicity="1" />
+          <End Type="TransactionModel.PaymentItem" Role="PaymentItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PaymentItem">
+              <PropertyRef Name="PaymentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TaxInvoiceReceipt">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="DateTime" Name="IssuedDate" Nullable="false" cg:SetterAccess="Internal" />
+          <Property Type="String" Name="IssuedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" cg:SetterAccess="Internal" />
+          <Property Type="Binary" Name="TaxInvoiceReceiptPdf" Nullable="false" MaxLength="Max" FixedLength="false" cg:SetterAccess="Internal" />
+          <Property Type="Int64" Name="PaymentId" Nullable="false" cg:SetterAccess="Internal" />
+          <NavigationProperty Name="Payment" Relationship="TransactionModel.FK_TaxInvoiceReceipts_Payments" FromRole="TaxInvoiceReceipt" ToRole="Payment" cg:SetterAccess="Internal" cg:GetterAccess="Public" />
+          <Property Type="String" Name="DocumentNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_TaxInvoiceReceipts_Payments">
+          <End Type="TransactionModel.Payment" Role="Payment" Multiplicity="1" />
+          <End Type="TransactionModel.TaxInvoiceReceipt" Role="TaxInvoiceReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payment">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TaxInvoiceReceipt">
+              <PropertyRef Name="PaymentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RefundItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Qty" Nullable="false" />
+          <Property Type="Int32" Name="UnitAmount" Nullable="false" />
+          <Property Type="String" Name="ItemDescription" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="RefundId" Nullable="false" />
+          <Property Type="String" Name="Remark" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GroupRef1" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="GroupRef2" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Refund" Relationship="TransactionModel.FK_RefundItems_Refunds" FromRole="RefundItem" ToRole="Refund" />
+        </EntityType>
+        <EntityType Name="Refund">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="CreatedDate" Nullable="false" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="false" />
+          <Property Type="String" Name="UpdatedBy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Binary" Name="Version" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Type="String" Name="PaymentCode" Nullable="false" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Status" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsVoid" Nullable="false" />
+          <Property Type="Int64" Name="CustomerIdmPartyId" Nullable="false" />
+          <Property Type="String" Name="CustomerName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CustomerAddress" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CustomerRefundAccountNo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CustomerRefundAccountName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CustomerRefundBankId" />
+          <Property Type="String" Name="CustomerMobilePhoneNo" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Remark" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ref1" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ref2" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Ref3" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RefundItems" Relationship="TransactionModel.FK_RefundItems_Refunds" FromRole="Refund" ToRole="RefundItem" />
+          <NavigationProperty Name="Refunds1" Relationship="TransactionModel.FK_Refunds_RefundItems" FromRole="Refund" ToRole="Refund1" />
+          <NavigationProperty Name="Refund1" Relationship="TransactionModel.FK_Refunds_RefundItems" FromRole="Refund1" ToRole="Refund" />
+          </EntityType>
+        <Association Name="FK_RefundItems_Refunds">
+          <End Type="TransactionModel.Refund" Role="Refund" Multiplicity="1" />
+          <End Type="TransactionModel.RefundItem" Role="RefundItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Refund">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RefundItem">
+              <PropertyRef Name="RefundId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Refunds_RefundItems">
+          <End Type="TransactionModel.Refund" Role="Refund" Multiplicity="1" />
+          <End Type="TransactionModel.Refund" Role="Refund1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Refund">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Refund1">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TransactionModelStoreContainer" CdmEntityContainer="TransactionModelContainer">
+    <EntitySetMapping Name="Configurations">
+      <EntityTypeMapping TypeName="IsTypeOf(TransactionModel.Configuration)">
+        <MappingFragment StoreEntitySet="Configurations">
+          <ScalarProperty Name="Group" ColumnName="Group" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value1" ColumnName="Value1" />
+          <ScalarProperty Name="Value2" ColumnName="Value2" />
+          <ScalarProperty Name="Value3" ColumnName="Value3" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErrorLogs">
+      <EntityTypeMapping TypeName="IsTypeOf(TransactionModel.ErrorLog)">
+        <MappingFragment StoreEntitySet="ErrorLogs">
+          <ScalarProperty Name="SystemErrorName" ColumnName="SystemErrorName" />
+                <ScalarProperty Name="SystemErrorId" ColumnName="SystemErrorId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IssuedBy" ColumnName="IssuedBy" />
+          <ScalarProperty Name="IssuedDate" ColumnName="IssuedDate" />
+          <ScalarProperty Name="IssuedMessage" ColumnName="IssuedMessage" />
+          <ScalarProperty Name="Severity" ColumnName="Severity" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentCodes">
+      <EntityTypeMapping TypeName="IsTypeOf(TransactionModel.PaymentCode)">
+        <MappingFragment StoreEntitySet="PaymentCodes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReconciliationFiles">
+      <EntityTypeMapping TypeName="IsTypeOf(TransactionModel.ReconciliationFile)">
+        <MappingFragment StoreEntitySet="ReconciliationFiles">
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Contents" ColumnName="Contents" />
+          <ScalarProperty Name="BackupPath" ColumnName="BackupPath" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+          <EntitySetMapping Name="Reconciliations">
+            <EntityTypeMapping TypeName="TransactionModel.Reconciliation">
+              <MappingFragment StoreEntitySet="Reconciliations">
+                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+                <ScalarProperty Name="ReconciliationFileId" ColumnName="ReconciliationFileId" />
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+                <ScalarProperty Name="PaymentBy" ColumnName="PaymentBy" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="PaymentCode" ColumnName="PaymentCode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerCredits">
+            <EntityTypeMapping TypeName="TransactionModel.CustomerCredit">
+              <MappingFragment StoreEntitySet="CustomerCredits">
+                <ScalarProperty Name="HotKey" ColumnName="HotKey" />
+                <ScalarProperty Name="BeneficiaryCharge" ColumnName="BeneficiaryCharge" />
+                <ScalarProperty Name="IsUsedOrRefund" ColumnName="IsUsedOrRefund" />
+                <ScalarProperty Name="CustomerMobilePhoneNo" ColumnName="CustomerMobilePhoneNo" />
+                <ScalarProperty Name="CustomerRefundBankId" ColumnName="CustomerRefundBankId" />
+                <ScalarProperty Name="CustomerRefundAccountName" ColumnName="CustomerRefundAccountName" />
+                <ScalarProperty Name="CustomerRefundAccountNo" ColumnName="CustomerRefundAccountNo" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerIdmPartyId" ColumnName="CustomerIdmPartyId" />
+                <ScalarProperty Name="InstallmentId" ColumnName="InstallmentId" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Installments">
+            <EntityTypeMapping TypeName="TransactionModel.Installment">
+              <MappingFragment StoreEntitySet="Installments">
+                <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+                <ScalarProperty Name="CustomerCreditId" ColumnName="CustomerCreditId" />
+                <ScalarProperty Name="ReconciliationId" ColumnName="ReconciliationId" />
+                <ScalarProperty Name="Method" ColumnName="Method" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="InstallmentBy" ColumnName="InstallmentBy" />
+                <ScalarProperty Name="InstallmentDate" ColumnName="InstallmentDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PayInSlips">
+            <EntityTypeMapping TypeName="TransactionModel.PayInSlip">
+              <MappingFragment StoreEntitySet="PayInSlips">
+                <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+                <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+                <ScalarProperty Name="SlipPdf" ColumnName="SlipPdf" />
+                <ScalarProperty Name="IssuedBy" ColumnName="IssuedBy" />
+                <ScalarProperty Name="IssuedDate" ColumnName="IssuedDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentItems">
+            <EntityTypeMapping TypeName="TransactionModel.PaymentItem">
+              <MappingFragment StoreEntitySet="PaymentItems">
+                <ScalarProperty Name="VatPercent" ColumnName="VatPercent" />
+                <ScalarProperty Name="ItemDescription" ColumnName="ItemDescription" />
+                <ScalarProperty Name="IsLegalPerson" ColumnName="IsLegalPerson" />
+                <ScalarProperty Name="WithholdingTexPercent" ColumnName="WithholdingTexPercent" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+                <ScalarProperty Name="ServiceIsRevenue" ColumnName="ServiceIsRevenue" />
+                <ScalarProperty Name="UnitAmount" ColumnName="UnitAmount" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="GroupRef3" ColumnName="GroupRef3" />
+                <ScalarProperty Name="GroupRef2" ColumnName="GroupRef2" />
+                <ScalarProperty Name="GroupRef1" ColumnName="GroupRef1" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="TransactionModel.Payment">
+              <MappingFragment StoreEntitySet="Payments">
+                <ScalarProperty Name="Ref3" ColumnName="Ref3" />
+                <ScalarProperty Name="Ref2" ColumnName="Ref2" />
+                <ScalarProperty Name="Ref1" ColumnName="Ref1" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="CustomerMobilePhoneNo" ColumnName="CustomerMobilePhoneNo" />
+                <ScalarProperty Name="CustomerRefundBankId" ColumnName="CustomerRefundBankId" />
+                <ScalarProperty Name="CustomerRefundAccountName" ColumnName="CustomerRefundAccountName" />
+                <ScalarProperty Name="CustomerRefundAccountNo" ColumnName="CustomerRefundAccountNo" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerIdmPartyId" ColumnName="CustomerIdmPartyId" />
+                <ScalarProperty Name="IsVoid" ColumnName="IsVoid" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PaymentCode" ColumnName="PaymentCode" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaxInvoiceReceipts">
+            <EntityTypeMapping TypeName="TransactionModel.TaxInvoiceReceipt">
+              <MappingFragment StoreEntitySet="TaxInvoiceReceipts">
+                <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+                <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+                <ScalarProperty Name="TaxInvoiceReceiptPdf" ColumnName="TaxInvoiceReceiptPdf" />
+                <ScalarProperty Name="IssuedBy" ColumnName="IssuedBy" />
+                <ScalarProperty Name="IssuedDate" ColumnName="IssuedDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RefundItems">
+            <EntityTypeMapping TypeName="TransactionModel.RefundItem">
+              <MappingFragment StoreEntitySet="RefundItems">
+                <ScalarProperty Name="GroupRef2" ColumnName="GroupRef2" />
+                <ScalarProperty Name="GroupRef1" ColumnName="GroupRef1" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="RefundId" ColumnName="RefundId" />
+                <ScalarProperty Name="ItemDescription" ColumnName="ItemDescription" />
+                <ScalarProperty Name="UnitAmount" ColumnName="UnitAmount" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Refunds">
+            <EntityTypeMapping TypeName="TransactionModel.Refund">
+              <MappingFragment StoreEntitySet="Refunds">
+                <ScalarProperty Name="Ref3" ColumnName="Ref3" />
+                <ScalarProperty Name="Ref2" ColumnName="Ref2" />
+                <ScalarProperty Name="Ref1" ColumnName="Ref1" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="CustomerMobilePhoneNo" ColumnName="CustomerMobilePhoneNo" />
+                <ScalarProperty Name="CustomerRefundBankId" ColumnName="CustomerRefundBankId" />
+                <ScalarProperty Name="CustomerRefundAccountName" ColumnName="CustomerRefundAccountName" />
+                <ScalarProperty Name="CustomerRefundAccountNo" ColumnName="CustomerRefundAccountNo" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerIdmPartyId" ColumnName="CustomerIdmPartyId" />
+                <ScalarProperty Name="IsVoid" ColumnName="IsVoid" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PaymentCode" ColumnName="PaymentCode" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="TransactionModel" ZoomLevel="70" >
+        <EntityTypeShape EntityType="TransactionModel.Configuration" Width="1.5" PointX="0.75" PointY="0.75" Height="2.7427376302083246" />
+        <EntityTypeShape EntityType="TransactionModel.ErrorLog" Width="1.5" PointX="2.75" PointY="0.75" Height="1.9210009765625102" />
+        <EntityTypeShape EntityType="TransactionModel.PaymentCode" Width="1.5" PointX="4.75" PointY="0.75" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="TransactionModel.ReconciliationFile" Width="2.25" PointX="0.75" PointY="3.75" Height="2.4140429687499996" />
+        <EntityTypeShape EntityType="TransactionModel.Reconciliation" Width="1.5" PointX="4" PointY="3.75" Height="2.4140429687499996" />
+        <AssociationConnector Association="TransactionModel.FK_Reconciliations_ReconciliationFiles" >
+          <ConnectorPoint PointX="3" PointY="5.0391951497395828" />
+          <ConnectorPoint PointX="4" PointY="5.0391951497395828" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="TransactionModel.CustomerCredit" Width="2.25" PointX="10.75" PointY="3.75" Height="4.0575162760416674" />
+        <EntityTypeShape EntityType="TransactionModel.Installment" Width="1.5" PointX="7.375" PointY="3.75" Height="2.7427376302083308" />
+        <EntityTypeShape EntityType="TransactionModel.PayInSlip" Width="1.5" PointX="4.375" PointY="7.5" Height="1.9210009765624996" />
+        <EntityTypeShape EntityType="TransactionModel.PaymentItem" Width="1.875" PointX="10.75" PointY="8.25" Height="3.2357796223958317" />
+        <EntityTypeShape EntityType="TransactionModel.Payment" Width="2.25" PointX="7.25" PointY="7.375" Height="4.7149055989583335" />
+        <AssociationConnector Association="TransactionModel.FK_CustomerCredits_Installments" >
+          <ConnectorPoint PointX="8.875" PointY="5.1213688151041659" />
+          <ConnectorPoint PointX="10.75" PointY="5.1213688151041659" />
+        </AssociationConnector>
+        <AssociationConnector Association="TransactionModel.FK_Installments_Payments" >
+          <ConnectorPoint PointX="8.125" PointY="7.375" />
+          <ConnectorPoint PointX="8.125" PointY="6.4927376302083308" />
+        </AssociationConnector>
+        <AssociationConnector Association="TransactionModel.FK_Installments_Reconciliations" >
+          <ConnectorPoint PointX="5.5" PointY="5.0391951497395828" />
+          <ConnectorPoint PointX="7.375" PointY="5.0391951497395828" />
+        </AssociationConnector>
+        <AssociationConnector Association="TransactionModel.FK_PayInSlips_Payments" >
+          <ConnectorPoint PointX="7.25" PointY="8.46050048828125" />
+          <ConnectorPoint PointX="5.875" PointY="8.46050048828125" />
+        </AssociationConnector>
+        <AssociationConnector Association="TransactionModel.FK_PaymentItems_Payments" >
+          <ConnectorPoint PointX="9.5" PointY="9.8678898111979159" />
+          <ConnectorPoint PointX="10.75" PointY="9.8678898111979159" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="TransactionModel.TaxInvoiceReceipt" Width="1.875" PointX="4.375" PointY="9.875" Height="1.9210009765625031" />
+        <AssociationConnector Association="TransactionModel.FK_TaxInvoiceReceipts_Payments" >
+          <ConnectorPoint PointX="7.25" PointY="10.835500488281252" />
+          <ConnectorPoint PointX="6.25" PointY="10.835500488281252" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="TransactionModel.RefundItem" Width="1.5" PointX="3" PointY="14.25" Height="2.414042968749996" />
+        <EntityTypeShape EntityType="TransactionModel.Refund" Width="1.5" PointX="0.75" PointY="13" Height="4.7149055989583246" />
+        <AssociationConnector Association="TransactionModel.FK_RefundItems_Refunds" >
+          <ConnectorPoint PointX="2.25" PointY="15.457021484374998" />
+          <ConnectorPoint PointX="3" PointY="15.457021484374998" />
+        </AssociationConnector>
+        <AssociationConnector Association="TransactionModel.FK_Refunds_RefundItems" >
+          <ConnectorPoint PointX="1.2819230769230767" PointY="17.714905598958335" />
+          <ConnectorPoint PointX="1.2819230769230767" PointY="17.964905598958335" />
+          <ConnectorPoint PointX="1.7284615384615383" PointY="17.964905598958335" />
+          <ConnectorPoint PointX="1.7284615384615383" PointY="17.714905598958335" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

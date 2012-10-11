@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WCFIDMService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IIDMService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IIDMService_RegisterCustomer_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IIDMService_RegisterPartner_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IIDMService_ResetPassword_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IIDMService_UpdateOrganization_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IIDMService_UpdatePerson_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IIDMService_UpdatePersonByIdentificationNo_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IIDMService_CreateOrganization_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IIDMService_CreatePerson_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IIDMService_CreateUserAccount_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsat:ATAssertion wsp:Optional="true" wsp1:Optional="true" xmlns:wsat="http://schemas.xmlsoap.org/ws/2004/10/wsat" xmlns:wsp1="http://schemas.xmlsoap.org/ws/2002/12/policy" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://itdev02.carpassad.co.th:8081/idm/service/current/WCFIDMServiceApplication.WCFIDMService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://itdev02.carpassad.co.th:8081/idm/service/current/WCFIDMServiceApplication.WCFIDMService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://itdev02.carpassad.co.th:8081/idm/service/current/WCFIDMServiceApplication.WCFIDMService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+      <xsd:import schemaLocation="http://itdev02.carpassad.co.th:8081/idm/service/current/WCFIDMServiceApplication.WCFIDMService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://itdev02.carpassad.co.th:8081/idm/service/current/WCFIDMServiceApplication.WCFIDMService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/IDMServiceApplication" />
+      <xsd:import schemaLocation="http://itdev02.carpassad.co.th:8081/idm/service/current/WCFIDMServiceApplication.WCFIDMService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IIDMService_GetSystemById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemById" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetSystemById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetUserAccountsByPartyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAccountsByPartyId" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetUserAccountsByPartyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAccountsByPartyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetUsersBySystemId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersBySystemId" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetUsersBySystemId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersBySystemIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetUserByUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByUsername" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetUserByUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetUserByUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByUserId" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetUserByUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetUserSummaryByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserSummaryByName" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetUserSummaryByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserSummaryByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetUserSummaryFromUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserSummaryFromUserId" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetUserSummaryFromUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserSummaryFromUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_IsOrganizationExisted_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsOrganizationExisted" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_IsOrganizationExisted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsOrganizationExistedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_IsPersonExisted_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsPersonExisted" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_IsPersonExisted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsPersonExistedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_Logout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_RegisterCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_RegisterCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_RegisterPartner_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterPartner" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_RegisterPartner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterPartnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_ResetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_ResetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_ResetPasswordByAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordByAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_ResetPasswordByAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordByAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_UpdateOrganization_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrganization" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_UpdateOrganization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_UpdatePerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePerson" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_UpdatePerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_UpdatePersonByIdentificationNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePersonByIdentificationNo" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_UpdatePersonByIdentificationNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePersonByIdentificationNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetPersonHistories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonHistories" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetPersonHistories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonHistoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetOrganizationHistories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationHistories" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetOrganizationHistories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationHistoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetUserAccountHistories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAccountHistories" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetUserAccountHistories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAccountHistoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_ChangePasswordByAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordByAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_ChangePasswordByAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordByAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_ChangeQuestionAnswer_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeQuestionAnswer" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_ChangeQuestionAnswer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeQuestionAnswerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_ChangeQuestionAnswerByAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeQuestionAnswerByAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_ChangeQuestionAnswerByAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeQuestionAnswerByAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_ChangeUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUsername" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_ChangeUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_ChangeUsernameByAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUsernameByAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_ChangeUsernameByAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUsernameByAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_CreateOrganization_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrganization" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_CreateOrganization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOrganizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_CreatePerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePerson" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_CreatePerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_CreateUserAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserAccount" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_CreateUserAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GenerateUserAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateUserAccount" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GenerateUserAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateUserAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetAllCustomerCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCustomerCategories" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetAllCustomerCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCustomerCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetAllOrganizationSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrganizationSummary" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetAllOrganizationSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrganizationSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetAllPartnerCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPartnerCategories" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetAllPartnerCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPartnerCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetAllQuestions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQuestions" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetAllQuestions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQuestionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetAllSystems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSystems" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetAllSystems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSystemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetCustomerCategoryById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerCategoryById" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetCustomerCategoryById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerCategoryByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetOrganizationByPartyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByPartyId" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetOrganizationByPartyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByPartyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetOrganizationByRegistNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByRegistNo" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetOrganizationByRegistNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByRegistNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetOrganizationsByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationsByName" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetOrganizationsByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationsByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetOrganizationByShortName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByShortName" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetOrganizationByShortName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationByShortNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetOrganizationsByShortName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationsByShortName" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetOrganizationsByShortName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganizationsByShortNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetOttByTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOttByTicket" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetOttByTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOttByTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetPartnerCategoryById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartnerCategoryById" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetPartnerCategoryById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartnerCategoryByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetPartyByPartyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartyByPartyId" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetPartyByPartyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartyByPartyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetPeopleByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeopleByName" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetPeopleByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeopleByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetPersonByIdNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonByIdNo" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetPersonByIdNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonByIdNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetPersonByPartyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonByPartyId" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetPersonByPartyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonByPartyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetQuestionById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuestionById" />
+  </wsdl:message>
+  <wsdl:message name="IIDMService_GetQuestionById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuestionByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IIDMService">
+    <wsdl:operation name="GetSystemById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetSystemById" message="tns:IIDMService_GetSystemById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetSystemByIdResponse" message="tns:IIDMService_GetSystemById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAccountsByPartyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetUserAccountsByPartyId" message="tns:IIDMService_GetUserAccountsByPartyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetUserAccountsByPartyIdResponse" message="tns:IIDMService_GetUserAccountsByPartyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersBySystemId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetUsersBySystemId" message="tns:IIDMService_GetUsersBySystemId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetUsersBySystemIdResponse" message="tns:IIDMService_GetUsersBySystemId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByUsername">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetUserByUsername" message="tns:IIDMService_GetUserByUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetUserByUsernameResponse" message="tns:IIDMService_GetUserByUsername_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetUserByUserId" message="tns:IIDMService_GetUserByUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetUserByUserIdResponse" message="tns:IIDMService_GetUserByUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSummaryByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetUserSummaryByName" message="tns:IIDMService_GetUserSummaryByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetUserSummaryByNameResponse" message="tns:IIDMService_GetUserSummaryByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSummaryFromUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetUserSummaryFromUserId" message="tns:IIDMService_GetUserSummaryFromUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetUserSummaryFromUserIdResponse" message="tns:IIDMService_GetUserSummaryFromUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsOrganizationExisted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/IsOrganizationExisted" message="tns:IIDMService_IsOrganizationExisted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/IsOrganizationExistedResponse" message="tns:IIDMService_IsOrganizationExisted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsPersonExisted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/IsPersonExisted" message="tns:IIDMService_IsPersonExisted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/IsPersonExistedResponse" message="tns:IIDMService_IsPersonExisted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/Login" message="tns:IIDMService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/LoginResponse" message="tns:IIDMService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/Logout" message="tns:IIDMService_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/LogoutResponse" message="tns:IIDMService_Logout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/RegisterCustomer" message="tns:IIDMService_RegisterCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/RegisterCustomerResponse" message="tns:IIDMService_RegisterCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPartner">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/RegisterPartner" message="tns:IIDMService_RegisterPartner_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/RegisterPartnerResponse" message="tns:IIDMService_RegisterPartner_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/ResetPassword" message="tns:IIDMService_ResetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/ResetPasswordResponse" message="tns:IIDMService_ResetPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPasswordByAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/ResetPasswordByAdmin" message="tns:IIDMService_ResetPasswordByAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/ResetPasswordByAdminResponse" message="tns:IIDMService_ResetPasswordByAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrganization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/UpdateOrganization" message="tns:IIDMService_UpdateOrganization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/UpdateOrganizationResponse" message="tns:IIDMService_UpdateOrganization_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/UpdatePerson" message="tns:IIDMService_UpdatePerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/UpdatePersonResponse" message="tns:IIDMService_UpdatePerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonByIdentificationNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/UpdatePersonByIdentificationNo" message="tns:IIDMService_UpdatePersonByIdentificationNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/UpdatePersonByIdentificationNoResponse" message="tns:IIDMService_UpdatePersonByIdentificationNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonHistories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetPersonHistories" message="tns:IIDMService_GetPersonHistories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetPersonHistoriesResponse" message="tns:IIDMService_GetPersonHistories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationHistories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetOrganizationHistories" message="tns:IIDMService_GetOrganizationHistories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetOrganizationHistoriesResponse" message="tns:IIDMService_GetOrganizationHistories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAccountHistories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetUserAccountHistories" message="tns:IIDMService_GetUserAccountHistories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetUserAccountHistoriesResponse" message="tns:IIDMService_GetUserAccountHistories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/ChangePassword" message="tns:IIDMService_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/ChangePasswordResponse" message="tns:IIDMService_ChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePasswordByAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/ChangePasswordByAdmin" message="tns:IIDMService_ChangePasswordByAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/ChangePasswordByAdminResponse" message="tns:IIDMService_ChangePasswordByAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeQuestionAnswer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/ChangeQuestionAnswer" message="tns:IIDMService_ChangeQuestionAnswer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/ChangeQuestionAnswerResponse" message="tns:IIDMService_ChangeQuestionAnswer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeQuestionAnswerByAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/ChangeQuestionAnswerByAdmin" message="tns:IIDMService_ChangeQuestionAnswerByAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/ChangeQuestionAnswerByAdminResponse" message="tns:IIDMService_ChangeQuestionAnswerByAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUsername">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/ChangeUsername" message="tns:IIDMService_ChangeUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/ChangeUsernameResponse" message="tns:IIDMService_ChangeUsername_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUsernameByAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/ChangeUsernameByAdmin" message="tns:IIDMService_ChangeUsernameByAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/ChangeUsernameByAdminResponse" message="tns:IIDMService_ChangeUsernameByAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrganization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/CreateOrganization" message="tns:IIDMService_CreateOrganization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/CreateOrganizationResponse" message="tns:IIDMService_CreateOrganization_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/CreatePerson" message="tns:IIDMService_CreatePerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/CreatePersonResponse" message="tns:IIDMService_CreatePerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/CreateUserAccount" message="tns:IIDMService_CreateUserAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/CreateUserAccountResponse" message="tns:IIDMService_CreateUserAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateUserAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GenerateUserAccount" message="tns:IIDMService_GenerateUserAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GenerateUserAccountResponse" message="tns:IIDMService_GenerateUserAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetAllCustomerCategories" message="tns:IIDMService_GetAllCustomerCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetAllCustomerCategoriesResponse" message="tns:IIDMService_GetAllCustomerCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrganizationSummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetAllOrganizationSummary" message="tns:IIDMService_GetAllOrganizationSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetAllOrganizationSummaryResponse" message="tns:IIDMService_GetAllOrganizationSummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPartnerCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetAllPartnerCategories" message="tns:IIDMService_GetAllPartnerCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetAllPartnerCategoriesResponse" message="tns:IIDMService_GetAllPartnerCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuestions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetAllQuestions" message="tns:IIDMService_GetAllQuestions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetAllQuestionsResponse" message="tns:IIDMService_GetAllQuestions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSystems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetAllSystems" message="tns:IIDMService_GetAllSystems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetAllSystemsResponse" message="tns:IIDMService_GetAllSystems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCategoryById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetCustomerCategoryById" message="tns:IIDMService_GetCustomerCategoryById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetCustomerCategoryByIdResponse" message="tns:IIDMService_GetCustomerCategoryById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationByPartyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetOrganizationByPartyId" message="tns:IIDMService_GetOrganizationByPartyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetOrganizationByPartyIdResponse" message="tns:IIDMService_GetOrganizationByPartyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationByRegistNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetOrganizationByRegistNo" message="tns:IIDMService_GetOrganizationByRegistNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetOrganizationByRegistNoResponse" message="tns:IIDMService_GetOrganizationByRegistNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationsByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetOrganizationsByName" message="tns:IIDMService_GetOrganizationsByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetOrganizationsByNameResponse" message="tns:IIDMService_GetOrganizationsByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationByShortName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetOrganizationByShortName" message="tns:IIDMService_GetOrganizationByShortName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetOrganizationByShortNameResponse" message="tns:IIDMService_GetOrganizationByShortName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationsByShortName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetOrganizationsByShortName" message="tns:IIDMService_GetOrganizationsByShortName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetOrganizationsByShortNameResponse" message="tns:IIDMService_GetOrganizationsByShortName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOttByTicket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetOttByTicket" message="tns:IIDMService_GetOttByTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetOttByTicketResponse" message="tns:IIDMService_GetOttByTicket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartnerCategoryById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetPartnerCategoryById" message="tns:IIDMService_GetPartnerCategoryById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetPartnerCategoryByIdResponse" message="tns:IIDMService_GetPartnerCategoryById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartyByPartyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetPartyByPartyId" message="tns:IIDMService_GetPartyByPartyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetPartyByPartyIdResponse" message="tns:IIDMService_GetPartyByPartyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPeopleByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetPeopleByName" message="tns:IIDMService_GetPeopleByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetPeopleByNameResponse" message="tns:IIDMService_GetPeopleByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonByIdNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetPersonByIdNo" message="tns:IIDMService_GetPersonByIdNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetPersonByIdNoResponse" message="tns:IIDMService_GetPersonByIdNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonByPartyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetPersonByPartyId" message="tns:IIDMService_GetPersonByPartyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetPersonByPartyIdResponse" message="tns:IIDMService_GetPersonByPartyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuestionById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IIDMService/GetQuestionById" message="tns:IIDMService_GetQuestionById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IIDMService/GetQuestionByIdResponse" message="tns:IIDMService_GetQuestionById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IIDMService" type="tns:IIDMService">
+    <wsp:PolicyReference URI="#WSHttpBinding_IIDMService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSystemById">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetSystemById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAccountsByPartyId">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetUserAccountsByPartyId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersBySystemId">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetUsersBySystemId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByUsername">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetUserByUsername" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByUserId">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetUserByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSummaryByName">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetUserSummaryByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserSummaryFromUserId">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetUserSummaryFromUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsOrganizationExisted">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/IsOrganizationExisted" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPersonExisted">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/IsPersonExisted" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/Logout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCustomer">
+      <wsp:PolicyReference URI="#WSHttpBinding_IIDMService_RegisterCustomer_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/RegisterCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPartner">
+      <wsp:PolicyReference URI="#WSHttpBinding_IIDMService_RegisterPartner_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/RegisterPartner" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <wsp:PolicyReference URI="#WSHttpBinding_IIDMService_ResetPassword_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPasswordByAdmin">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/ResetPasswordByAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrganization">
+      <wsp:PolicyReference URI="#WSHttpBinding_IIDMService_UpdateOrganization_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/UpdateOrganization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePerson">
+      <wsp:PolicyReference URI="#WSHttpBinding_IIDMService_UpdatePerson_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/UpdatePerson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonByIdentificationNo">
+      <wsp:PolicyReference URI="#WSHttpBinding_IIDMService_UpdatePersonByIdentificationNo_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/UpdatePersonByIdentificationNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonHistories">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetPersonHistories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationHistories">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetOrganizationHistories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAccountHistories">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetUserAccountHistories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePasswordByAdmin">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/ChangePasswordByAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeQuestionAnswer">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/ChangeQuestionAnswer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeQuestionAnswerByAdmin">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/ChangeQuestionAnswerByAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUsername">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/ChangeUsername" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUsernameByAdmin">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/ChangeUsernameByAdmin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrganization">
+      <wsp:PolicyReference URI="#WSHttpBinding_IIDMService_CreateOrganization_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/CreateOrganization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePerson">
+      <wsp:PolicyReference URI="#WSHttpBinding_IIDMService_CreatePerson_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/CreatePerson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUserAccount">
+      <wsp:PolicyReference URI="#WSHttpBinding_IIDMService_CreateUserAccount_policy" />
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/CreateUserAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateUserAccount">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GenerateUserAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerCategories">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetAllCustomerCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrganizationSummary">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetAllOrganizationSummary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPartnerCategories">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetAllPartnerCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuestions">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetAllQuestions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSystems">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetAllSystems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCategoryById">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetCustomerCategoryById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationByPartyId">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetOrganizationByPartyId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationByRegistNo">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetOrganizationByRegistNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationsByName">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetOrganizationsByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationByShortName">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetOrganizationByShortName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationsByShortName">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetOrganizationsByShortName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOttByTicket">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetOttByTicket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartnerCategoryById">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetPartnerCategoryById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartyByPartyId">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetPartyByPartyId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeopleByName">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetPeopleByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonByIdNo">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetPersonByIdNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonByPartyId">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetPersonByPartyId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuestionById">
+      <soap12:operation soapAction="http://tempuri.org/IIDMService/GetQuestionById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WCFIDMService">
+    <wsdl:port name="WSHttpBinding_IIDMService" binding="tns:WSHttpBinding_IIDMService">
+      <soap12:address location="http://itdev02.carpassad.co.th:8081/idm/service/current/WCFIDMServiceApplication.WCFIDMService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://itdev02.carpassad.co.th:8081/idm/service/current/WCFIDMServiceApplication.WCFIDMService.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

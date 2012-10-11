@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{97AAE905-B922-4E11-84A2-628BC3E55633}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TransactionServiceAdaptor</RootNamespace>
+    <AssemblyName>TransactionServiceAdaptor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\EmailGatewayService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GalileoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\IDMService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SmsGatewayService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\EmailGatewayService\EmailGateway.wsdl" />
+    <None Include="Service References\EmailGatewayService\EmailGatewayWcf.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmailGatewayService\EmailGatewayWcf1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmailGatewayService\EmailGatewayWcf2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GalileoService\CarPass.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GalileoService\CarPass1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GalileoService\CarPass2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GalileoService\CarPass3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GalileoService\CarPass4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GalileoService\CarPass5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GalileoService\CarPass6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GalileoService\CarPass7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GalileoService\GalileoInternalServiceWcf.wsdl" />
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.AbandonPmpSubscriptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.CancelPmpSubscriptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ChangePmpPolicyHolderDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ChangePmpVehicleDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ConfirmDispatchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ExtendPmpSubscriptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.IsAliveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.IsEffectiveSubscriptionExistedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.NotifyPmpPaidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessBatteryTemperatureCheckResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessButtonPressedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessCarStealingSmsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessCasingOpenAlertResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessDeviceReceiptCheckingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessDongleInternalBatteryVoltageSOCResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessEcallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessFreezeFrameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessFuelDropResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessFuelThresholdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessGeofenceAlertResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessGPSDataGapResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessGPSDeviceHealthStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessGPSDeviceInternalBatterySOHResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessHeartbeatLateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessIdlingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessJourneySummaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessLowBatteryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessObdAlertResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessOBDCoreDataUnreadableResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessOdometerAccuracyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessPowerLossResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessTiltResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessTowingDetectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessValueAddedSmsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessVINMismatchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ProcessWakeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ReDispatchPmpSubscriptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.RenewPmpSubscriptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.UpdateInstallmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GalileoService\TransactionServiceAdaptor.GalileoService.ValidateApplicationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.ChangePasswordByAdminResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.ChangePasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.ChangeQuestionAnswerByAdminResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.ChangeQuestionAnswerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.ChangeUsernameByAdminResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.ChangeUsernameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.CreateOrganizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.CreatePersonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.CreateUserAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GenerateUserAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetAllCustomerCategoriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetAllOrganizationSummaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetAllPartnerCategoriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetAllQuestionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetAllSystemsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetCustomerCategoryByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetOrganizationByPartyIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetOrganizationByRegistNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetOrganizationByShortNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetOrganizationHistoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetOrganizationsByNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetOrganizationsByShortNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetOttByTicketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetPartnerCategoryByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetPartyByPartyIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetPeopleByNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetPersonByIdNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetPersonByPartyIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetPersonHistoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetQuestionByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetSystemByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetUserAccountHistoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetUserAccountsByPartyIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetUserByUserIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetUserByUsernameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetUsersBySystemIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetUserSummaryByNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.GetUserSummaryFromUserIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.IsOrganizationExistedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.IsPersonExistedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.LoginResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.LogoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.RegisterCustomerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.RegisterPartnerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.ResetPasswordByAdminResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.ResetPasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.UpdateOrganizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\TransactionServiceAdaptor.IDMService.UpdatePersonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IDMService\WCFIDMService.wsdl" />
+    <None Include="Service References\IDMService\WCFIDMServiceApplication.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IDMService\WCFIDMServiceApplication1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IDMService\WCFIDMServiceApplication2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IDMService\WCFIDMServiceApplication3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IDMService\WCFIDMServiceApplication4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\IDMService\WCFIDMServiceApplication5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SmsGatewayService\SmsGateway.wsdl" />
+    <None Include="Service References\SmsGatewayService\SmsGatewayWcf.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SmsGatewayService\SmsGatewayWcf1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SmsGatewayService\SmsGatewayWcf2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SmsGatewayService\SmsGatewayWcf3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\EmailGatewayService\" />
+    <WCFMetadataStorage Include="Service References\GalileoService\" />
+    <WCFMetadataStorage Include="Service References\IDMService\" />
+    <WCFMetadataStorage Include="Service References\SmsGatewayService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EmailGatewayService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EmailGatewayService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\EmailGatewayService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SmsGatewayService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SmsGatewayService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SmsGatewayService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IDMService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IDMService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IDMService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GalileoService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GalileoService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GalileoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GalileoService\CarPass.disco" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

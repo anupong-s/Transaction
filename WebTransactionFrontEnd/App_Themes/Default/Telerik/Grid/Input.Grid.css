@@ -1,0 +1,142 @@
+/*Telerik RadInput Default Skin*/
+
+/*global*/
+
+.RadInput_Grid,
+.RadInputMgr_Grid
+{
+	font:12px "segoe ui",arial,sans-serif;
+}
+
+/*textbox states*/
+
+html body .RadInput_Grid .riTextBox,
+html body .RadInputMgr_Grid
+{
+	border-color:#8e8e8e #b8b8b8 #b8b8b8 #8e8e8e;
+	background:#fff;
+	color:#FFF;
+	font:12px "segoe ui",arial,sans-serif;
+}
+
+html body .RadInput_Grid .riEmpty,
+html body .RadInput_Empty_Grid
+{
+	color:#FFF;
+}
+
+html body .RadInput_Grid .riHover,
+html body .RadInput_Hover_Grid,
+html body .RadInput_Grid .riFocused,
+html body .RadInput_Focused_Grid
+{
+	border-color:#515151;
+}
+
+html body .RadInput_Grid .riRead,
+html body .RadInput_Read_Grid
+{
+	border-color:#d0d0d0;
+}
+
+html body .RadInput_Grid .riDisabled,
+html body .RadInput_Disabled_Grid
+{
+	border-color:#d0d0d0;
+	color:#FFF;
+	cursor:default;
+}
+
+html body .RadInput_Grid .riError,
+html body .RadInput_Error_Grid
+{
+	border-color:#d51923;
+	background:#fff 100% -298px no-repeat url('Input/sprite.gif');
+	color:#FFF;
+}
+
+.RadForm.rfdTextbox .RadInput_Grid .riError[type="text"],
+.RadForm.rfdTextbox .RadInput_Error_Grid[type="text"]
+{
+	border-color:#d51923;
+	background:#fff 100% -298px no-repeat url('Input/sprite.gif');
+	color:#FFF;
+}
+
+html body .RadInput_Grid .riNegative,
+html body .RadInput_Negative_Grid
+{
+	color:#FFF;
+}
+
+/*buttons*/
+
+.RadInput_Grid a
+{
+	background:transparent no-repeat url('Input/sprite.gif');
+}
+
+/*go*/
+
+.RadInput_Grid .riBtn a
+{
+	width:20px;
+	height:18px;
+	line-height:18px;
+	background-position:3px 5px;
+}
+
+.RadInput_Grid .riBtn a:hover
+{
+	background-position:3px -45px;
+}
+
+/*spin*/
+
+.RadInput_Grid .riSpin a
+{
+	width:15px;
+	height:7px;
+	line-height:7px;
+}
+
+.RadInput_Grid a.riUp
+{
+	background-position:4px -98px;
+}
+
+.RadInput_Grid a.riUp:hover
+{
+	background-position:4px -148px;
+}
+
+.RadInput_Grid a.riDown
+{
+	background-position:4px -199px;
+}
+
+.RadInput_Grid a.riDown:hover
+{
+	background-position:4px -249px;
+}
+
+/*label*/
+
+.RadInput_Grid .riLabel
+{
+	color:#FFF;
+}
+
+/*rtl*/
+
+html body .RadInputRTL_Grid .riError,
+html body .RadInputRTL_Error_Grid
+{
+	background-position:3px -298px;
+}
+
+.RadForm.rfdTextbox .RadInputRTL_Grid .riError[type="text"],
+.RadForm.rfdTextbox .RadInputRTL_Error_Grid[type="text"]
+{
+	background-position:3px -298px;
+} 

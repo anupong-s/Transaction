@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/IDMServiceApplication" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IDMServiceApplication" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://itdev02.carpassad.co.th:8081/idm/service/current/WCFIDMServiceApplication.WCFIDMService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://itdev02.carpassad.co.th:8081/idm/service/current/WCFIDMServiceApplication.WCFIDMService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="GetUserSummaryByNameRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System" base="q1:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUserSummaryByNameRequest" nillable="true" type="tns:GetUserSummaryByNameRequest" />
+  <xs:complexType name="GetUserSummaryByNameResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/System" base="q2:MultipleResultResponseOfUserSummaryWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUserSummaryByNameResponse" nillable="true" type="tns:GetUserSummaryByNameResponse" />
+  <xs:complexType name="GetUserSummaryFromUserIdRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/System" base="q3:AbstractRequest">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UserIds" nillable="true" type="q4:ArrayOflong" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUserSummaryFromUserIdRequest" nillable="true" type="tns:GetUserSummaryFromUserIdRequest" />
+  <xs:complexType name="GetUserSummaryFromUserIdResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/System" base="q5:MultipleResultResponseOfUserSummaryWS_Py3X1u">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUserSummaryFromUserIdResponse" nillable="true" type="tns:GetUserSummaryFromUserIdResponse" />
+  <xs:complexType name="GetOrganizationByShortNameRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/System" base="q6:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetOrganizationByShortNameRequest" nillable="true" type="tns:GetOrganizationByShortNameRequest" />
+  <xs:complexType name="GetOrganizationByShortNameResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/System" base="q7:SingleResultResponseOfIDMOrganizationWS_Py3X1u">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetOrganizationByShortNameResponse" nillable="true" type="tns:GetOrganizationByShortNameResponse" />
+</xs:schema>

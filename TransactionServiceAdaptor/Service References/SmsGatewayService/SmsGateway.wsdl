@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SmsGateway" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ISmsGateway_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://sms.carpass.co.th/SmsGateway/Service/current/SmsGatewayWcf.SmsGateway.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://sms.carpass.co.th/SmsGateway/Service/current/SmsGatewayWcf.SmsGateway.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://sms.carpass.co.th/SmsGateway/Service/current/SmsGatewayWcf.SmsGateway.svc?xsd=xsd2" namespace="http://schemas.carpass.co.th/2010/06/AisSmsReceiveContract" />
+      <xsd:import schemaLocation="http://sms.carpass.co.th/SmsGateway/Service/current/SmsGatewayWcf.SmsGateway.svc?xsd=xsd3" namespace="http://schemas.carpass.co.th/2010/06/ThinkSmartSmsReceiveContract" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISmsGateway_SendSmsViaAis_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendSmsViaAis" />
+  </wsdl:message>
+  <wsdl:message name="ISmsGateway_SendSmsViaAis_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendSmsViaAisResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmsGateway_ReceiveSmsFromAis_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveSmsFromAis" />
+  </wsdl:message>
+  <wsdl:message name="ISmsGateway_ReceiveSmsFromAis_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveSmsFromAisResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmsGateway_SendSmsViaThinkSmart_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendSmsViaThinkSmart" />
+  </wsdl:message>
+  <wsdl:message name="ISmsGateway_SendSmsViaThinkSmart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendSmsViaThinkSmartResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmsGateway_ReceiveSmsFromThinkSmart_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveSmsFromThinkSmart" />
+  </wsdl:message>
+  <wsdl:message name="ISmsGateway_ReceiveSmsFromThinkSmart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveSmsFromThinkSmartResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmsGateway_ReceiveSmsFromPolice_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveSmsFromPolice" />
+  </wsdl:message>
+  <wsdl:message name="ISmsGateway_ReceiveSmsFromPolice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveSmsFromPoliceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISmsGateway">
+    <wsdl:operation name="SendSmsViaAis">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmsGateway/SendSmsViaAis" message="tns:ISmsGateway_SendSmsViaAis_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmsGateway/SendSmsViaAisResponse" message="tns:ISmsGateway_SendSmsViaAis_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveSmsFromAis">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmsGateway/ReceiveSmsFromAis" message="tns:ISmsGateway_ReceiveSmsFromAis_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmsGateway/ReceiveSmsFromAisResponse" message="tns:ISmsGateway_ReceiveSmsFromAis_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsViaThinkSmart">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmsGateway/SendSmsViaThinkSmart" message="tns:ISmsGateway_SendSmsViaThinkSmart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmsGateway/SendSmsViaThinkSmartResponse" message="tns:ISmsGateway_SendSmsViaThinkSmart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveSmsFromThinkSmart">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmsGateway/ReceiveSmsFromThinkSmart" message="tns:ISmsGateway_ReceiveSmsFromThinkSmart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmsGateway/ReceiveSmsFromThinkSmartResponse" message="tns:ISmsGateway_ReceiveSmsFromThinkSmart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveSmsFromPolice">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmsGateway/ReceiveSmsFromPolice" message="tns:ISmsGateway_ReceiveSmsFromPolice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmsGateway/ReceiveSmsFromPoliceResponse" message="tns:ISmsGateway_ReceiveSmsFromPolice_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ISmsGateway" type="tns:ISmsGateway">
+    <wsp:PolicyReference URI="#WSHttpBinding_ISmsGateway_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendSmsViaAis">
+      <soap12:operation soapAction="http://tempuri.org/ISmsGateway/SendSmsViaAis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveSmsFromAis">
+      <soap12:operation soapAction="http://tempuri.org/ISmsGateway/ReceiveSmsFromAis" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsViaThinkSmart">
+      <soap12:operation soapAction="http://tempuri.org/ISmsGateway/SendSmsViaThinkSmart" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveSmsFromThinkSmart">
+      <soap12:operation soapAction="http://tempuri.org/ISmsGateway/ReceiveSmsFromThinkSmart" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveSmsFromPolice">
+      <soap12:operation soapAction="http://tempuri.org/ISmsGateway/ReceiveSmsFromPolice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SmsGateway">
+    <wsdl:port name="WSHttpBinding_ISmsGateway" binding="tns:WSHttpBinding_ISmsGateway">
+      <soap12:address location="http://sms.carpass.co.th/SmsGateway/Service/current/SmsGatewayWcf.SmsGateway.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://sms.carpass.co.th/SmsGateway/Service/current/SmsGatewayWcf.SmsGateway.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

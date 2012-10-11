@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EmailGateway" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IEmailGateway_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://itdev01:8080/emailgateway/service/201101/EmailGatewayWcf.EmailGateway.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://itdev01:8080/emailgateway/service/201101/EmailGatewayWcf.EmailGateway.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://itdev01:8080/emailgateway/service/201101/EmailGatewayWcf.EmailGateway.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IEmailGateway_SendText_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendText" />
+  </wsdl:message>
+  <wsdl:message name="IEmailGateway_SendText_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmailGateway_SendHtml_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendHtml" />
+  </wsdl:message>
+  <wsdl:message name="IEmailGateway_SendHtml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendHtmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmailGateway_SendTextAttachments_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendTextAttachments" />
+  </wsdl:message>
+  <wsdl:message name="IEmailGateway_SendTextAttachments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendTextAttachmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmailGateway_SendHtmlAttachments_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendHtmlAttachments" />
+  </wsdl:message>
+  <wsdl:message name="IEmailGateway_SendHtmlAttachments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendHtmlAttachmentsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IEmailGateway">
+    <wsdl:operation name="SendText">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmailGateway/SendText" message="tns:IEmailGateway_SendText_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmailGateway/SendTextResponse" message="tns:IEmailGateway_SendText_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendHtml">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmailGateway/SendHtml" message="tns:IEmailGateway_SendHtml_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmailGateway/SendHtmlResponse" message="tns:IEmailGateway_SendHtml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendTextAttachments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmailGateway/SendTextAttachments" message="tns:IEmailGateway_SendTextAttachments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmailGateway/SendTextAttachmentsResponse" message="tns:IEmailGateway_SendTextAttachments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendHtmlAttachments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmailGateway/SendHtmlAttachments" message="tns:IEmailGateway_SendHtmlAttachments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmailGateway/SendHtmlAttachmentsResponse" message="tns:IEmailGateway_SendHtmlAttachments_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IEmailGateway" type="tns:IEmailGateway">
+    <wsp:PolicyReference URI="#WSHttpBinding_IEmailGateway_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendText">
+      <soap12:operation soapAction="http://tempuri.org/IEmailGateway/SendText" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendHtml">
+      <soap12:operation soapAction="http://tempuri.org/IEmailGateway/SendHtml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTextAttachments">
+      <soap12:operation soapAction="http://tempuri.org/IEmailGateway/SendTextAttachments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendHtmlAttachments">
+      <soap12:operation soapAction="http://tempuri.org/IEmailGateway/SendHtmlAttachments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EmailGateway">
+    <wsdl:port name="WSHttpBinding_IEmailGateway" binding="tns:WSHttpBinding_IEmailGateway">
+      <soap12:address location="http://itdev01:8080/emailgateway/service/201101/EmailGatewayWcf.EmailGateway.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://itdev01:8080/emailgateway/service/201101/EmailGatewayWcf.EmailGateway.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

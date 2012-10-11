@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TransactionServiceInterface" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TransactionServiceInterface" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="CreatePaymentRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreateBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerAccountBankId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CustomerAccountName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerAccountNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerIDMPartyID" type="xs:long" />
+          <xs:element minOccurs="0" name="CustomerMobilePhoneNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentItems" nillable="true" type="tns:ArrayOfCreatePaymentRequestItem" />
+          <xs:element minOccurs="0" name="Ref1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ref2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ref3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreatePaymentRequest" nillable="true" type="tns:CreatePaymentRequest" />
+  <xs:complexType name="AbstractRequest">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="AbstractRequest" nillable="true" type="tns:AbstractRequest" />
+  <xs:complexType name="ArrayOfCreatePaymentRequestItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreatePaymentRequestItem" nillable="true" type="tns:CreatePaymentRequestItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCreatePaymentRequestItem" nillable="true" type="tns:ArrayOfCreatePaymentRequestItem" />
+  <xs:complexType name="CreatePaymentRequestItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GroupRef1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupRef2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupRef3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLegalPerson" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ItemDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceIsRevenue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UnitAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VatPercent" type="xs:decimal" />
+      <xs:element minOccurs="0" name="WithholdingTaxPercent" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreatePaymentRequestItem" nillable="true" type="tns:CreatePaymentRequestItem" />
+  <xs:complexType name="CreatePaymentResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CreateBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CustomerAccountBankId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CustomerAccountName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerAccountNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerIDMPartyID" type="xs:long" />
+          <xs:element minOccurs="0" name="CustomerMobilePhoneNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GrandTotal" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PaymentCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PaymentId" type="xs:long" />
+          <xs:element minOccurs="0" name="PaymentItems" nillable="true" type="tns:ArrayOfCreatePaymentResponsePaymentItem" />
+          <xs:element minOccurs="0" name="PaymentStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ref1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ref2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ref3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RemainingAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TotalAdjustment" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalBeforeAdjustment" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalVatAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalWithholdingTaxAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UpdateBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UpdateDate" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CreatePaymentResponse" nillable="true" type="tns:CreatePaymentResponse" />
+  <xs:complexType name="AbstractResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeginTimestamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EndTimestamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsSuccessful" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AbstractResponse" nillable="true" type="tns:AbstractResponse" />
+  <xs:complexType name="ArrayOfCreatePaymentResponsePaymentItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CreatePaymentResponsePaymentItem" nillable="true" type="tns:CreatePaymentResponsePaymentItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCreatePaymentResponsePaymentItem" nillable="true" type="tns:ArrayOfCreatePaymentResponsePaymentItem" />
+  <xs:complexType name="CreatePaymentResponsePaymentItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GroupRef1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupRef2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupRef3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLegalPerson" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRevenue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ItemDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NetTotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PaymentItemId" type="xs:long" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubTotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UnitAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VatAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VatPercent" type="xs:decimal" />
+      <xs:element minOccurs="0" name="WithholdingTaxAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="WithholdingTaxPercent" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreatePaymentResponsePaymentItem" nillable="true" type="tns:CreatePaymentResponsePaymentItem" />
+</xs:schema>

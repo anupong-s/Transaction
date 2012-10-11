@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/System" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" />
+  <xs:complexType name="AbstractRequest">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="AbstractRequest" nillable="true" type="tns:AbstractRequest" />
+  <xs:complexType name="AbstractResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeginTimestamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EndTimestamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsSuccessful" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AbstractResponse" nillable="true" type="tns:AbstractResponse" />
+  <xs:complexType name="SingleResultResponseOfIsVinActiveunQWKDRz">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IsVinActive" Namespace="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Service.Process" minOccurs="0" name="Result" nillable="true" type="q1:IsVinActive" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleResultResponseOfIsVinActiveunQWKDRz" nillable="true" type="tns:SingleResultResponseOfIsVinActiveunQWKDRz" />
+  <xs:complexType name="SingleResultResponseOfboolean">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="boolean" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleResultResponseOfboolean" nillable="true" type="tns:SingleResultResponseOfboolean" />
+  <xs:complexType name="SingleResultResponseOfstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleResultResponseOfstring" nillable="true" type="tns:SingleResultResponseOfstring" />
+</xs:schema>

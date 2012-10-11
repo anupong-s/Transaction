@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPages_MasterPage" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>View Payment</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="Container">
+        <telerik:RadScriptManager ID="RadScriptManager1" runat="server" LoadScriptsBeforeUI="true"
+            EnableCdn="true" ScriptMode="Release">
+            <CompositeScript>
+                <Scripts>
+                    <asp:ScriptReference Name="MicrosoftAjax.js" />
+                    <asp:ScriptReference Name="MicrosoftAjaxWebForms.js" />
+                    <asp:ScriptReference Name="Telerik.Web.UI.Common.Core.js" Assembly="Telerik.Web.UI, Version=2010.3.1109.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" />
+                    <asp:ScriptReference Name="Telerik.Web.UI.Ajax.Ajax.js" Assembly="Telerik.Web.UI, Version=2010.3.1109.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" />
+                    <asp:ScriptReference Name="Telerik.Web.UI.Button.RadButton.js" Assembly="Telerik.Web.UI, Version=2010.3.1109.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" />
+                    <asp:ScriptReference Name="Telerik.Web.UI.Common.jQuery.js" Assembly="Telerik.Web.UI, Version=2010.3.1109.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" />
+                    <asp:ScriptReference Name="Telerik.Web.UI.Common.jQueryPlugins.js" Assembly="Telerik.Web.UI, Version=2010.3.1109.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" />
+                    <asp:ScriptReference Name="Telerik.Web.UI.Common.TouchScrollExtender.js" Assembly="Telerik.Web.UI, Version=2010.3.1109.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" />
+                    <asp:ScriptReference Name="Telerik.Web.UI.Grid.RadGridScripts.js" Assembly="Telerik.Web.UI, Version=2010.3.1109.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" />
+                    <asp:ScriptReference Name="Telerik.Web.UI.Common.Popup.PopupScripts.js" Assembly="Telerik.Web.UI, Version=2010.3.1109.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" />
+                    <asp:ScriptReference Name="Telerik.Web.UI.Common.Animation.AnimationScripts.js" Assembly="Telerik.Web.UI, Version=2010.3.1109.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" />
+                    <asp:ScriptReference Name="Telerik.Web.UI.Window.RadWindowScripts.js" Assembly="Telerik.Web.UI, Version=2010.3.1109.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" />
+                    <asp:ScriptReference Name="Telerik.Web.UI.Window.RadWindowManager.js" Assembly="Telerik.Web.UI, Version=2010.3.1109.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4" />
+                </Scripts>
+            </CompositeScript>
+        </telerik:RadScriptManager>
+        <telerik:RadAjaxManager ID="RadAjaxManager1" runat="server">
+        </telerik:RadAjaxManager>
+        <asp:ContentPlaceHolder ID="content" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <asp:ContentPlaceHolder ID="footer" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C33DA03A-6328-4156-845D-3F73EA1B5B59}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TransactionServiceImpl</RootNamespace>
+    <AssemblyName>TransactionServiceImpl</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransactionExtension.cs" />
+    <Compile Include="TransactionService.cs" />
+    <Compile Include="TransactionService.Refund.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TransactionCommon\TransactionCommon.csproj">
+      <Project>{47FE0268-EFFB-4A60-83D1-6B66D7182193}</Project>
+      <Name>TransactionCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransactionFrontEnd\TransactionFrontEnd.csproj">
+      <Project>{9677979A-9154-4D0E-8980-9A49F98FF1A0}</Project>
+      <Name>TransactionFrontEnd %28Applications\TransactionFrontEnd\TransactionFrontEnd%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransactionModel\TransactionModel.csproj">
+      <Project>{9AE20600-407F-4BC0-93BE-C85BB86A9411}</Project>
+      <Name>TransactionModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransactionServiceAdaptor\TransactionServiceAdaptor.csproj">
+      <Project>{97AAE905-B922-4E11-84A2-628BC3E55633}</Project>
+      <Name>TransactionServiceAdaptor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransactionServiceInterface\TransactionServiceInterface.csproj">
+      <Project>{B28E51EB-6520-4374-B4F0-0AEE1EB7BF3D}</Project>
+      <Name>TransactionServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

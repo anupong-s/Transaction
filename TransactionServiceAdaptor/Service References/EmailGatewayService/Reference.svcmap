@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3b5ad050-7f80-4aa3-8c21-374c96d6c983" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>true</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://itdev01:8080/emailgateway/service/201101/EmailGatewayWcf.EmailGateway.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EmailGatewayWcf.xsd" MetadataType="Schema" ID="b45bf525-3455-4b3b-8afb-5637b1f3c570" SourceId="1" SourceUrl="http://itdev01:8080/emailgateway/service/201101/EmailGatewayWcf.EmailGateway.svc?xsd=xsd2" />
+    <MetadataFile FileName="EmailGatewayWcf1.xsd" MetadataType="Schema" ID="50a676ba-8082-4f83-ae22-b7b28b6c77b4" SourceId="1" SourceUrl="http://itdev01:8080/emailgateway/service/201101/EmailGatewayWcf.EmailGateway.svc?xsd=xsd0" />
+    <MetadataFile FileName="EmailGatewayWcf2.xsd" MetadataType="Schema" ID="4707d176-9852-466f-8b0e-2e0f5bb5bcbf" SourceId="1" SourceUrl="http://itdev01:8080/emailgateway/service/201101/EmailGatewayWcf.EmailGateway.svc?xsd=xsd1" />
+    <MetadataFile FileName="EmailGateway.wsdl" MetadataType="Wsdl" ID="585c80cd-5fff-4b8a-ac0f-bdad6731eb08" SourceId="1" SourceUrl="http://itdev01:8080/emailgateway/service/201101/EmailGatewayWcf.EmailGateway.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/System" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://itdev02.carpassad.co.th:8081/idm/service/current/WCFIDMServiceApplication.WCFIDMService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+  <xs:complexType name="AbstractRequest">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="AbstractRequest" nillable="true" type="tns:AbstractRequest" />
+  <xs:complexType name="SingleResultResponseOfIDMASystemWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMASystem" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Result" nillable="true" type="q1:IDMASystem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleResultResponseOfIDMASystemWS_Py3X1u" nillable="true" type="tns:SingleResultResponseOfIDMASystemWS_Py3X1u" />
+  <xs:complexType name="AbstractResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeginTimestamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EndTimestamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsSuccessful" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AbstractResponse" nillable="true" type="tns:AbstractResponse" />
+  <xs:complexType name="MultipleResultResponseOfIDMUserAccountWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="MultipleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMUserAccount" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Results" nillable="true" type="q2:ArrayOfIDMUserAccount" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MultipleResultResponseOfIDMUserAccountWS_Py3X1u" nillable="true" type="tns:MultipleResultResponseOfIDMUserAccountWS_Py3X1u" />
+  <xs:complexType name="SingleResultResponseOfIDMUserAccountWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMUserAccount" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Result" nillable="true" type="q3:IDMUserAccount" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleResultResponseOfIDMUserAccountWS_Py3X1u" nillable="true" type="tns:SingleResultResponseOfIDMUserAccountWS_Py3X1u" />
+  <xs:complexType name="MultipleResultResponseOfUserSummaryWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="MultipleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="UserSummary" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Results" nillable="true" type="q4:ArrayOfUserSummary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MultipleResultResponseOfUserSummaryWS_Py3X1u" nillable="true" type="tns:MultipleResultResponseOfUserSummaryWS_Py3X1u" />
+  <xs:complexType name="SingleResultResponseOfIDMOttWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMOtt" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Result" nillable="true" type="q5:IDMOtt" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleResultResponseOfIDMOttWS_Py3X1u" nillable="true" type="tns:SingleResultResponseOfIDMOttWS_Py3X1u" />
+  <xs:complexType name="SingleResultResponseOfIDMPartyWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMParty" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Result" nillable="true" type="q6:IDMParty" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleResultResponseOfIDMPartyWS_Py3X1u" nillable="true" type="tns:SingleResultResponseOfIDMPartyWS_Py3X1u" />
+  <xs:complexType name="SingleResultResponseOfIDMOrganizationWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMOrganization" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Result" nillable="true" type="q7:IDMOrganization" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleResultResponseOfIDMOrganizationWS_Py3X1u" nillable="true" type="tns:SingleResultResponseOfIDMOrganizationWS_Py3X1u" />
+  <xs:complexType name="SingleResultResponseOfIDMPersonWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMPerson" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Result" nillable="true" type="q8:IDMPerson" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleResultResponseOfIDMPersonWS_Py3X1u" nillable="true" type="tns:SingleResultResponseOfIDMPersonWS_Py3X1u" />
+  <xs:complexType name="MultipleResultResponseOfIDMPersonHistoryWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="MultipleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMPersonHistory" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Results" nillable="true" type="q9:ArrayOfIDMPersonHistory" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MultipleResultResponseOfIDMPersonHistoryWS_Py3X1u" nillable="true" type="tns:MultipleResultResponseOfIDMPersonHistoryWS_Py3X1u" />
+  <xs:complexType name="MultipleResultResponseOfIDMOrganizationHistoryWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="MultipleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMOrganizationHistory" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Results" nillable="true" type="q10:ArrayOfIDMOrganizationHistory" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MultipleResultResponseOfIDMOrganizationHistoryWS_Py3X1u" nillable="true" type="tns:MultipleResultResponseOfIDMOrganizationHistoryWS_Py3X1u" />
+  <xs:complexType name="MultipleResultResponseOfIDMUserAccountHistoryWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="MultipleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMUserAccountHistory" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Results" nillable="true" type="q11:ArrayOfIDMUserAccountHistory" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MultipleResultResponseOfIDMUserAccountHistoryWS_Py3X1u" nillable="true" type="tns:MultipleResultResponseOfIDMUserAccountHistoryWS_Py3X1u" />
+  <xs:complexType name="MultipleResultResponseOfIDMCustomerCategoryWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="MultipleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMCustomerCategory" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Results" nillable="true" type="q12:ArrayOfIDMCustomerCategory" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MultipleResultResponseOfIDMCustomerCategoryWS_Py3X1u" nillable="true" type="tns:MultipleResultResponseOfIDMCustomerCategoryWS_Py3X1u" />
+  <xs:complexType name="MultipleResultResponseOfIDMOrganizationSummaryWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="MultipleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMOrganizationSummary" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Results" nillable="true" type="q13:ArrayOfIDMOrganizationSummary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MultipleResultResponseOfIDMOrganizationSummaryWS_Py3X1u" nillable="true" type="tns:MultipleResultResponseOfIDMOrganizationSummaryWS_Py3X1u" />
+  <xs:complexType name="MultipleResultResponseOfIDMPartnerCategoryWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="MultipleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMPartnerCategory" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Results" nillable="true" type="q14:ArrayOfIDMPartnerCategory" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MultipleResultResponseOfIDMPartnerCategoryWS_Py3X1u" nillable="true" type="tns:MultipleResultResponseOfIDMPartnerCategoryWS_Py3X1u" />
+  <xs:complexType name="MultipleResultResponseOfIDMQuestionWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="MultipleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMQuestion" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Results" nillable="true" type="q15:ArrayOfIDMQuestion" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MultipleResultResponseOfIDMQuestionWS_Py3X1u" nillable="true" type="tns:MultipleResultResponseOfIDMQuestionWS_Py3X1u" />
+  <xs:complexType name="MultipleResultResponseOfIDMASystemWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="MultipleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMASystem" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Results" nillable="true" type="q16:ArrayOfIDMASystem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MultipleResultResponseOfIDMASystemWS_Py3X1u" nillable="true" type="tns:MultipleResultResponseOfIDMASystemWS_Py3X1u" />
+  <xs:complexType name="SingleResultResponseOfIDMCustomerCategoryWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMCustomerCategory" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Result" nillable="true" type="q17:IDMCustomerCategory" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleResultResponseOfIDMCustomerCategoryWS_Py3X1u" nillable="true" type="tns:SingleResultResponseOfIDMCustomerCategoryWS_Py3X1u" />
+  <xs:complexType name="MultipleResultResponseOfIDMOrganizationWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="MultipleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMOrganization" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Results" nillable="true" type="q18:ArrayOfIDMOrganization" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MultipleResultResponseOfIDMOrganizationWS_Py3X1u" nillable="true" type="tns:MultipleResultResponseOfIDMOrganizationWS_Py3X1u" />
+  <xs:complexType name="SingleResultResponseOfIDMPartnerCategoryWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMPartnerCategory" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Result" nillable="true" type="q19:IDMPartnerCategory" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleResultResponseOfIDMPartnerCategoryWS_Py3X1u" nillable="true" type="tns:SingleResultResponseOfIDMPartnerCategoryWS_Py3X1u" />
+  <xs:complexType name="MultipleResultResponseOfIDMPersonWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="MultipleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMPerson" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Results" nillable="true" type="q20:ArrayOfIDMPerson" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MultipleResultResponseOfIDMPersonWS_Py3X1u" nillable="true" type="tns:MultipleResultResponseOfIDMPersonWS_Py3X1u" />
+  <xs:complexType name="SingleResultResponseOfIDMQuestionWS_Py3X1u">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="SingleResultResponseOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/System" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IDMQuestion" Namespace="http://schemas.datacontract.org/2004/07/IDM.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractResponse">
+        <xs:sequence>
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/IDM.Dto" minOccurs="0" name="Result" nillable="true" type="q21:IDMQuestion" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SingleResultResponseOfIDMQuestionWS_Py3X1u" nillable="true" type="tns:SingleResultResponseOfIDMQuestionWS_Py3X1u" />
+</xs:schema>

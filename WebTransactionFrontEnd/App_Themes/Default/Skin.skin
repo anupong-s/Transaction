@@ -1,0 +1,35 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+<%-------------- Layout --------------%>
+
+<asp:Image runat="server"  SkinID="header1"  ImageUrl="Images/header_01.jpg"/>
+<asp:Image runat="server"  SkinID="header3"  ImageUrl="Images/header_03.jpg"/>
+<asp:Image runat="server"  SkinID="header4"  ImageUrl="Images/header_04.jpg"/>
+
+<%-------------- Layout --------------%>
+
+<asp:Image runat="server"  SkinID="barWhereCar"  ImageUrl="img/content/barWhereCar.png"/>
+<asp:Image runat="server"  SkinID="barRSA"  ImageUrl="img/content/barRSA.png"/>
+<asp:Image runat="server"  SkinID="barCSR"  ImageUrl="img/content/barCSR.png"/>
+<asp:Image runat="server"  SkinID="barECall"  ImageUrl="img/content/barECall.png"/>
+
+
+<%-------------- itonn add --------------%>
+<asp:Image runat="server"  SkinID="thead"  ImageUrl="Images/Layout/thead.jpg"/>
+<asp:Image runat="server"  SkinID="barBGspace"  ImageUrl="Images/Layout/barBGspace.jpg"/>
+
+<%-------------- itonn add --------------%>

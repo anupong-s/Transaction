@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+  <xs:complexType name="GeoPoint">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q1:ComplexObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Altitude" type="xs:short" />
+          <xs:element minOccurs="0" name="GroundSpeed" type="xs:int" />
+          <xs:element minOccurs="0" name="Hdop" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Heading" type="xs:int" />
+          <xs:element minOccurs="0" name="Latitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Longitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="UtcTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GeoPoint" nillable="true" type="tns:GeoPoint" />
+  <xs:simpleType name="ELowBatterySignalType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Stage1" />
+      <xs:enumeration value="Stage2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ELowBatterySignalType" nillable="true" type="tns:ELowBatterySignalType" />
+  <xs:simpleType name="EHeartbeatLateSignalType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SILENT_1_ALERT" />
+      <xs:enumeration value="SLIENT_1_ALERTCHANGED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EHeartbeatLateSignalType" nillable="true" type="tns:EHeartbeatLateSignalType" />
+  <xs:simpleType name="ECasingOpenSignalType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OPENING" />
+      <xs:enumeration value="CLOSING" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ECasingOpenSignalType" nillable="true" type="tns:ECasingOpenSignalType" />
+  <xs:simpleType name="EGpsDeviceInternalBatterySOHSignalType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SOHLevel1" />
+      <xs:enumeration value="SOHLevel2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EGpsDeviceInternalBatterySOHSignalType" nillable="true" type="tns:EGpsDeviceInternalBatterySOHSignalType" />
+  <xs:simpleType name="EGPSDataGapSignalType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="STAGE1" />
+      <xs:enumeration value="STAGE2" />
+      <xs:enumeration value="STOPMISSING" />
+      <xs:enumeration value="ENDOfJOURNEY" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EGPSDataGapSignalType" nillable="true" type="tns:EGPSDataGapSignalType" />
+  <xs:simpleType name="EEcallPdof">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Front" />
+      <xs:enumeration value="NearSide" />
+      <xs:enumeration value="Rear" />
+      <xs:enumeration value="FarSide" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EEcallPdof" nillable="true" type="tns:EEcallPdof" />
+  <xs:simpleType name="ERestingPosition">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Back" />
+      <xs:enumeration value="LeftSide" />
+      <xs:enumeration value="Tires" />
+      <xs:enumeration value="Front" />
+      <xs:enumeration value="RightSide" />
+      <xs:enumeration value="Roof" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ERestingPosition" nillable="true" type="tns:ERestingPosition" />
+  <xs:simpleType name="EEcallSeverity">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Low" />
+      <xs:enumeration value="Medium" />
+      <xs:enumeration value="High" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EEcallSeverity" nillable="true" type="tns:EEcallSeverity" />
+  <xs:simpleType name="EDongleInternalBatteryVoltageSOCFlag">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BatteryShouldBeReplaced" />
+      <xs:enumeration value="Normal" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EDongleInternalBatteryVoltageSOCFlag" nillable="true" type="tns:EDongleInternalBatteryVoltageSOCFlag" />
+  <xs:simpleType name="EFuelThresholdLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RemainingPercentage75" />
+      <xs:enumeration value="RemainingPercentage50" />
+      <xs:enumeration value="RemainingPercentage25" />
+      <xs:enumeration value="RemainingPercentage5" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EFuelThresholdLevel" nillable="true" type="tns:EFuelThresholdLevel" />
+  <xs:simpleType name="EVinMismatchSignalType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="BEGINMISMATCH" />
+      <xs:enumeration value="ENDMISMATCH" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EVinMismatchSignalType" nillable="true" type="tns:EVinMismatchSignalType" />
+  <xs:simpleType name="EDevicepluggingStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pin4And5AreNotPlugged" />
+      <xs:enumeration value="Pin4And5ArePlugged" />
+      <xs:enumeration value="OnlyPin4IsPlugged" />
+      <xs:enumeration value="OnlyPin5IsPlugged" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EDevicepluggingStatus" nillable="true" type="tns:EDevicepluggingStatus" />
+  <xs:simpleType name="EPowerSourceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Internal" />
+      <xs:enumeration value="External" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EPowerSourceType" nillable="true" type="tns:EPowerSourceType" />
+  <xs:simpleType name="EPowerLossSignalType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="POWERLOSS" />
+      <xs:enumeration value="POWERRESTORED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EPowerLossSignalType" nillable="true" type="tns:EPowerLossSignalType" />
+  <xs:simpleType name="EIdlingSignalType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IdlingStart" />
+      <xs:enumeration value="IdlingStop" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EIdlingSignalType" nillable="true" type="tns:EIdlingSignalType" />
+  <xs:simpleType name="EDeviceReceiptCheckingSignalType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PENDING" />
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="LATE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EDeviceReceiptCheckingSignalType" nillable="true" type="tns:EDeviceReceiptCheckingSignalType" />
+</xs:schema>

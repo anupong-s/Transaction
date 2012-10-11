@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CarPass.Galileo.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="VehicleDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BodyConfiguration" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BodyStyle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ColorId" type="xs:int" />
+      <xs:element minOccurs="0" name="DriveTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="EngineSize" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstLicensePlateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FuelTypeId" type="xs:int" />
+      <xs:element minOccurs="0" name="Gear" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HorsePower" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsCngNgv" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEligibleDiscount" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRedPlate" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastLicensePlateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicensePlateProvince" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LicensePlateProvinceId" type="xs:int" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModelYear" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoOfDoors" type="xs:int" />
+      <xs:element minOccurs="0" name="OicVehicleLevel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PurchaseDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RegistrationDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransmissionId" type="xs:int" />
+      <xs:element minOccurs="0" name="Trim" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VehicleCodeGen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vin" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleDto" nillable="true" type="tns:VehicleDto" />
+  <xs:complexType name="PMPSubscriptionDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DispatchAddress" nillable="true" type="tns:AddressDto" />
+      <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExpireDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IDMUserAccountID" type="xs:long" />
+      <xs:element minOccurs="0" name="InsurerIDMPartyID" type="xs:long" />
+      <xs:element minOccurs="0" name="PolicyHolder" nillable="true" type="tns:PolicyHolderDto" />
+      <xs:element minOccurs="0" name="Vehicle" nillable="true" type="tns:VehicleDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PMPSubscriptionDto" nillable="true" type="tns:PMPSubscriptionDto" />
+  <xs:complexType name="AddressDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Apartment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Building" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DistrictId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DistrictName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HouseNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvinceId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvinceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Road" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Soi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubDistrictId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubDistrictName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnitNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Village" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Yak" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressDto" nillable="true" type="tns:AddressDto" />
+  <xs:complexType name="PolicyHolderDto">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PersonDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CountryId" type="xs:int" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HomePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MobilePhone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RefundAccount" nillable="true" type="tns:BankAccountDto" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PolicyHolderDto" nillable="true" type="tns:PolicyHolderDto" />
+  <xs:complexType name="PersonDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BirthDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" type="tns:Gender" />
+      <xs:element minOccurs="0" name="IdentificationNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsThaiPerson" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PassportNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonDto" nillable="true" type="tns:PersonDto" />
+  <xs:simpleType name="Gender">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Male" />
+      <xs:enumeration value="Female" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Gender" nillable="true" type="tns:Gender" />
+  <xs:complexType name="BankAccountDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AccountNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BankId" type="xs:int" />
+      <xs:element minOccurs="0" name="BranchId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BankAccountDto" nillable="true" type="tns:BankAccountDto" />
+</xs:schema>

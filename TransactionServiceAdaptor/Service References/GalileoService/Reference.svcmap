@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="531af5da-a9d3-4513-b864-7b13debd504b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://itdev02:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CarPass.xsd" MetadataType="Schema" ID="3e857f3e-2906-4205-87c9-53c8cc9ab485" SourceId="1" SourceUrl="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd3" />
+    <MetadataFile FileName="CarPass1.xsd" MetadataType="Schema" ID="f8934597-f81f-4f6a-b7fe-f9e71d416bbb" SourceId="1" SourceUrl="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd5" />
+    <MetadataFile FileName="CarPass2.xsd" MetadataType="Schema" ID="b3383c43-d35f-4b6c-97d9-3beba8834599" SourceId="1" SourceUrl="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd2" />
+    <MetadataFile FileName="GalileoInternalServiceWcf.wsdl" MetadataType="Wsdl" ID="68a46d16-5098-4145-8eac-e64fcde2f79c" SourceId="1" SourceUrl="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?wsdl" />
+    <MetadataFile FileName="CarPass3.xsd" MetadataType="Schema" ID="bc630638-e1db-4d87-822a-e92171a25ee4" SourceId="1" SourceUrl="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd4" />
+    <MetadataFile FileName="CarPass.disco" MetadataType="Disco" ID="718bc3e8-cd19-4a0c-88db-76944fef1a93" SourceId="1" SourceUrl="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?disco" />
+    <MetadataFile FileName="CarPass4.xsd" MetadataType="Schema" ID="0d41f887-3c41-4ec8-84bf-98de683bdb4f" SourceId="1" SourceUrl="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd7" />
+    <MetadataFile FileName="CarPass5.xsd" MetadataType="Schema" ID="e860d249-982f-4cc1-af6b-6780074cf6d3" SourceId="1" SourceUrl="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd1" />
+    <MetadataFile FileName="CarPass6.xsd" MetadataType="Schema" ID="5d137136-1ba7-4abe-a055-6035b2152f7e" SourceId="1" SourceUrl="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd6" />
+    <MetadataFile FileName="CarPass7.xsd" MetadataType="Schema" ID="282ceac3-ca48-4195-98a0-c7b4f62b37a8" SourceId="1" SourceUrl="http://itdev02.carpassad.co.th:8080/galileo/service/current/CarPass.Galileo.Service.Internal.Wcf.GalileoInternalServiceWcf.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
