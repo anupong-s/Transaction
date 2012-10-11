@@ -8,7 +8,7 @@ using TransactionFrontEnd.ViewPayment;
 using Telerik.Web.UI;
 using TransactionModel.Utils;
 using WebTransactionFrontEnd;
-using TransactionCommon;
+using CarPass.Transaction.Common;
 using System.Configuration;
 
 public partial class Pages_ViewPayment : PageBase

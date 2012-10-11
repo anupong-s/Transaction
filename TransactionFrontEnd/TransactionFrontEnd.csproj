@@ -82,9 +82,9 @@
     <Compile Include="ViewPayment\ViewPayment.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TransactionCommon\TransactionCommon.csproj">
+    <ProjectReference Include="..\CarPass.Transaction.Common\CarPass.Transaction.Common.csproj">
       <Project>{47FE0268-EFFB-4A60-83D1-6B66D7182193}</Project>
-      <Name>TransactionCommon</Name>
+      <Name>CarPass.Transaction.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\TransactionModel\TransactionModel.csproj">
       <Project>{9AE20600-407F-4BC0-93BE-C85BB86A9411}</Project>

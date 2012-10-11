@@ -5,7 +5,7 @@ using System.Text;
 using TransactionModel.Utils;
 using TransactionServiceAdaptor.IDMService;
 using TransactionFrontEnd.ViewPayment;
-using TransactionCommon;
+using CarPass.Transaction.Common;
 using TransactionServiceInterface;
 using TransactionModel;
 using System.ServiceModel;

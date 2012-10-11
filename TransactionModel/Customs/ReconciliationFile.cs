@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TransactionModel.Utils;
-using TransactionCommon;
+using CarPass.Transaction.Common;
 
 namespace TransactionModel
 {
@@ -26,7 +26,7 @@ namespace TransactionModel
         /// <param name="backupPath">Nullable</param>
         /// <param name="isValid">true or false</param>
         /// <param name="source">Nullable</param>
-        public ReconciliationFile(string filename, Byte[] contents, DateTime createDate, string createBy, 
+        public ReconciliationFile(string filename, Byte[] contents, DateTime createDate, string createBy,
                                     string backupPath, bool isValid, string source, bool isRead)
         {
             FileName = filename;
@@ -60,7 +60,7 @@ namespace TransactionModel
             }
         }
 
-        public static ReconciliationFile GetReconciliationFile(long Id,bool IsRead)
+        public static ReconciliationFile GetReconciliationFile(long Id, bool IsRead)
         {
             using (var container = new TransactionModelContainer())
             {
@@ -100,7 +100,7 @@ namespace TransactionModel
 
         partial void OnFileNameChanging(String value)
         {
-            if(string.IsNullOrEmpty(value))
+            if (string.IsNullOrEmpty(value))
             {
                 throw new ArgumentException("NULL_OR_EMPTY_FILENAME");
             }

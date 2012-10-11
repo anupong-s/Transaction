@@ -11,7 +11,7 @@ using System.IO;
 using System.Windows.Forms;
 using TransactionModel.Utils;
 using TransactionServiceAdaptor.IDMService;
-using TransactionCommon;
+using CarPass.Transaction.Common;
 
 namespace TransactionFrontEnd.ViewPayment
 {

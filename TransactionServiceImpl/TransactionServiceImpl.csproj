@@ -53,9 +53,9 @@
     <Compile Include="TransactionService.Refund.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TransactionCommon\TransactionCommon.csproj">
+    <ProjectReference Include="..\CarPass.Transaction.Common\CarPass.Transaction.Common.csproj">
       <Project>{47FE0268-EFFB-4A60-83D1-6B66D7182193}</Project>
-      <Name>TransactionCommon</Name>
+      <Name>CarPass.Transaction.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\TransactionFrontEnd\TransactionFrontEnd.csproj">
       <Project>{9677979A-9154-4D0E-8980-9A49F98FF1A0}</Project>

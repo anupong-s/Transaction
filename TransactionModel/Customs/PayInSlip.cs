@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TransactionModel.Utils;
-using TransactionCommon;
+using CarPass.Transaction.Common;
 
 namespace TransactionModel
 {

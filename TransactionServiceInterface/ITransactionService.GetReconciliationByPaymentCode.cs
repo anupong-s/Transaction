@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 using System.ServiceModel;
-using TransactionCommon;
+using CarPass.Transaction.Common;
 using System;
 
 namespace TransactionServiceInterface

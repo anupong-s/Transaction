@@ -99,9 +99,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TransactionCommon\TransactionCommon.csproj">
+    <ProjectReference Include="..\CarPass.Transaction.Common\CarPass.Transaction.Common.csproj">
       <Project>{47FE0268-EFFB-4A60-83D1-6B66D7182193}</Project>
-      <Name>TransactionCommon</Name>
+      <Name>CarPass.Transaction.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

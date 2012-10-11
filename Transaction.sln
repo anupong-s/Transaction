@@ -51,7 +51,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebTransactionFrontEnd", "W
 		SccLocalPath = ".."
 		SccProvider = "MSSCCI:Microsoft Visual SourceSafe"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		ProjectReferences = "{9677979A-9154-4D0E-8980-9A49F98FF1A0}|TransactionFrontEnd.dll;{9AE20600-407F-4BC0-93BE-C85BB86A9411}|TransactionModel.dll;{97AAE905-B922-4E11-84A2-628BC3E55633}|TransactionServiceAdaptor.dll;{EC3BE02B-F28F-470C-B6E0-EE6626D050FC}|WcfTransactionService.dll;{C33DA03A-6328-4156-845D-3F73EA1B5B59}|TransactionServiceImpl.dll;{B28E51EB-6520-4374-B4F0-0AEE1EB7BF3D}|TransactionServiceInterface.dll;{47FE0268-EFFB-4A60-83D1-6B66D7182193}|TransactionCommon.dll;"
+		ProjectReferences = "{9677979A-9154-4D0E-8980-9A49F98FF1A0}|TransactionFrontEnd.dll;{9AE20600-407F-4BC0-93BE-C85BB86A9411}|TransactionModel.dll;{97AAE905-B922-4E11-84A2-628BC3E55633}|TransactionServiceAdaptor.dll;{EC3BE02B-F28F-470C-B6E0-EE6626D050FC}|WcfTransactionService.dll;{C33DA03A-6328-4156-845D-3F73EA1B5B59}|TransactionServiceImpl.dll;{B28E51EB-6520-4374-B4F0-0AEE1EB7BF3D}|TransactionServiceInterface.dll;{47FE0268-EFFB-4A60-83D1-6B66D7182193}|CarPass.Transaction.Common.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/WebTransactionFrontEnd"
 		Debug.AspNetCompiler.PhysicalPath = "WebTransactionFrontEnd\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\WebTransactionFrontEnd\"
@@ -92,8 +92,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReconciliationProcessorWinS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstallmentServiceWinSrv", "InstallmentServiceWinSrv\InstallmentServiceWinSrv.csproj", "{58F23B7A-8B00-4DB3-AFB7-85B977939C8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionCommon", "TransactionCommon\TransactionCommon.csproj", "{47FE0268-EFFB-4A60-83D1-6B66D7182193}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{743F5C4B-EC96-4174-BA11-F788AC120E96}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{8F257455-A4E3-4980-B60F-D3BE6063AB35}"
@@ -103,6 +101,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{4E23A281-4104-41C4-B5E3-5A837366AB84}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarPass.Transaction.Application.Common", "CarPass.Transaction.ApplicationCommon\CarPass.Transaction.Application.Common.csproj", "{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarPass.Transaction.Common", "CarPass.Transaction.Common\CarPass.Transaction.Common.csproj", "{47FE0268-EFFB-4A60-83D1-6B66D7182193}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -337,16 +337,6 @@ Global
 		{58F23B7A-8B00-4DB3-AFB7-85B977939C8B}.Release|Mixed Platforms.Build.0 = Release|x86
 		{58F23B7A-8B00-4DB3-AFB7-85B977939C8B}.Release|x86.ActiveCfg = Release|x86
 		{58F23B7A-8B00-4DB3-AFB7-85B977939C8B}.Release|x86.Build.0 = Release|x86
-		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Release|Any CPU.Build.0 = Release|Any CPU
-		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Release|x86.ActiveCfg = Release|Any CPU
 		{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -357,6 +347,16 @@ Global
 		{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F}.Release|x86.ActiveCfg = Release|Any CPU
+		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{47FE0268-EFFB-4A60-83D1-6B66D7182193}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -384,10 +384,10 @@ Global
 		{BEC8126E-3E5A-4808-8E37-E7748D9EB036} = {743F5C4B-EC96-4174-BA11-F788AC120E96}
 		{8F257455-A4E3-4980-B60F-D3BE6063AB35} = {743F5C4B-EC96-4174-BA11-F788AC120E96}
 		{AB5483AE-73C9-4446-BD2E-1FA331A4502D} = {743F5C4B-EC96-4174-BA11-F788AC120E96}
-		{47FE0268-EFFB-4A60-83D1-6B66D7182193} = {8F257455-A4E3-4980-B60F-D3BE6063AB35}
 		{9AE20600-407F-4BC0-93BE-C85BB86A9411} = {8F257455-A4E3-4980-B60F-D3BE6063AB35}
 		{97AAE905-B922-4E11-84A2-628BC3E55633} = {8F257455-A4E3-4980-B60F-D3BE6063AB35}
 		{DA3FD210-2B1D-4F16-9116-7F16C8BF9F5F} = {8F257455-A4E3-4980-B60F-D3BE6063AB35}
+		{47FE0268-EFFB-4A60-83D1-6B66D7182193} = {8F257455-A4E3-4980-B60F-D3BE6063AB35}
 		{67B21638-9A49-4BE7-9DC9-809AB579806B} = {4E23A281-4104-41C4-B5E3-5A837366AB84}
 		{A5C23FE0-AF99-4DC2-8BCA-64CD5E03B518} = {4E23A281-4104-41C4-B5E3-5A837366AB84}
 		{63523CE3-A3D7-4824-928F-E280DCC46883} = {4E23A281-4104-41C4-B5E3-5A837366AB84}
