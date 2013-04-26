@@ -53,15 +53,15 @@ namespace ReconciliationFileProcessor
                     var flag = str.AsRecordType();
                     if (flag.ToUpper().Equals("D")) //Detail
                     {
-                        var recDto = new Reconciliation { ReconciliationFileId = rec.Id, PaymentMethod = rec.FileType };
-
-                        //var paymentDate = str.AsPaymentDate();
-                        //var paymentTime = str.AsPaymentTime();
-
-                        recDto.PaymentCode = str.AsCustomerNoRef1();
-                        recDto.PaymentDate = str.AsPaymentDateTime(); //ConvertToDateTime(paymentDate, paymentTime);
-                        recDto.PaymentBy = str.AsCustomerName();
-                        recDto.Amount = str.AsAmount();
+                        var recDto = new Reconciliation
+                        {
+                            ReconciliationFileId = rec.Id,
+                            PaymentMethod = rec.FileType,
+                            PaymentCode = str.AsCustomerNoRef1(),
+                            PaymentDate = str.AsPaymentDateTime(),
+                            PaymentBy = str.AsCustomerName(),
+                            Amount = str.AsAmount()
+                        };
 
                         reconciliations.Add(recDto);
                     }
@@ -71,22 +71,6 @@ namespace ReconciliationFileProcessor
             }
             return reconciliations;
         }
-
-        //private static DateTime ConvertToDateTime(string date, string time)
-        //{
-        //    var day = date.Substring(0, 2);
-        //    var month = date.Substring(2, 2);
-        //    var year = date.Substring(4, 4);
-
-        //    var hour = time.Substring(0, 2);
-        //    var minute = time.Substring(2, 2);
-        //    var second = time.Substring(4, 2);
-
-        //    var dateTime = new DateTime(year.ToInt(), month.ToInt(), day.ToInt(),
-        //                                hour.ToInt(), minute.ToInt(), second.ToInt());
-
-        //    return dateTime;
-        //}
 
         public void SaveReconcilation(Reconciliation[] recons)
         {

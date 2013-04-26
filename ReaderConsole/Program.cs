@@ -23,8 +23,9 @@ namespace ReaderConsole
 
         public void Run()
         {
-            FileSystemWatcher watcher = new System.IO.FileSystemWatcher();
-            Reader reader = new Reader(watcher, basePath);
+            var watcher = new System.IO.FileSystemWatcher();
+            var reader = new Reader(watcher, basePath);
+
             //Reader reader = new Reader(watcher, @"C:\Reconciliation\BBL\CreditCard\");
             reader.StartReading();
 
@@ -105,27 +106,5 @@ namespace ReaderConsole
             Console.WriteLine("Thanks");
         }
 
-        //private static void BBL()
-        //{
-        //    FileSystemWatcher watcher = new System.IO.FileSystemWatcher();
-        //    Reader reader = new Reader(watcher, @"C:\Reconciliation\BBL\PayInSlip\");
-        //    //Reader reader = new Reader(watcher, @"C:\Reconciliation\BBL\CreditCard\");
-        //    reader.StartReading();
-        //    while (true)
-        //    {
-        //        Thread.Sleep(5000);
-        //    }
-        //    reader.StopReading();
-        //}
-
-        //private static void SCB()
-        //{
-        //    FileSystemWatcher watcher = new System.IO.FileSystemWatcher();
-        //    Reader reader = new Reader(watcher, @"C:\Reconciliation\SCB\PayInSlip\");
-        //    //Reader reader = new Reader(watcher, @"C:\Reconciliation\SCB\CreditCard\");
-        //    reader.StartReading();
-            
-        //    //reader.StopReading();
-        //}
     }
 }

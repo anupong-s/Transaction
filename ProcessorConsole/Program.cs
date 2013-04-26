@@ -27,8 +27,12 @@ namespace ProcessorConsole
         public void Start()
         {
             running = true;
+#if DEBUG
+            this.Run();
+#else
             t = new Thread(new ThreadStart(this.Run));
             t.Start();
+#endif
         }
 
         public void Stop()
@@ -37,7 +41,7 @@ namespace ProcessorConsole
             while (t.IsAlive) ;
         }
     }
-    
+
     class Program
     {
         static void Main(string[] args)
