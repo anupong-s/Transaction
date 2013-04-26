@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using TransactionModel;
 using TransactionModel.Utils;
 using CarPass.Transaction.Common;
 
@@ -59,12 +56,8 @@ namespace TransactionModel
                 exception = ex;
             }
 
-            if (exception != null)
-                return false;
-            else
-                return true;
+            return exception == null;
         }
-
         
         #endregion
 
@@ -147,11 +140,8 @@ namespace TransactionModel
 
         private static void CreateLogs(Exception ex)
         {
-            string message = ex.Message;
-            if (ex.InnerException != null)
-                message = ex.InnerException.Message;
-
-            ErrorLog.CreateErrorLog("System", ex.Message, SeverityEnum.HIGH, SystemError.ServiceProcessor);
+            ErrorLog.CreateErrorLog("System", ex.GetBaseException().Message,
+                                    SeverityEnum.HIGH, SystemError.ServiceProcessor);
         }
 
         #endregion

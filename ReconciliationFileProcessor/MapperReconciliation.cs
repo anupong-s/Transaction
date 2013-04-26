@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using TransactionModel;
 using TransactionModel.Utils;
 using System.Data;
@@ -41,15 +39,18 @@ namespace ReconciliationFileProcessor
             return input.Substring(32, 2).ToInt();
         }
 
-        public static string AsPayment(this string input,string value)
+        public static string AsPayment(this string input, string value)
         {
-            string val = value.ToLower();
-            if (val == "paymentby")
-                return input.Substring(34, 50).Trim();
-            else if (val == "paymentcode")
-                return input.Substring(84, 20).Trim();
-            else
-                return string.Empty;
+            var val = value.ToLower();
+            switch (val)
+            {
+                case "paymentby":
+                    return input.Substring(34, 50).Trim();
+                case "paymentcode":
+                    return input.Substring(84, 20).Trim();
+                default:
+                    return string.Empty;
+            }
         }
 
         public static decimal ToAmount(this string input)
@@ -67,10 +68,10 @@ namespace ReconciliationFileProcessor
 
         public static Reconciliation[] CreateCreditCardToBBL(DataTable dt, string paymentMethod, long reconciliationFileId)
         {
-            List<Reconciliation> result = new List<Reconciliation>();
-            for (int i = 0; i < dt.Rows.Count; i++)
+            var result = new List<Reconciliation>();
+            for (var i = 0; i < dt.Rows.Count; i++)
             {
-                Reconciliation recon = new Reconciliation
+                var recon = new Reconciliation
                 {
                     PaymentCode = dt.Rows[i]["Merchant Ref."].ToString(),
                     Amount = dt.Rows[i]["Amount"].ToString().ToDecimal(),
@@ -89,16 +90,16 @@ namespace ReconciliationFileProcessor
         {
             try
             {
-                var PaymentDate = new DateTime(strLine.ToPaySlipYear(), 
-                                                strLine.ToPaySlipMonth(), 
+                var paymentDate = new DateTime(strLine.ToPaySlipYear(),
+                                                strLine.ToPaySlipMonth(),
                                                 strLine.ToPaySlipDay(),
-                                                strLine.ToPaySlipHour(), 
-                                                strLine.ToPaySlipMinute(), 
+                                                strLine.ToPaySlipHour(),
+                                                strLine.ToPaySlipMinute(),
                                                 strLine.ToPaySlipSecond());
 
                 return new Reconciliation
-                { 
-                    PaymentDate = PaymentDate,
+                {
+                    PaymentDate = paymentDate,
                     PaymentBy = strLine.AsPayment("PaymentBy"),
                     PaymentCode = strLine.AsPayment("PaymentCode"),
                     Amount = strLine.ToAmount(),

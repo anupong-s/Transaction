@@ -14,9 +14,8 @@ namespace ReconciliationFileProcessor
     {
         public void ReadReconciliation()
         {
-            //Exception exception = null;
-
             var reconciliations = ReconciliationFile.GetReconciliationFile();
+
             foreach (var rec in reconciliations)
             {
                 try
@@ -25,19 +24,14 @@ namespace ReconciliationFileProcessor
                 }
                 catch (Exception ex)
                 {
-                    //exception = ex;
                     CreateLog(ex);
-                    //UpdateFailReconciliationFile(rec);
                 }
-
-                //if (exception != null)
-                //    UpdateFailReconciliationFile(rec);
             }
         }
 
         private void KindOfBank(ReconciliationFile rec)
         {
-            string bankName = GetBank(rec.BackupPath);
+            var bankName = GetBank(rec.BackupPath);
 
             if (bankName == TransactionBanks.BBL.ToString())
             {
@@ -59,16 +53,16 @@ namespace ReconciliationFileProcessor
         private string GetBank(string path)
         {
             var values = path.Split('\\');
-            
+
             return values[2].ToUpper();
         }
 
         private void UpdateFailReconciliationFile(ReconciliationFile rec)
         {
-            string sourceFile = rec.BackupPath;
-            string destinationFile = sourceFile.Replace("Success", "Err");
+            var sourceFile = rec.BackupPath;
+            var destinationFile = sourceFile.Replace("Success", "Err");
 
-            string parentPath = new DirectoryInfo(destinationFile).Parent.FullName;
+            var parentPath = new DirectoryInfo(destinationFile).Parent.FullName;
 
             CreateDirectory(parentPath);
 
@@ -81,7 +75,7 @@ namespace ReconciliationFileProcessor
 
         private void CreateLog(Exception ex)
         {
-            string message = ex.Message;
+            var message = ex.Message;
             if (ex.InnerException != null)
                 message = ex.InnerException.Message;
 

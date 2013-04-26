@@ -68,11 +68,11 @@ namespace TransactionModel
             }
         }
 
-        public static void UpdateSuccessReconciliationFile(long Id)
+        public static void UpdateSuccessReconciliationFile(long id)
         {
             using (var container = new TransactionModelContainer())
             {
-                var val = container.ReconciliationFiles.FirstOrDefault(x => x.Id == Id);
+                var val = container.ReconciliationFiles.FirstOrDefault(x => x.Id == id);
                 val.IsRead = true;
 
                 container.SaveChanges();

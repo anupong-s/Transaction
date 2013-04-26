@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\FileProcessorExtension.cs" />
     <Compile Include="IBankProcessor.cs" />
     <Compile Include="BBLProcessor.cs" />
     <Compile Include="KBankProcessor.cs" />

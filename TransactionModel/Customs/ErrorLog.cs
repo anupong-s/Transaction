@@ -78,6 +78,7 @@ namespace TransactionModel
                         SystemErrorId = (byte)sys,
                         SystemErrorName = sys.ToString(),
                     });
+
                     container.SaveChanges();
 
                     exceptionLogScope.Complete();
