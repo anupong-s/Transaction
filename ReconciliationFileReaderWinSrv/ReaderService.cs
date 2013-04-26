@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Linq;
 using System.ServiceProcess;
-using System.Text;
 using System.Threading;
-using System.IO;
 using ReconciliationFileReader;
 using TransactionModel;
 
@@ -52,14 +47,7 @@ namespace ReconciliationFileReaderWinSrv
             }
             catch (Exception ex)
             {
-                string msg = ex.Message;
-                if (ex.InnerException != null)
-                    msg = ex.InnerException.Message;
-
-                ErrorLog.CreateErrorLog("ReconciliationFileReader", 
-                            msg, 
-                            SeverityEnum.HIGH, 
-                            SystemError.ServiceReader);
+                ErrorLog.Log("ReconciliationFileReader", ex, SystemError.ServiceReader);
             }
         }
 
@@ -67,21 +55,14 @@ namespace ReconciliationFileReaderWinSrv
         {
             try
             {
-                if (runners.Count() > 0)
+                if (runners.Count > 0)
                 {
                     runners.ForEach(x => x.Stop());
                 }
             }
             catch (Exception ex)
             {
-                string msg = ex.Message;
-                if (ex.InnerException != null)
-                    msg = ex.InnerException.Message;
-
-                ErrorLog.CreateErrorLog("ReconciliationFileReader",
-                            msg,
-                            SeverityEnum.HIGH,
-                            SystemError.ServiceReader);
+                ErrorLog.Log("System", ex, SystemError.ServiceReader);
             }
         }
     }
@@ -99,8 +80,8 @@ namespace ReconciliationFileReaderWinSrv
 
         public void Run()
         {
-            FileSystemWatcher watcher = new System.IO.FileSystemWatcher();
-            Reader reader = new Reader(watcher, basePath);
+            var watcher = new System.IO.FileSystemWatcher();
+            var reader = new Reader(watcher, basePath);
             reader.StartReading();
 
             while (running)

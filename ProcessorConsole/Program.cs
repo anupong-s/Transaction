@@ -15,7 +15,7 @@ namespace ProcessorConsole
 
         public void Run()
         {
-            Processor updator = new Processor();
+            var updator = new Processor();
 
             while (running)
             {
@@ -42,7 +42,7 @@ namespace ProcessorConsole
     {
         static void Main(string[] args)
         {
-            Runner runner = new Runner();
+            var runner = new Runner();
 
             string cmd = null;
 

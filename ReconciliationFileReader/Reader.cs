@@ -24,8 +24,7 @@ namespace ReconciliationFileReader
                 this.inPath = basePath + "In\\";
                 this.successPath = basePath + "Success\\";
                 this.errPath = basePath + "Err\\";
-                this.maxSize = 1000000 * Configuration.GetConfiguration("RECONCILIATION",
-                                                "RAW_FILE_MAXSIZE").Value1.ToInt();
+                this.maxSize = 1000000 * Configuration.GetConfiguration("RECONCILIATION", "RAW_FILE_MAXSIZE").Value1.ToInt();
 
                 ValidateDirectory(basePath);
 
@@ -40,7 +39,7 @@ namespace ReconciliationFileReader
             }
             catch (Exception ex)
             {
-                CreateLog(ex);
+                ErrorLog.Log("System", ex, SystemError.ServiceReader);
             }
         }
 
@@ -80,14 +79,15 @@ namespace ReconciliationFileReader
             {
                 using (var container = new TransactionModelContainer())
                 {
-                    string fileName = GetFileName(sourcePath);
-                    FileInfo fileinfo = new FileInfo(fileName);
-                    byte[] contents = ReadFile(sourcePath);
+                    var fileName = GetFileName(sourcePath);
+                    var fileinfo = new FileInfo(fileName);
+                    var contents = ReadFile(sourcePath);
 
                     if (!IsValidFile(fileinfo))
                     {
-                        string newFileName = MoveFileToFolder(container, errPath, sourcePath, fileinfo);
-                        container.ReconciliationFiles.AddObject(new ReconciliationFile { 
+                        var newFileName = MoveFileToFolder(container, errPath, sourcePath, fileinfo);
+                        container.ReconciliationFiles.AddObject(new ReconciliationFile
+                        {
                             FileName = fileinfo.Name,
                             Contents = contents,
                             CreateDate = DateTime.Now,
@@ -101,8 +101,8 @@ namespace ReconciliationFileReader
                     }
                     else
                     {
-                        string parentFolder = new DirectoryInfo(successPath).Parent.Name;
-                        string newFileName = MoveFileToFolder(container, successPath, sourcePath, fileinfo);
+                        var parentFolder = new DirectoryInfo(successPath).Parent.Name;
+                        var newFileName = MoveFileToFolder(container, successPath, sourcePath, fileinfo);
                         container.ReconciliationFiles.AddObject(new ReconciliationFile
                         {
                             FileName = fileinfo.Name,
@@ -113,8 +113,9 @@ namespace ReconciliationFileReader
                             IsValid = true,
                             Source = null,
                             IsRead = false,
-                            FileType = (parentFolder.ToLower().Contains("credit"))?
-                                            FileType.C.ToString() : FileType.P.ToString(),
+                            FileType = (parentFolder.ToLower().Contains("credit"))
+                                            ? FileType.C.ToString()
+                                            : FileType.P.ToString(),
                         });
                     }
                     container.SaveChanges();
@@ -122,7 +123,7 @@ namespace ReconciliationFileReader
             }
             catch (Exception ex)
             {
-                CreateLog(ex);
+                ErrorLog.Log("System", ex, SystemError.ServiceReader);
             }
         }
 
@@ -152,18 +153,18 @@ namespace ReconciliationFileReader
                 return fileStream.Name;
             }
         }
-        
+
         private byte[] ReadFile(string sourcePath)
         {
             byte[] buffer;
-            using (FileStream fileStream = new FileStream(sourcePath, FileMode.Open, FileAccess.Read))
+            using (var fileStream = new FileStream(sourcePath, FileMode.Open, FileAccess.Read))
             {
                 try
                 {
-                    int length = (int)fileStream.Length;  // get file length
+                    var length = (int)fileStream.Length;  // get file length
                     buffer = new byte[length];            // create buffer
                     int count;                            // actual number of bytes read
-                    int sum = 0;                          // total number of bytes read
+                    var sum = 0;                          // total number of bytes read
 
                     // read until Read method returns 0 (end of the stream has been reached)
                     while ((count = fileStream.Read(buffer, sum, length - sum)) > 0)
@@ -195,10 +196,10 @@ namespace ReconciliationFileReader
 
         private string MoveFileToFolder(TransactionModelContainer container, string moveToPath, string sourceFile, FileInfo fileInfo)
         {
-            string folderName = DateTime.Now.Year.ToString("0000") + DateTime.Now.Month.ToString("00");
-            string fullPath = moveToPath + folderName + "\\";
-            string newFileName = DateTime.Now.ToString("yyyyMMddHHmmss") + "_" + fileInfo.Name;
-            string destinationPath = fullPath + newFileName;
+            var folderName = DateTime.Now.Year.ToString("0000") + DateTime.Now.Month.ToString("00");
+            var fullPath = moveToPath + folderName + "\\";
+            var newFileName = DateTime.Now.ToString("yyyyMMddHHmmss") + "_" + fileInfo.Name;
+            var destinationPath = fullPath + newFileName;
 
             CreateSubFolderDirectorySuccess(container, fullPath);
 
@@ -223,15 +224,6 @@ namespace ReconciliationFileReader
             {
                 return true;
             }
-        }
-
-        private void CreateLog(Exception ex)
-        {
-            string message = ex.Message;
-            if (ex.InnerException != null)
-                message = ex.InnerException.Message;
-
-            ErrorLog.CreateErrorLog("System", message, SeverityEnum.HIGH, SystemError.ServiceReader);
         }
 
         #endregion

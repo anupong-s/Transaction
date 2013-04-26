@@ -129,7 +129,7 @@ namespace TransactionFrontEnd.ViewPayment
                 var payment = container.Payments
                     .Include("PaymentItems")
                     .Include("Installments")
-                    .FirstOrDefault(x => x.Id == paymentId && 
+                    .FirstOrDefault(x => x.Id == paymentId &&
                                     x.CustomerIdmPartyId == TheMain.PartyId);
 
                 if (payment == null)
@@ -254,11 +254,7 @@ namespace TransactionFrontEnd.ViewPayment
 
         public static void LogsError(Exception ex, string issuedBy)
         {
-            string msg = ex.Message;
-            if (ex.InnerException != null)
-                msg = ex.InnerException.Message;
-
-            ErrorLog.CreateErrorLog(issuedBy, msg, SeverityEnum.MEDIUM, SystemError.Web);
+            ErrorLog.Log(issuedBy, ex, SystemError.Web, SeverityEnum.MEDIUM);
         }
     }
 

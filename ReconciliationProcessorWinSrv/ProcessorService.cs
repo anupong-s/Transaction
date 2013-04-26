@@ -42,7 +42,7 @@ namespace ReconciliationProcessorWinSrv
             public void Stop()
             {
                 running = false;
-                while (t.IsAlive);
+                while (t.IsAlive) ;
             }
         }
 
@@ -60,14 +60,7 @@ namespace ReconciliationProcessorWinSrv
             }
             catch (Exception ex)
             {
-                string msg = ex.Message;
-                if (ex.InnerException != null)
-                    msg = ex.InnerException.Message;
-
-                ErrorLog.CreateErrorLog("ReconciliationProcessor",
-                            msg,
-                            SeverityEnum.HIGH,
-                            SystemError.ServiceReader);
+                ErrorLog.Log("ReconciliationProcessor", ex, SystemError.ServiceReader);
             }
         }
 
@@ -79,14 +72,7 @@ namespace ReconciliationProcessorWinSrv
             }
             catch (Exception ex)
             {
-                string msg = ex.Message;
-                if (ex.InnerException != null)
-                    msg = ex.InnerException.Message;
-
-                ErrorLog.CreateErrorLog("ReconciliationProcessor",
-                            msg,
-                            SeverityEnum.HIGH,
-                            SystemError.ServiceReader);
+                ErrorLog.Log("System", ex, SystemError.ServiceReader);
             }
         }
     }

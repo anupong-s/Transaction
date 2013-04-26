@@ -90,7 +90,7 @@ namespace TransactionModelTest
         [TestMethod]
         public void TestCreateErrorLog()
         {
-            ErrorLog.CreateErrorLog("System", "error message", SeverityEnum.HIGH, SystemError.TransactionService);
+            ErrorLog.Log("System", "error message", SystemError.TransactionService);
         }
 
         [TestMethod]

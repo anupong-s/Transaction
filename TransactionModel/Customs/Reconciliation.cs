@@ -58,7 +58,7 @@ namespace TransactionModel
 
             return exception == null;
         }
-        
+
         #endregion
 
         #region Partial Method
@@ -140,8 +140,7 @@ namespace TransactionModel
 
         private static void CreateLogs(Exception ex)
         {
-            ErrorLog.CreateErrorLog("System", ex.GetBaseException().Message,
-                                    SeverityEnum.HIGH, SystemError.ServiceProcessor);
+            ErrorLog.Log("System", ex, SystemError.ServiceProcessor);
         }
 
         #endregion

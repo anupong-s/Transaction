@@ -299,7 +299,7 @@ namespace TransactionServiceImpl
         {
             var res = new RetrievePaymentCodeResponse();
 
-            using(var ctx = new TransactionModelContainer())
+            using (var ctx = new TransactionModelContainer())
             {
                 res.PaymentCode = PaymentCode.NextPaymentCode(ctx);
                 ctx.SaveChanges();
@@ -312,23 +312,14 @@ namespace TransactionServiceImpl
 
         #region Private Method
 
-        private void CreateLog(CreatePaymentRequest req, Exception x)
+        private void CreateLog(CreatePaymentRequest req, Exception ex)
         {
-            string msg = x.GetBaseException().Message;
-
-            ErrorLog.CreateErrorLog(
-                req.CustomerName, msg,
-                SeverityEnum.HIGH,
-                SystemError.TransactionService);
+            ErrorLog.Log(req.CustomerName, ex, SystemError.TransactionService);
         }
 
-        private void CreateLog(Exception x)
+        private void CreateLog(Exception ex)
         {
-            string msg = x.GetBaseException().Message;
-
-            ErrorLog.CreateErrorLog("System", msg,
-                SeverityEnum.HIGH,
-                SystemError.TransactionService);
+            ErrorLog.Log("System", ex, SystemError.TransactionService);
         }
 
         private void ValidateCreatePaymentRequest(IDMServiceClient client, CreatePaymentRequest req)

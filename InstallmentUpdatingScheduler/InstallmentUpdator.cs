@@ -59,10 +59,9 @@ namespace InstallmentUpdatingScheduler
                     #endregion
                 }
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
-                ErrorLog.CreateErrorLog("System", exception.GetBaseException().Message, 
-                    SeverityEnum.HIGH, SystemError.ServiceReader);
+                ErrorLog.Log("System", exception, SystemError.ServiceReader);
             }
         }
 

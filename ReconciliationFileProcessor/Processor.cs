@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Data;
 using System.IO;
 using TransactionModel;
 using TransactionModel.Utils;
-using System.Threading;
 
 namespace ReconciliationFileProcessor
 {
@@ -20,7 +15,7 @@ namespace ReconciliationFileProcessor
             {
                 try
                 {
-                    KindOfBank(rec);
+                    BankType(rec);
                 }
                 catch (Exception ex)
                 {
@@ -29,7 +24,7 @@ namespace ReconciliationFileProcessor
             }
         }
 
-        private void KindOfBank(ReconciliationFile rec)
+        private void BankType(ReconciliationFile rec)
         {
             var bankName = GetBank(rec.BackupPath);
 
@@ -75,11 +70,7 @@ namespace ReconciliationFileProcessor
 
         private void CreateLog(Exception ex)
         {
-            var message = ex.Message;
-            if (ex.InnerException != null)
-                message = ex.InnerException.Message;
-
-            ErrorLog.CreateErrorLog("System", message, SeverityEnum.HIGH, SystemError.ServiceProcessor);
+            ErrorLog.Log("System", ex, SystemError.ServiceProcessor);
         }
 
         private void CreateDirectory(string path)

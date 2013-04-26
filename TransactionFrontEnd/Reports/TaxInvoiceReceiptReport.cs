@@ -53,11 +53,7 @@ namespace TransactionFrontEnd.ViewPayment
                 }
                 catch (Exception ex)
                 {
-                    string msg = ex.Message.ToString();
-                    if (ex.InnerException != null)
-                        msg = ex.InnerException.Message;
-
-                    ErrorLog.CreateErrorLog("System", msg, SeverityEnum.HIGH, SystemError.TransactionService);
+                    ErrorLog.Log("System", ex, SystemError.TransactionService);
                 }
             }
 

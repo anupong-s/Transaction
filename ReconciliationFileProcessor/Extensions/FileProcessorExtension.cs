@@ -1,5 +1,9 @@
 ﻿namespace ReconciliationFileProcessor
 {
+    using System;
+
+    using TransactionModel.Utils;
+
     /// <summary>
     /// This extension use for KBank and SCB
     /// </summary>
@@ -41,6 +45,32 @@
         public static string AsCompanyAccount(this string value)
         {
             return value.Substring(10, 10).Trim();
+        }
+
+        public static DateTime AsPaymentDateTime(this string value)
+        {
+            var dt = value.Substring(20, 14).Trim();
+
+            var date = dt.Substring(0, 8).Trim();
+            var time = dt.Substring(8, 6).Trim();
+
+            return ConvertToDateTime(date, time);
+        }
+
+        private static DateTime ConvertToDateTime(string date, string time)
+        {
+            var day = date.Substring(0, 2);
+            var month = date.Substring(2, 2);
+            var year = date.Substring(4, 4);
+
+            var hour = time.Substring(0, 2);
+            var minute = time.Substring(2, 2);
+            var second = time.Substring(4, 2);
+
+            var dateTime = new DateTime(year.ToInt(), month.ToInt(), day.ToInt(),
+                                        hour.ToInt(), minute.ToInt(), second.ToInt());
+
+            return dateTime;
         }
 
         public static string AsPaymentDate(this string value)
